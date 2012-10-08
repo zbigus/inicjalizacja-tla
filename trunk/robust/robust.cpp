@@ -10,6 +10,7 @@
 #include <deque>
 #include <math.h>
 #include "utils.h"
+#include "blok.h"
 using namespace cv;
 using namespace std;
 
@@ -74,7 +75,10 @@ int main(int argc, const char** argv) {
 		imshow("inicjalizacja-tla", gray);
 		tmp = grid_cut(gray, size);
 		// cout << x <<","<<y<<endl;
+		blok blk(tmp[y][x],size);
+		blk.dump();
 		imshow("kawalek", tmp[y][x]);
+
 		char c = (char) waitKey(10);
 		if (c == 27)
 			break;
