@@ -37,7 +37,7 @@ int main(int argc, const char** argv) {
 	string str_null("null");
 	Mat** tmp;
 
-	int size = 40;
+	int size = 10;
 	clock_t before = clock();
 	int x = 0, y = 0;
 
@@ -70,14 +70,21 @@ int main(int argc, const char** argv) {
 			cout << "ERROR: pusta ramka...\n";
 			break;
 		}
-
-		cvtColor(color, gray, CV_BGR2GRAY);
+		
+				cvtColor(color, gray, CV_BGR2GRAY);
 		imshow("inicjalizacja-tla", gray);
 		tmp = grid_cut(gray, size);
 		// cout << x <<","<<y<<endl;
 		blok blk(tmp[y][x],size);
 		blk.dump();
+		system("PAUSE");
+		if(blk.getSize())
+		{
+		Mat kawalek2=blk.devectorize();
+		cout<<kawalek2;
 		imshow("kawalek", tmp[y][x]);
+		imshow("kawalek2", kawalek2);
+		}
 
 		char c = (char) waitKey(10);
 		if (c == 27)

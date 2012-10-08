@@ -24,5 +24,6 @@ public:
 	blok(Mat , int );
 	//blok(Mat** input_block, int _size);
 	int operator()(int, int);
-	Mat& operator=(blok&);
+	Mat& devectorize();
+	int getSize();
 };
