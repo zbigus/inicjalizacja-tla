@@ -32,5 +32,5 @@ public:
 	double mean();
 	double deviation();
 	double corelation(blok &blk);
-	double mad(blok blk);
+	double mad(blok &blk);
 };

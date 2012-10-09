@@ -59,20 +59,37 @@ double blok::deviation(){
 	vector<unsigned int> zero_mean( content );
 	transform( zero_mean.begin(), zero_mean.end(), zero_mean.begin(),bind2nd( minus<double>(), mean ) );
 
-	double deviation = inner_product( zero_mean.begin(),zero_mean.end(), zero_mean.begin(), 0.0f );
+	double deviation = inner_product( zero_mean.begin(),zero_mean.end(), zero_mean.begin(), 0.0 );
 	deviation = sqrt( deviation / ( content.size() - 1 ) );
 	return deviation;
 }
 double blok::corelation(blok &blk){
 	double mean_inner=this->mean();
 	double mean_outer=blk.mean();
-	blok blk2(blk);
-	std::reverse(blk.content.begin(),blk.content.end());
-	cout<<"inn"<<mean_inner;
-	cout<<"out"<<mean_outer;
-	double a=inner_product(this->content.begin(),this->content.end(),blk2.content.begin(),0,[](double acc, double wyr){return acc+wyr;},[mean_inner,mean_outer](double x, double y){return (double)abs(((double)x-mean_inner)*((double)y-mean_outer));});
-	double b=this->deviation()*blk.deviation();
-	cout<<"a:"<<a<<endl;
-	cout<<"b:"<<b<<endl; 
-	return a/b;
+	double sigma_inner=0;
+	double sigma_outter=0;
+	double covariance=0;
+	vector<unsigned int>::iterator itin;
+	vector<unsigned int>::iterator itout;
+	for(itin = content.begin();itin !=content.end();itin++)
+		sigma_inner+=pow((*itin)-mean_inner,2);
+	sigma_inner=sqrt(sigma_inner);
+	for(itout = blk.content.begin();itout !=blk.content.end();itout++)
+		sigma_outter+=pow((*itout)-mean_outer,2);
+	sigma_outter=sqrt(sigma_outter);
+	cout<<"inn:"<<sigma_inner<<endl;
+	cout<<"out:"<<sigma_outter<<endl;
+	for(itin = content.begin(),itout=blk.content.begin();itin !=content.end();itin++,itout++)
+		covariance+=(*itin-mean_inner)*(*itout-mean_outer);
+	return covariance/(sigma_inner*sigma_outter);
+}
+double blok::mad(blok& blk)
+{
+	double sum=0;
+	vector<unsigned int>::iterator itin;
+	vector<unsigned int>::iterator itout;
+	for(itin = content.begin(),itout=blk.content.begin();itin !=content.end();itin++,itout++)
+		sum+=abs((int)*itin-(int)*itout);
+	sum=sum/(size*size);
+	return sum;
 }
