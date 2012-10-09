@@ -42,7 +42,7 @@ int main(int argc, const char** argv) {
 	string str_null("null");
 	Mat** tmp;
 
-	int size = 10;
+	int size = 5;
 	clock_t before = clock();
 	int x = 0, y = 0;
 
@@ -100,8 +100,7 @@ int main(int argc, const char** argv) {
 		cout<<"test :"<<test;
 		cout<<"mean:"<<blk.mean();
 		cout<<"deviation"<<blk.deviation();
-		cout<<"corr:";
-		cout<<blk.corelation(blk);
+		
 		system("PAUSE");
 		if(blk.getSize())
 		{
@@ -112,8 +111,14 @@ int main(int argc, const char** argv) {
 		}
 		grd.insertAt(2,3,blk);
 		cout<<"size:"<<grd(3,2).at(0).getSize();
-	//	if(grd(3,2).at(0).getSize())
-		//  imshow("kawalek3",grd(2,3).at(0).devectorize());
+		if(grd(3,2).at(0).getSize())
+			{
+				blok blk4=grd(3,2).at(0);
+				imshow("kawalek4",blk4.devectorize());
+				cout<<"corr:";
+				cout<<blk.corelation(blk4)<<endl;
+				cout<<"mad:"<<blk.mad(blk4);
+			}
 		char c = (char) waitKey(10);
 		if (c == 27)
 			break;
