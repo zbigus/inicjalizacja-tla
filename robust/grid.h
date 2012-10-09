@@ -11,26 +11,23 @@
 #include <iomanip>
 #include <deque>
 #include <math.h>
+#include "blok.h"
 using namespace cv;
 using namespace std;
-class blok
+class grid
 {
 private:
-	std::vector<unsigned int> content;
-	double weight;
-	int size;
+	std::vector<std::vector<blok>> content;
+	int height,width;
 public:
 	void dump();
-	blok(Mat , int );
-	blok();
+	grid(int , int );
 	//blok(Mat** input_block, int _size);
-	int operator()(int, int);
-	blok operator-(int);
-	double blok::operator*(blok);
-	Mat& devectorize();
-	int getSize();
-	double mean();
-	double deviation();
-	double corelation(blok &blk);
-	double mad(blok blk);
+	std::vector<blok> operator()(int, int);
+	void insertAt(int,int, blok);
+	int getWidth();
+	int getHeight();
+	void setHeight(int);
+	void setWidth(int);
+	void reserve(int);
 };

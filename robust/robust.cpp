@@ -11,6 +11,7 @@
 #include <math.h>
 #include "utils.h"
 #include "blok.h"
+#include "grid.h"
 using namespace cv;
 using namespace std;
 
@@ -21,6 +22,10 @@ Mat gray;
 VideoCapture vcap;
 int movie_width;
 int movie_height;
+int grid_width;
+int grid_height;
+grid grd(0,0);
+bool init=1;
 //Matqueue** history;
 
 
@@ -72,11 +77,31 @@ int main(int argc, const char** argv) {
 		}
 		
 				cvtColor(color, gray, CV_BGR2GRAY);
+				if(init)
+				{
+					::grid_height = (int) gray.rows / size;
+					::grid_width = (int) gray.cols / size;
+					grd.setHeight(grid_height);
+					grd.setWidth(grid_width);
+					grd.reserve(grid_height*grid_width);
+					cout<<grd.getWidth()<<" "<<grd.getHeight();
+					system("PAUSE");
+				}
+				
 		imshow("inicjalizacja-tla", gray);
 		tmp = grid_cut(gray, size);
 		// cout << x <<","<<y<<endl;
 		blok blk(tmp[y][x],size);
 		blk.dump();
+		double test=blk*blk;
+		cout<<endl;
+		blk.dump();
+		cout<<endl;
+		cout<<"test :"<<test;
+		cout<<"mean:"<<blk.mean();
+		cout<<"deviation"<<blk.deviation();
+		cout<<"corr:";
+		cout<<blk.corelation(blk);
 		system("PAUSE");
 		if(blk.getSize())
 		{
@@ -85,7 +110,10 @@ int main(int argc, const char** argv) {
 		imshow("kawalek", tmp[y][x]);
 		imshow("kawalek2", kawalek2);
 		}
-
+		grd.insertAt(2,3,blk);
+		cout<<"size:"<<grd(3,2).at(0).getSize();
+	//	if(grd(3,2).at(0).getSize())
+		//  imshow("kawalek3",grd(2,3).at(0).devectorize());
 		char c = (char) waitKey(10);
 		if (c == 27)
 			break;
