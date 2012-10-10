@@ -26,9 +26,8 @@ public:
 	//blok(Mat** input_block, int _size);
 	int operator()(int, int);
 	blok operator-(int);
-	blok operator+(blok &blk);
-	void operator*(double)
-	double blok::operator*(blok);
+	void operator+(blok &blk);
+	void operator*(double);
 	Mat& devectorize();
 	int getSize();
 	double mean();
@@ -36,4 +35,7 @@ public:
 	double corelation(blok &blk);
 	double mad(blok &blk);
 	boolean similar(blok &blk, double,double);
+	void setWeight(double);
+	double getWeight();
+	void update(blok& );
 };

@@ -16,15 +16,15 @@ using namespace cv;
 using namespace std;
 class grid
 {
-private:
+public:
 	std::vector<std::vector<blok>> content;
 	int height,width;
 public:
 	void dump();
 	grid(int , int );
 	//blok(Mat** input_block, int _size);
-	std::vector<blok> operator()(int, int);
-	void insertAt(int,int, blok);
+	std::vector<blok>& operator()(int, int);
+	void insertAt(int,int, blok&);
 	int getWidth();
 	int getHeight();
 	void setHeight(int);

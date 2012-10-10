@@ -21,9 +21,10 @@ blok::blok(Mat input_block, int _size){
 	for(int i=0;i<size;i++)
 		for(int j=0;j<size;j++)
 		content.push_back(input[input_block.step1()*i+j]); 
-	weight=0;
+	weight=1;
 	size=_size;
 }
+
 int blok::operator()(int x, int y){
 	return content.at(x+y*size);
 }
@@ -31,10 +32,6 @@ blok blok::operator-(int _x){
 
 	transform(content.begin(),content.end(),content.begin(),[_x](unsigned int x) { return x - _x; });
 	return *this;
-}
-double blok::operator*(blok blk){
-	double product=inner_product(this->content.begin(),this->content.end(),blk.content.begin(),0);
-	return product;
 }
 Mat& blok::devectorize(){ //TODO: DOPISAC OBSLUGE WYJATKU GDY ROZMIARY CONTENT I MAT SIE NIE ZGADZAJA
 	Mat *tmp=new Mat(size,size,CV_8UC1);
@@ -98,6 +95,22 @@ boolean blok::similar(blok &blk, double T1, double T2){
 		return true;
 	else return false;
 }
-void operator*(double x){
-	blok blk
+void blok::operator*(double x){
+	vector<unsigned int>::iterator it;
+	for(it = this->content.begin();it!=this->content.end();it++)
+		*it=*(it)*x;
+}
+void blok::setWeight(double x){
+	weight=x;
+}
+double blok::getWeight(){
+	return weight;
+}
+void blok::update(blok& blk)
+{
+	vector<unsigned int>::iterator itin, itout;
+	for(itin = this->content.begin(),itout=blk.content.begin();itin !=this->content.end();itin++,itout++)
+		*itin=((*itin)*weight+(*itout))/(weight+1);
+	weight=weight+1;
+	
 }
