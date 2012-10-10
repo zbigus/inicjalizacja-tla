@@ -77,8 +77,6 @@ double blok::corelation(blok &blk){
 	for(itout = blk.content.begin();itout !=blk.content.end();itout++)
 		sigma_outter+=pow((*itout)-mean_outer,2);
 	sigma_outter=sqrt(sigma_outter);
-	cout<<"inn:"<<sigma_inner<<endl;
-	cout<<"out:"<<sigma_outter<<endl;
 	for(itin = content.begin(),itout=blk.content.begin();itin !=content.end();itin++,itout++)
 		covariance+=(*itin-mean_inner)*(*itout-mean_outer);
 	return covariance/(sigma_inner*sigma_outter);
@@ -92,4 +90,14 @@ double blok::mad(blok& blk)
 		sum+=abs((int)*itin-(int)*itout);
 	sum=sum/(size*size);
 	return sum;
+}
+boolean blok::similar(blok &blk, double T1, double T2){
+	double corr=this->corelation(blk);
+	double mad=this->mad(blk);
+	if(corr>=T1&& mad<=T2)
+		return true;
+	else return false;
+}
+void operator*(double x){
+	blok blk
 }

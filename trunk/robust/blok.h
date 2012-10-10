@@ -26,6 +26,8 @@ public:
 	//blok(Mat** input_block, int _size);
 	int operator()(int, int);
 	blok operator-(int);
+	blok operator+(blok &blk);
+	void operator*(double)
 	double blok::operator*(blok);
 	Mat& devectorize();
 	int getSize();
@@ -33,4 +35,5 @@ public:
 	double deviation();
 	double corelation(blok &blk);
 	double mad(blok &blk);
+	boolean similar(blok &blk, double,double);
 };
