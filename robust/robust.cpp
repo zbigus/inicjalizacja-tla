@@ -44,7 +44,7 @@ int main(int argc, const char** argv) {
 	string str_null("null");
 	Mat** tmp;
 
-	int size = 5;
+	int size = 24;
 	clock_t before = clock();
 	int x = 0, y = 0;
 
@@ -70,7 +70,9 @@ int main(int argc, const char** argv) {
 			<< movie_height << "px" << endl;
 	cvNamedWindow("inicjalizacja-tla", CV_WINDOW_AUTOSIZE);
 	cvNamedWindow("kawalek", CV_WINDOW_AUTOSIZE);
-	while(true) { //na razie ograniczanmy ilosc przechwyconych ramek
+	for(int F=0;F<100;F++){
+		cout<<F<<endl;
+	//while(true) { //na razie ograniczanmy ilosc przechwyconych ramek
 		vcap >> color;
 		if (color.empty()) {
 			cout << "pusta ramka...\n";
@@ -87,6 +89,7 @@ int main(int argc, const char** argv) {
 					grd.reserve(grid_height*grid_width);
 					cout<<grd.getWidth()<<" "<<grd.getHeight();
 					system("PAUSE");
+					init=false;
 				}
 				
 		imshow("inicjalizacja-tla", gray);
@@ -95,16 +98,25 @@ int main(int argc, const char** argv) {
 			for (int j=0;j<::grid_height;j++)
 			{	
 				bool flaga=false;
-				std::vector<blok> wektor=grd(i,j);
+				vector<blok> wektor=grd(i,j);
 				vector<blok>::iterator it;
-				for(it=wektor.begin();it<wektor.end();it++)
+				blok b(tmp[j][i],size);
+				for(it=wektor.begin();it!=wektor.end();it++)
 				{
-					if(it->similar(tmp[i][j],T1,T2))
+					//cout<<i<<","<<j<<"przed sim";
+					//system("PAUSE");
+					if(it->similar(b,T1,T2))
 					{
 						flaga=true;
-
+						it->update(b);
+						cout<<"similar!";
+						
 					}
 
+				}
+				if(flaga==false){
+					blok c(tmp[j][i],size);
+					grd.insertAt(i,j,(blok(tmp[j][i],size)));
 				}
 			}
 		// cout << x <<","<<y<<endl;
@@ -150,7 +162,13 @@ int main(int argc, const char** argv) {
 			break;
 		}*/
 	}
-	cvDestroyWindow("mywindow");
+	for(int i=0;i<::grid_width;i++)
+	{	
+		cout<<endl;
+		for (int j=0;j<::grid_height;j++)
+			cout<<grd(i,j).size()<<" ";
+	}
+		cvDestroyWindow("mywindow");
 	clock_t after = clock();
 
 	cout << endl << "czas[ms]" << after - before << endl;

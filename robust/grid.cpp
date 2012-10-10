@@ -8,9 +8,10 @@ width=_width;
 height=_height;
 
 }
-std::vector<blok> grid::operator()(int y, int x){
+std::vector<blok>& grid::operator()(int x, int y){
 	return content.at(x+y*width);
 }
+
 
 int grid::getWidth(){
 	return width;
@@ -24,7 +25,7 @@ void grid::setWidth(int _width){
 void grid::setHeight(int _height){
 	height=_height;
 }
-void grid::insertAt(int x,int y,blok blk)
+void grid::insertAt(int x,int y,blok &blk)
 {
 	vector<vector<blok>>::iterator it;
 
