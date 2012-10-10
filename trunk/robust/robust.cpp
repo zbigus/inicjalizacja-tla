@@ -27,7 +27,7 @@ int grid_height;
 grid grd(0,0);
 bool init=1;
 double T1=0.8;
-double T2=0.2;
+double T2=100;
 //Matqueue** history;
 
 
