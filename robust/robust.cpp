@@ -26,6 +26,8 @@ int grid_width;
 int grid_height;
 grid grd(0,0);
 bool init=1;
+double T1=0.8;
+double T2=0.2;
 //Matqueue** history;
 
 
@@ -64,15 +66,14 @@ int main(int argc, const char** argv) {
 	}
 	movie_width = vcap.get(CV_CAP_PROP_FRAME_WIDTH);
 	movie_height = vcap.get(CV_CAP_PROP_FRAME_HEIGHT);
-
 	cout << "szerokosc filmu: " << movie_width << "px\twysokosc filmu: "
 			<< movie_height << "px" << endl;
 	cvNamedWindow("inicjalizacja-tla", CV_WINDOW_AUTOSIZE);
 	cvNamedWindow("kawalek", CV_WINDOW_AUTOSIZE);
-	for(int i=0;i<1000;i++) { //na razie ograniczanmy ilosc przechwyconych ramek
+	while(true) { //na razie ograniczanmy ilosc przechwyconych ramek
 		vcap >> color;
 		if (color.empty()) {
-			cout << "ERROR: pusta ramka...\n";
+			cout << "pusta ramka...\n";
 			break;
 		}
 		
@@ -90,18 +91,24 @@ int main(int argc, const char** argv) {
 				
 		imshow("inicjalizacja-tla", gray);
 		tmp = grid_cut(gray, size);
+		for(int i=0;i<::grid_width;i++)
+			for (int j=0;j<::grid_height;j++)
+			{	
+				bool flaga=false;
+				std::vector<blok> wektor=grd(i,j);
+				vector<blok>::iterator it;
+				for(it=wektor.begin();it<wektor.end();it++)
+				{
+					if(it->similar(tmp[i][j],T1,T2))
+					{
+						flaga=true;
+
+					}
+
+				}
+			}
 		// cout << x <<","<<y<<endl;
-		blok blk(tmp[y][x],size);
-		blk.dump();
-		double test=blk*blk;
-		cout<<endl;
-		blk.dump();
-		cout<<endl;
-		cout<<"test :"<<test;
-		cout<<"mean:"<<blk.mean();
-		cout<<"deviation"<<blk.deviation();
-		
-		system("PAUSE");
+/*		blok blk(tmp[y][x],size);
 		if(blk.getSize())
 		{
 		Mat kawalek2=blk.devectorize();
@@ -118,8 +125,8 @@ int main(int argc, const char** argv) {
 				cout<<"corr:";
 				cout<<blk.corelation(blk4)<<endl;
 				cout<<"mad:"<<blk.mad(blk4);
-			}
-		char c = (char) waitKey(10);
+			}*/
+/*		char c = (char) waitKey(10);
 		if (c == 27)
 			break;
 		switch (c) {
@@ -141,7 +148,7 @@ int main(int argc, const char** argv) {
 			break;
 		default:
 			break;
-		}
+		}*/
 	}
 	cvDestroyWindow("mywindow");
 	clock_t after = clock();
