@@ -12,6 +12,7 @@
 #include "utils.h"
 #include "blok.h"
 #include "grid.h"
+#include "background.h"
 using namespace cv;
 using namespace std;
 
@@ -25,9 +26,11 @@ int movie_height;
 int grid_width;
 int grid_height;
 grid grd(0,0);
-bool init=1;
+background bg(0,0);
+bool init=true;
 double T1=0.8;
 double T2=100;
+int size = 24;
 //Matqueue** history;
 
 
@@ -40,11 +43,9 @@ double T2=100;
 }*/
 
 int main(int argc, const char** argv) {
-
 	string str_null("null");
 	Mat** tmp;
 
-	int size = 24;
 	clock_t before = clock();
 	int x = 0, y = 0;
 
@@ -52,12 +53,8 @@ int main(int argc, const char** argv) {
 		vcap.open(0);
 		cout << "zrodlo obrazu: kamera wideo" << endl;
 	} else {
-		stringstream ss;
-		ss<<argv[1];
-
-		string filename;
-		ss>>filename;
-		vcap.open(filename);
+		//string filename = (LPCTSTR) argv[1];
+		vcap.open(argv[1]);
 		cout << "zrodlo obrazu: " << argv[1] << endl;
 	}
 	if (!vcap.isOpened()) {
@@ -66,19 +63,27 @@ int main(int argc, const char** argv) {
 	}
 	movie_width = vcap.get(CV_CAP_PROP_FRAME_WIDTH);
 	movie_height = vcap.get(CV_CAP_PROP_FRAME_HEIGHT);
+
 	cout << "szerokosc filmu: " << movie_width << "px\twysokosc filmu: "
-			<< movie_height << "px" << endl;
+		<< movie_height << "px" << endl;
 	cvNamedWindow("inicjalizacja-tla", CV_WINDOW_AUTOSIZE);
 	cvNamedWindow("kawalek", CV_WINDOW_AUTOSIZE);
-	for(int F=0;F<100;F++){
-		cout<<F<<endl;
-	//while(true) { //na razie ograniczanmy ilosc przechwyconych ramek
+	cvNamedWindow("kolor", CV_WINDOW_AUTOSIZE);
+	int klatka=0;
+	while (1) {
+		klatka++;
+		if(klatka==15)
+			break;
 		vcap >> color;
 		if (color.empty()) {
-			cout << "pusta ramka...\n";
+			cout << "ERROR: pusta ramka...\n";
 			break;
-		}
-		
+		} //na razie ograniczanmy ilosc przechwyconych ramek
+   		//cout<<nrramki<<endl;
+		//nrramki++;
+		//if(nrramki%100!=0)
+		//{continue;}
+	//	system("Pause");
 				cvtColor(color, gray, CV_BGR2GRAY);
 				if(init)
 				{
@@ -87,21 +92,28 @@ int main(int argc, const char** argv) {
 					grd.setHeight(grid_height);
 					grd.setWidth(grid_width);
 					grd.reserve(grid_height*grid_width);
+					bg.setHeight(grid_height);
+					bg.setWidth(grid_width);
+					bg.reserve(grid_height*grid_width);
 					cout<<grd.getWidth()<<" "<<grd.getHeight();
 					system("PAUSE");
 					init=false;
 				}
 				
+		imshow("kolor",color);
 		imshow("inicjalizacja-tla", gray);
+		char cc = (char) waitKey(10);
 		tmp = grid_cut(gray, size);
 		for(int i=0;i<::grid_width;i++)
 			for (int j=0;j<::grid_height;j++)
 			{	
 				bool flaga=false;
-				vector<blok> wektor=grd(i,j);
+				vector<blok> wektor=grd(j,i);
 				vector<blok>::iterator it;
-				blok b(tmp[j][i],size);
-				for(it=wektor.begin();it!=wektor.end();it++)
+				blok b=blok(tmp[j][i],size);
+				//imshow("kawalek",b.devectorize());
+				//char kawalek_char=(char) waitKey(10);
+				for(it=grd(j,i).begin();it!=grd(j,i).end();it++)
 				{
 					//cout<<i<<","<<j<<"przed sim";
 					//system("PAUSE");
@@ -109,7 +121,8 @@ int main(int argc, const char** argv) {
 					{
 						flaga=true;
 						it->update(b);
-						cout<<"similar!";
+						//cout<<"similar!";
+						cout<<it->getWeight();
 						
 					}
 
@@ -119,15 +132,16 @@ int main(int argc, const char** argv) {
 					grd.insertAt(i,j,(blok(tmp[j][i],size)));
 				}
 			}
-		// cout << x <<","<<y<<endl;
-/*		blok blk(tmp[y][x],size);
-		if(blk.getSize())
+		// cout << x <<","<<y<<endl;*/
+		//blok blk(tmp[y][x],size);
+	/*	if(blk.getSize())
 		{
 		Mat kawalek2=blk.devectorize();
 		cout<<kawalek2;
 		imshow("kawalek", tmp[y][x]);
 		imshow("kawalek2", kawalek2);
-		}
+		}*/
+		/*
 		grd.insertAt(2,3,blk);
 		cout<<"size:"<<grd(3,2).at(0).getSize();
 		if(grd(3,2).at(0).getSize())
@@ -138,37 +152,30 @@ int main(int argc, const char** argv) {
 				cout<<blk.corelation(blk4)<<endl;
 				cout<<"mad:"<<blk.mad(blk4);
 			}*/
-/*		char c = (char) waitKey(10);
-		if (c == 27)
-			break;
-		switch (c) {
-		case 'a':
-			if (x > 0)
-				x--;
-			break;
-		case 'd':
-			if (x + 1 < (movie_width / size))
-				x++;
-			break;
-		case 'w':
-			if (y > 0)
-				y--;
-			break;
-		case 's':
-			if (y + 1 < (movie_height / size))
-				y++;
-			break;
-		default:
-			break;
-		}*/
+		
+		//if (cc == 27)
+			//break;
+		
 	}
+
+	grd.fix();
 	for(int i=0;i<::grid_width;i++)
 	{	
 		cout<<endl;
 		for (int j=0;j<::grid_height;j++)
-			cout<<grd(i,j).size()<<" ";
+		{
+			cout<<grd(j,i).size()<<","<<grd(j,i).at(0).getWeight()<<" ";
+			Mat tmp=grd(j,i).at(0).devectorize();
+			cvNamedWindow("test");
+			imshow("test",tmp);
+			char cdd=(char) waitKey(10);
+			//system("PAUSE");
+			bg.insertAt(j,i,grd(j,i).at(0)); //testowe,moze krzaczyc
+		}
 	}
-		cvDestroyWindow("mywindow");
+	cvNamedWindow("wynik");
+	imshow("wynik",bg.devectorize()); //jeszcze nie dziala
+	system("PAUSE");	
 	clock_t after = clock();
 
 	cout << endl << "czas[ms]" << after - before << endl;

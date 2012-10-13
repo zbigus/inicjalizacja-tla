@@ -24,5 +24,8 @@ public:
 	Mat & devectorize();
 	blok & operator()(int, int);
 	void insertAt(int, int,blok&);
+	void reserve(int);
+	void setWidth(int);
+	void setHeight(int);
 
 };
