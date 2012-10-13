@@ -38,7 +38,7 @@ Mat& blok::devectorize(){ //TODO: DOPISAC OBSLUGE WYJATKU GDY ROZMIARY CONTENT I
 	
 	for(int i=0;i<size;i++)
 		for(int j=0;j<size;j++)
-			tmp->at<uchar>(i,j) = content.at(i*size+j);
+			tmp->at<uchar>(j,i) = content.at(i+size*j);
 	return *tmp;
 }
 int blok::getSize(){
@@ -111,6 +111,6 @@ void blok::update(blok& blk)
 	vector<unsigned int>::iterator itin, itout;
 	for(itin = this->content.begin(),itout=blk.content.begin();itin !=this->content.end();itin++,itout++)
 		*itin=((*itin)*weight+(*itout))/(weight+1);
-	weight=weight+1;
+	this->weight=this->weight+1;
 	
 }

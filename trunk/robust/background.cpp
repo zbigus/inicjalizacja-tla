@@ -7,13 +7,13 @@ background::background(int _width, int _height){
 		   }
 blok& background::operator()(int x, int y)
 {
-return content->at(x+y*width);
+return content->at(y+x*width);
 }
 void background::insertAt(int x,int y, blok & blk){
 	vector<blok>::iterator it;
 
 	it = content->begin();
-	for(int i=0;i<y*width+x;i++)
+	for(int i=0;i<x*width+y;i++)
 		++it;
 	content->insert(it,blk);
 }
@@ -25,3 +25,12 @@ Mat & background::devectorize(){
 				tmp->at<cv::Vec2d>((j+a*content->at(0).getSize())%width,i+a*content->at(0).getSize())=content->at(a).devectorize().at<cv::Vec2d>(j,i);
 return *tmp;
 }
+void background::reserve(int n){
+	*content=vector<blok>(n);
+}
+void background::setWidth(int _width){
+	width=_width;
+}
+void background::setHeight(int _height){
+	height=_height;
+}	

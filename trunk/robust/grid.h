@@ -30,4 +30,5 @@ public:
 	void setHeight(int);
 	void setWidth(int);
 	void reserve(int);
+	void fix();
 };
