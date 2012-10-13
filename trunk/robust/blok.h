@@ -30,6 +30,7 @@ public:
 	void operator*(double);
 	Mat& devectorize();
 	int getSize();
+	int getSqrtSize();
 	double mean();
 	double deviation();
 	double corelation(blok &blk);
