@@ -67,13 +67,14 @@ int main(int argc, const char** argv) {
 	cout << "szerokosc filmu: " << movie_width << "px\twysokosc filmu: "
 		<< movie_height << "px" << endl;
 	cvNamedWindow("inicjalizacja-tla", CV_WINDOW_AUTOSIZE);
-	cvNamedWindow("kawalek", CV_WINDOW_AUTOSIZE);
+	//cvNamedWindow("kawalek", CV_WINDOW_AUTOSIZE);
 	cvNamedWindow("kolor", CV_WINDOW_AUTOSIZE);
 	int klatka=0;
 	while (1) {
 		klatka++;
-		if(klatka==15)
+		if(klatka==100)
 			break;
+		cout<<"Obrobka klatki nr: "<<klatka<<endl;
 		vcap >> color;
 		if (color.empty()) {
 			cout << "ERROR: pusta ramka...\n";
@@ -122,7 +123,7 @@ int main(int argc, const char** argv) {
 						flaga=true;
 						it->update(b);
 						//cout<<"similar!";
-						cout<<it->getWeight();
+						//cout<<it->getWeight();
 						
 					}
 
@@ -159,22 +160,24 @@ int main(int argc, const char** argv) {
 	}
 
 	grd.fix();
-	for(int i=0;i<::grid_width;i++)
+	for(int i=0;i<::grid_height;i++)
 	{	
 		cout<<endl;
-		for (int j=0;j<::grid_height;j++)
+		for (int j=0;j<::grid_width;j++)
 		{
-			cout<<grd(j,i).size()<<","<<grd(j,i).at(0).getWeight()<<" ";
-			Mat tmp=grd(j,i).at(0).devectorize();
+			cout<<grd(i,j).size()<<","<<grd(i,j).at(0).getWeight()<<" ";
+			Mat tmp=grd(i,j).at(0).devectorize();
 			cvNamedWindow("test");
 			imshow("test",tmp);
 			char cdd=(char) waitKey(10);
 			//system("PAUSE");
-			bg.insertAt(j,i,grd(j,i).at(0)); //testowe,moze krzaczyc
+			bg.insertAt(i,j,grd(i,j).at(0)); //testowe,moze krzaczyc
 		}
 	}
 	cvNamedWindow("wynik");
+	
 	imshow("wynik",bg.devectorize()); //jeszcze nie dziala
+	char wynik_char=(char) waitKey(10);
 	system("PAUSE");	
 	clock_t after = clock();
 

@@ -44,6 +44,9 @@ Mat& blok::devectorize(){ //TODO: DOPISAC OBSLUGE WYJATKU GDY ROZMIARY CONTENT I
 int blok::getSize(){
 return content.size();
 }
+int blok::getSqrtSize(){
+	return sqrt((double)content.size());
+}
 double blok::mean(){
 	double total = std::accumulate(content.begin(), content.end(), 0);
 	double mean = total / content.size();

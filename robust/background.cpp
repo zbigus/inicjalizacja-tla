@@ -18,11 +18,25 @@ void background::insertAt(int x,int y, blok & blk){
 	content->insert(it,blk);
 }
 Mat & background::devectorize(){
-	Mat *tmp=new Mat(width*content->at(0).getSize(),height*content->at(0).getSize(),CV_8UC1);
-	for(unsigned int a=0;a<content->size();a++)	
-	for(int i=0;i<content->at(0).getSize();i++)
-			for(int j=0;j<content->at(0).getSize();j++)
-				tmp->at<cv::Vec2d>((j+a*content->at(0).getSize())%width,i+a*content->at(0).getSize())=content->at(a).devectorize().at<cv::Vec2d>(j,i);
+	Mat *tmp=new Mat(height*content->at(0).getSqrtSize(),width*content->at(0).getSqrtSize(),CV_8UC1,Scalar(0));
+	//cout<<content->at(0).getSize();
+	//cout<<"POJ:"<<content->capacity();
+	//cout<<width*height;
+	//for(unsigned int a=0;a<width*height;a++)
+	vector<blok>::iterator it=content->begin();
+		int size=content->at(0).getSqrtSize();
+	for (int i = 0; i < height; i++) {
+		for (int j = 0; j < width; j++) {
+			
+			if(it->getSize())
+			it->devectorize().copyTo((*tmp)(Rect(j*size, i*size, size, size)));
+			it++;
+			}
+		
+	}
+		//for(int i=0;i<content->at(0).getSqrtSize();i++)
+			//for(int j=0;j<content->at(0).getSqrtSize();j++)
+				//tmp->at<uchar>(i+a/width*content->at(0).getSqrtSize(),j+a%width)=content->at(a).devectorize().at<uchar>(i,j);
 return *tmp;
 }
 void background::reserve(int n){
