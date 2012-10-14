@@ -29,8 +29,8 @@ grid grd(0,0);
 background bg(0,0);
 bool init=true;
 double T1=0.8;
-double T2=100;
-int size = 24;
+double T2=10;
+int size = 12;
 //Matqueue** history;
 
 
