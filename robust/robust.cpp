@@ -44,7 +44,7 @@ int size = 12;
 }*/
 
 int main(int argc, const char** argv) {
-	int method = 1;
+	int method = 0;
 	string str_null("null");
 	Mat** tmp;
 
@@ -80,7 +80,7 @@ int main(int argc, const char** argv) {
 		cvNamedWindow("kolor", CV_WINDOW_AUTOSIZE);
 		while (1) {
 			klatka++;
-			if(klatka==100)
+			if(klatka==20)
 				break;
 			cout<<"Obrobka klatki nr: "<<klatka<<endl;
 			vcap >> color;
@@ -179,7 +179,13 @@ int main(int argc, const char** argv) {
 				imshow("test",tmp);
 				char cdd=(char) waitKey(10);
 				//system("PAUSE");
+				if(grd(i,j).size()==1)
 				bg.insertAt(i,j,grd(i,j).at(0)); //testowe,moze krzaczyc
+				else
+				{
+					Mat zeromat=Mat(size,size,CV_8UC1,Scalar(0));
+					bg.insertAt(i,j,blok(zeromat,size));
+				}
 			}
 		}
 		cvNamedWindow("wynik");
