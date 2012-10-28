@@ -1,0 +1,178 @@
+% This file was created with JabRef 2.8.1.
+% Encoding: Cp1250
+
+@INPROCEEDINGS{Baltieri2010,
+  author = {Baltieri, D. and Vezzani, R. and Cucchiara, R.},
+  title = {Fast Background Initialization with Recursive Hadamard Transform},
+  booktitle = {Advanced Video and Signal Based Surveillance (AVSS), 2010 Seventh
+	IEEE International Conference on},
+  year = {2010},
+  pages = {165 -171},
+  month = {29 2010-sept. 1},
+  abstract = {In this paper, we present a new and fast technique for background
+	estimation from cluttered image sequences. Most of the background
+	initialization approaches developed so far collect a number of initial
+	frames and then require a slow estimation step which introduces a
+	delay whenever it is applied. Conversely, the proposed technique
+	redistributes the computational load among all the frames by means
+	of a patch by patch preprocessing, which makes the overall algorithm
+	more suitable for real-time applications. For each patch location
+	a prototype set is created and maintained. The background is then
+	iteratively estimated by choosing from each set the most appropriate
+	candidate patch, which should verify a sort of frequency coherence
+	with its neighbors. To this aim, the Hadamard transform has been
+	adopted which requires less computation time than the commonly used
+	DCT Finally, a refinement step exploits spatial continuity constraints
+	along the patch borders to prevent erroneous patch selections. The
+	approach has been compared with the state of the art on videos from
+	available datasets (ViSOR and CAVIAR), showing a speed up of about
+	10 times and an improved accuracy.},
+  doi = {10.1109/AVSS.2010.43},
+  keywords = {CAVIAR;Hadamard transform;ViSOR;background estimation;fast background
+	initialization;image sequences;patch preprocessing;Hadamard transforms;image
+	sequences;}
+}
+
+@INPROCEEDINGS{8,
+  author = {Grimson, W.E.L. and Stauffer, C. and Romano, R. and Lee, L.},
+  title = {Using adaptive tracking to classify and monitor activities in a site},
+  booktitle = {Computer Vision and Pattern Recognition, 1998. Proceedings. 1998
+	IEEE Computer Society Conference on},
+  year = {1998},
+  pages = {22 -29},
+  month = {jun},
+  abstract = {We describe a vision system that monitors activity in a site over
+	extended periods of time. The system uses a distributed set of sensors
+	to cover the site, and an adaptive tracker detects multiple moving
+	objects in the sensors. Our hypothesis is that motion tracking is
+	sufficient to support a range of computations about site activities.
+	We demonstrate using the tracked motion data to calibrate the distributed
+	sensors, to construct rough site models, to classify detected objects,
+	to learn common patterns of activity for different object classes,
+	and to detect unusual activities},
+  doi = {10.1109/CVPR.1998.698583},
+  issn = {1063-6919},
+  keywords = {adaptive tracker;adaptive tracking;distributed sensors;motion tracking;multiple
+	moving objects;rough site models;site activities;tracked motion data;vision
+	system;adaptive estimation;computer vision;motion estimation;security;surveillance;}
+}
+
+@INPROCEEDINGS{Reddy2009,
+  author = {Reddy, V. and Sanderson, C. and Lovell, B.C.},
+  title = {An efficient and robust sequential algorithm for background estimation
+	in video surveillance},
+  booktitle = {Image Processing (ICIP), 2009 16th IEEE International Conference
+	on},
+  year = {2009},
+  pages = {1109 -1112},
+  month = {nov.},
+  abstract = {Many computer vision algorithms such as object tracking and event
+	detection assume that a background model of the scene under analysis
+	is known. However, in many practical circumstances it is unavailable
+	and must be estimated from cluttered image sequences. We propose
+	a sequential technique for background estimation in such conditions,
+	with low computational and memory requirements. The first stage is
+	somewhat similar to that of the recently proposed agglomerative clustering
+	background estimation method, where image sequences are analysed
+	on a patch by patch basis. For each patch location a representative
+	set is maintained which contains distinct patches obtained along
+	its temporal line. The novelties lie in iteratively filling in background
+	areas by selecting the most appropriate candidate patches according
+	to the combined frequency responses of extended versions of the candidate
+	patch and its neigh-bourhood. It is assumed that the most appropriate
+	patch results in the smoothest response, indirectly enforcing the
+	spatial continuity of structures within a scene. Experiments on real-life
+	surveillance videos demonstrate the efficacy of the proposed method.},
+  doi = {10.1109/ICIP.2009.5413450},
+  issn = {1522-4880},
+  keywords = {agglomerative clustering background estimation method;computer vision
+	algorithms;event detection;image sequences;object tracking;robust
+	sequential algorithm;video surveillance;image sequences;object detection;target
+	tracking;video signal processing;video surveillance;}
+}
+
+@INPROCEEDINGS{7,
+  author = {Stauffer, C. and Grimson, W.E.L.},
+  title = {Adaptive background mixture models for real-time tracking},
+  booktitle = {Computer Vision and Pattern Recognition, 1999. IEEE Computer Society
+	Conference on.},
+  year = {1999},
+  volume = {2},
+  pages = {2 vol. (xxiii+637+663)},
+  abstract = {A common method for real-time segmentation of moving regions in image
+	sequences involves ldquo;background subtraction ldquo;, or thresholding
+	the error between an estimate of the image without moving objects
+	and the current image. The numerous approaches to this problem differ
+	in the type of background model used and the procedure used to update
+	the model. This paper discusses modeling each pixel as a mixture
+	of Gaussians and using an on-line approximation to update the model.
+	The Gaussian, distributions of the adaptive mixture model are then
+	evaluated to determine which are most likely to result from a background
+	process. Each pixel is classified based on whether the Gaussian distribution
+	which represents it most effectively is considered part of the background
+	model. This results in a stable, real-time outdoor tracker which
+	reliably deals with lighting changes, repetitive motions from clutter,
+	and long-term scene changes. This system has been run almost continuously
+	for 16 months, 24 hours a day, through rain and snow},
+  doi = {10.1109/CVPR.1999.784637},
+  keywords = {adaptive background mixture models;background subtraction;image sequences;real-time
+	segmentation;real-time tracking;thresholding;image segmentation;image
+	sequences;real-time systems;tracking;}
+}
+
+@INCOLLECTION{Wang2006,
+  author = {Wang, Hanzi and Suter, David},
+  title = {A Novel Robust Statistical Method for Background Initialization and
+	Visual Surveillance},
+  booktitle = {Computer Vision – ACCV 2006},
+  publisher = {Springer Berlin / Heidelberg},
+  year = {2006},
+  editor = {Narayanan, P. and Nayar, Shree and Shum, Heung-Yeung},
+  volume = {3851},
+  series = {Lecture Notes in Computer Science},
+  pages = {328-337},
+  note = {10.1007/11612032_34},
+  abstract = {In many visual tracking and surveillance systems, it is important
+	to
+	
+	initialize a background model using a training video sequence which
+	may include
+	
+	foreground objects. In such a case, robust statistical methods are
+	required
+	
+	to handle random occurrences of foreground objects (i.e., outliers),
+	as well as
+	
+	general image noise. The robust statistical method Median has been
+	employed
+	
+	for initializing the background model. However, the Median can tolerate
+	up to
+	
+	only 50% outliers, which cannot satisfy the requirements of some complicated
+	
+	environments. In this paper, we propose a novel robust method for
+	the background
+	
+	initialization. The proposed method can tolerate more than 50% of
+	
+	foreground pixels and noise. We give quantitative evaluations on a
+	number of
+	
+	video sequences and compare our proposed method with five other methods.
+	
+	Experiments show that our method can achieve very promising results
+	in background
+	
+	initialization: including applications in video segmentation, visual
+	
+	tracking and surveillance.},
+  affiliation = {Department of Electrical and Computer Systems Engineering, Monash
+	University, Clayton, 3800 Victoria, Australia},
+  doi = {10.1007/11612032_34},
+  isbn = {978-3-540-31219-2},
+  keyword = {Computer Science},
+  url = {http://dx.doi.org/10.1007/11612032_34}
+}
+
