@@ -44,7 +44,7 @@ int size = 12;
 }*/
 
 int main(int argc, const char** argv) {
-	int method = 0;
+	int method = 1;
 	string str_null("null");
 	Mat** tmp;
 
@@ -224,14 +224,14 @@ int main(int argc, const char** argv) {
 			fgimg = Scalar::all(0);
 			img.copyTo(fgimg, fgmask);
 
-			//Mat bgimg;
-			//bg_model.getBackgroundImage(bgimg);
+			Mat bgimg;
+			bg_model.getBackgroundImage(bgimg);
 
 			imshow("kolor", img);
 			imshow("maska pierwszego planu", fgmask);
 			imshow("pierwszy plan", fgimg);
-			//if(!bgimg.empty())
-			//	imshow("mean background image", bgimg );
+			if(!bgimg.empty())
+				imshow("mean background image", bgimg );
 
 			char k = (char)waitKey(10);
 
