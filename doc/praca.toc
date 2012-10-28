@@ -1,0 +1,18 @@
+\select@language {polish}
+\contentsline {chapter}{\numberline {1}Wst\k ep}{6}
+\contentsline {chapter}{\numberline {2}Metody operuj\k ace na poziomie pikseli}{7}
+\contentsline {section}{\numberline {2.1}Mixture of Gaussians (MOG)}{7}
+\contentsline {subsection}{\numberline {2.1.1}Wprowadzenie}{7}
+\contentsline {subsection}{\numberline {2.1.2}Opis metody}{8}
+\contentsline {subsubsection}{\numberline {2.1.2.1}Model mieszanki}{8}
+\contentsline {subsubsection}{\numberline {2.1.2.2}Estymacja modelu t\IeC {\l }a}{9}
+\contentsline {chapter}{\numberline {3}Metody blokowe (przestrzenne)}{11}
+\contentsline {section}{\numberline {3.1}Wprowadzenie}{11}
+\contentsline {section}{\numberline {3.2}Algorytm dzia\IeC {\l }ania}{11}
+\contentsline {subsection}{\numberline {3.2.1}Kolekcjonowanie kandydat\'ow}{12}
+\contentsline {subsubsection}{\numberline {3.2.1.1}Kryteria podobie\'nstwa blok\'ow}{12}
+\contentsline {subsection}{\numberline {3.2.2}Cz\k e\'sciowa rekonstrukcja t\IeC {\l }a}{13}
+\contentsline {subsection}{\numberline {3.2.3}Estymacja brakuj\k acego t\IeC {\l }a}{13}
+\contentsline {subsubsection}{\numberline {3.2.3.1}Estymacja z wykorzystaniem DCT}{13}
+\contentsline {subsubsection}{\numberline {3.2.3.2}Estymacja z wykorzystaniem rekursywnej transformaty Hadamarda}{14}
+\contentsline {chapter}{\numberline {4}S\IeC {\l }ownik u\.zytych poj\k e\'c}{16}

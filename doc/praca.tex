@@ -1,0 +1,91 @@
+\documentclass[pdflatex,11pt]{aghdpl}
+% \documentclass{aghdpl}               % przy kompilacji programem latex
+% \documentclass[pdflatex,en]{aghdpl}  % praca w jêzyku angielskim
+\usepackage[polish]{babel}
+
+\usepackage{polski}
+
+\usepackage[cp1250]{inputenc}
+
+% dodatkowe pakiety
+\usepackage{enumerate}
+\usepackage{listings}
+\usepackage{mathtools}
+\lstloadlanguages{TeX}
+%\numberwithin{equation}{section}
+
+%---------------------------------------------------------------------------
+
+\author{Jakub Gola, Zbigniew Tekiela}
+\shortauthor{J. Gola, Z. Tekiela}
+
+\titlePL{Metody inicjalizacji modelu t³a}
+\titleEN{Background model initialization methods}
+
+\shorttitlePL{Metody inicjalizacji modelu t³a} % skrócona wersja tytu³u jeœli jest bardzo d³ugi
+\shorttitleEN{Background model initialization methods}
+
+\thesistypePL{Praca in¿ynierska}
+\thesistypeEN{Bachelor of Science Thesis}
+
+\supervisorPL{dr hab. in¿. Marek Gorgoñ}
+\supervisorEN{Marek Gorgoñ Ph.D }
+
+\date{2012}
+
+\departmentPL{Katedra Automatyki}
+\departmentEN{Department of Automatics}
+
+\facultyPL{Wydzia³ Elektrotechniki, Automatyki, Informatyki i In¿ynierii Biomedycznej}
+\facultyEN{Faculty of Electrical Engineering, Automatics, Computer Science and Biomedical Engineering}
+
+\acknowledgements{Serdecznie dziêkujê \dots tu ci¹g dalszych podziêkowañ np. dla promotora, ¿ony, s¹siada itp.}
+
+
+
+\setlength{\cftsecnumwidth}{10mm}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{4}
+%---------------------------------------------------------------------------
+
+\begin{document}
+
+\titlepages
+
+\tableofcontents
+\clearpage
+
+\include{wstep}
+\include{MOG}
+\include{przestrzenne}
+\include{slownik}
+
+% itd.
+% \appendix
+% \include{dodatekA}
+% \include{dodatekB}
+% itd.
+
+\bibliographystyle{alpha}
+\bibliography{bibliografia}
+%\begin{thebibliography}{1}
+%
+%\bibitem{Dil00}
+%A.~Diller.
+%\newblock {\em LaTeX wiersz po wierszu}.
+%\newblock Wydawnictwo Helion, Gliwice, 2000.
+%
+%\bibitem{Lam92}
+%L.~Lamport.
+%\newblock {\em LaTeX system przygotowywania dokumentów}.
+%\newblock Wydawnictwo Ariel, Krakow, 1992.
+%
+%\bibitem{Alvis2011}
+%M.~Szpyrka.
+%\newblock {\em {On Line Alvis Manual}}.
+%\newblock AGH University of Science and Technology, 2011.cccccc
+%\newblock \\\texttt{http://fm.ia.agh.edu.pl/alvis:manual}.
+%
+%\end{thebibliography}
+
+\end{document}
