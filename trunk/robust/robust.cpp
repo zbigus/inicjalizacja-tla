@@ -44,7 +44,7 @@ int size = 12;
 }*/
 
 int main(int argc, const char** argv) {
-	int method = 1;
+	int method = 0;
 	string str_null("null");
 	Mat** tmp;
 
@@ -104,8 +104,9 @@ int main(int argc, const char** argv) {
 						bg.setHeight(grid_height);
 						bg.setWidth(grid_width);
 						bg.reserve(grid_height*grid_width);
+						bg.allocate();
 						cout<<grd.getWidth()<<" "<<grd.getHeight();
-						system("PAUSE");
+						//system("PAUSE");
 						init=false;
 					}
 				
@@ -166,7 +167,7 @@ int main(int argc, const char** argv) {
 				//break;
 		
 		}
-
+		//ETAP 2 
 		grd.fix();
 		for(int i=0;i<::grid_height;i++)
 		{	
@@ -184,14 +185,101 @@ int main(int argc, const char** argv) {
 				else
 				{
 					Mat zeromat=Mat(size,size,CV_8UC1,Scalar(0));
-					bg.insertAt(i,j,blok(zeromat,size));
+					bg.insertBlack(i,j,blok(zeromat,size));
 				}
 			}
 		}
 		cvNamedWindow("wynik");
 	
 		imshow("wynik",bg.devectorize()); //jeszcze nie dziala
-
+//ETAP 3
+		while(!bg.isComplete()){
+			for(int i=0;i<::grid_height-1;i++)
+				for(int j=0;j<::grid_width-1;j++)
+				{
+					if(bg.isFilled(i,j)+bg.isFilled(i+1,j)+bg.isFilled(i,j+1)+bg.isFilled(i+1,j+1)==3){
+					blok lewygora=bg(i,j);
+					blok prawygora=bg(i+1,j);
+					blok lewydol=bg(i,j+1);
+					blok prawydol=bg(i+1,j+1);
+					int nrzero;
+					int a,b;
+					if(!bg.isFilled(i,j))
+					{
+						nrzero=0;
+						a=i;
+						b=j;
+					}
+					else if(!bg.isFilled(i+1,j))
+					{
+						nrzero=1;
+						a=i;
+						b=j+1;
+					}
+					else if(!bg.isFilled(i,j+1))
+					{
+						nrzero=2;
+						a=i+1;
+						b=j;
+					}
+					else
+					{
+						nrzero=3;
+						a=i+1;
+						b=j+1;
+					}
+					int bloksize=bg(0,0).getSqrtSize();
+					Mat * superblok=new Mat(bloksize*2,bloksize*2,CV_8UC1,Scalar(0));
+					Mat *C =new Mat(bloksize*2,bloksize*2,CV_32FC1,Scalar(0));
+					Mat *D =new Mat(bloksize*2,bloksize*2,CV_32FC1,Scalar(0));
+					if(nrzero!=0)
+						lewygora.devectorize().copyTo((*superblok)(Rect(0, 0, bloksize, bloksize)));
+					if(nrzero!=1)
+						lewygora.devectorize().copyTo((*superblok)(Rect(size, 0, bloksize, bloksize)));
+					if(nrzero!=2)
+						lewygora.devectorize().copyTo((*superblok)(Rect(0, size, bloksize, bloksize)));
+					if(nrzero!=3)
+						lewygora.devectorize().copyTo((*superblok)(Rect(size, size, bloksize, bloksize)));
+					Mat superblokf;
+					superblok->convertTo(superblokf,CV_32FC1);
+					cv::dct(superblokf,*C,0);
+					int nrnajlepszegobloku=0;
+					double kosztnajlepszegobloku=0;
+					bool poczatekobliczen=true;
+					Mat * superblok2;
+					
+					for(unsigned int ind=0;ind<grd(a,b).size();ind++)
+					{
+						blok tmp=grd(a,b).at(ind);
+						if(tmp.mean()>128)
+							superblok2=new Mat(bloksize*2,bloksize*2,CV_8UC1,Scalar(0));
+						else
+							superblok2=new Mat(bloksize*2,bloksize*2,CV_8UC1,Scalar(255));
+						if(nrzero==0)
+							tmp.devectorize().copyTo((*superblok2)(Rect(0, 0, bloksize, bloksize)));
+						else if(nrzero==1)
+							tmp.devectorize().copyTo((*superblok2)(Rect(size, 0, bloksize, bloksize)));
+						else if(nrzero==2)
+							tmp.devectorize().copyTo((*superblok2)(Rect(0, size, bloksize, bloksize)));
+						else
+							tmp.devectorize().copyTo((*superblok2)(Rect(size, size, bloksize, bloksize)));
+						Mat superblok2f;
+						superblok2->convertTo(superblok2f,CV_32FC1);
+						cv::dct(superblok2f,*D,0);
+						double koszt=cost(*C,*D,bloksize,1,tmp.getWeight());
+						if(poczatekobliczen==true || koszt<kosztnajlepszegobloku)
+						{
+							kosztnajlepszegobloku=koszt;
+							nrnajlepszegobloku=i;
+							poczatekobliczen=false;
+						}
+					}
+					bg.insertAt(b,a,grd(b,a).at(nrnajlepszegobloku));
+				}
+			}
+		}
+		cvNamedWindow("wynik2");
+		imshow("wynik2",bg.devectorize());
 		break;
 
 	case 1:

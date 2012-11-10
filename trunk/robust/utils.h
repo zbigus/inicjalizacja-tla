@@ -15,5 +15,5 @@ using namespace cv;
 using namespace std;
 
 Mat** grid_cut(Mat input_image, int size);
-
+double cost(Mat C, Mat D,int size, double alpha, int weight);
 #endif
