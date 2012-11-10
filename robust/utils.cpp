@@ -9,6 +9,7 @@
 #include <iomanip>
 #include <deque>
 #include <math.h>
+#include "utils.h"
 using namespace cv;
 using namespace std;
 
@@ -28,4 +29,12 @@ Mat** grid_cut(Mat input_image, int size) {
 	}
 
 	return Container;
+}
+double cost(Mat C, Mat D,int size, double alpha, int weight){
+	float suma=0;
+	for(int i=0;i<size;i++)
+		for(int j=0;j<size;j++)
+			suma+=abs(C.at<float>(j,i)+D.at<float>(j,i));
+	suma*=exp(-alpha*weight);
+	return suma;
 }

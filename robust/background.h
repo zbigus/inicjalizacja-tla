@@ -18,14 +18,19 @@ class background{
 private:
 	std::vector<blok>* content;
 	int width, height;
+	int nrfilled;
+	int **filltable;
 public:
 	background();
 	background(int,int);
 	Mat & devectorize();
 	blok & operator()(int, int);
 	void insertAt(int, int,blok&);
+	void insertBlack(int, int,blok&);
 	void reserve(int);
 	void setWidth(int);
 	void setHeight(int);
-
+	bool isComplete();
+	void allocate();
+	int isFilled(int x,int y);
 };
