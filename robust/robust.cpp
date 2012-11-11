@@ -190,10 +190,11 @@ int main(int argc, const char** argv) {
 			}
 		}
 		cvNamedWindow("wynik");
-	
 		imshow("wynik",bg.devectorize()); //jeszcze nie dziala
+		waitKey(10);
 //ETAP 3
 		while(!bg.isComplete()){
+			
 			for(int i=0;i<::grid_height-1;i++)
 				for(int j=0;j<::grid_width-1;j++)
 				{
@@ -213,14 +214,14 @@ int main(int argc, const char** argv) {
 					else if(!bg.isFilled(i+1,j))
 					{
 						nrzero=1;
-						a=i;
-						b=j+1;
+						a=i+1;
+						b=j;
 					}
 					else if(!bg.isFilled(i,j+1))
 					{
 						nrzero=2;
-						a=i+1;
-						b=j;
+						a=i;
+						b=j+1;
 					}
 					else
 					{
@@ -235,11 +236,11 @@ int main(int argc, const char** argv) {
 					if(nrzero!=0)
 						lewygora.devectorize().copyTo((*superblok)(Rect(0, 0, bloksize, bloksize)));
 					if(nrzero!=1)
-						lewygora.devectorize().copyTo((*superblok)(Rect(size, 0, bloksize, bloksize)));
+						prawygora.devectorize().copyTo((*superblok)(Rect(bloksize, 0, bloksize, bloksize)));
 					if(nrzero!=2)
-						lewygora.devectorize().copyTo((*superblok)(Rect(0, size, bloksize, bloksize)));
+						lewydol.devectorize().copyTo((*superblok)(Rect(0, bloksize, bloksize, bloksize)));
 					if(nrzero!=3)
-						lewygora.devectorize().copyTo((*superblok)(Rect(size, size, bloksize, bloksize)));
+						prawydol.devectorize().copyTo((*superblok)(Rect(bloksize, bloksize, bloksize, bloksize)));
 					Mat superblokf;
 					superblok->convertTo(superblokf,CV_32FC1);
 					cv::dct(superblokf,*C,0);
@@ -270,11 +271,16 @@ int main(int argc, const char** argv) {
 						if(poczatekobliczen==true || koszt<kosztnajlepszegobloku)
 						{
 							kosztnajlepszegobloku=koszt;
-							nrnajlepszegobloku=i;
+							nrnajlepszegobloku=ind;
 							poczatekobliczen=false;
 						}
 					}
-					bg.insertAt(b,a,grd(b,a).at(nrnajlepszegobloku));
+					bg.rep(a,b,grd(a,b).at(nrnajlepszegobloku));
+					cout<<"Uzupe³niono "<<bg.getFilled()<<"\\"<<grd.getHeight()*grd.getWidth()<<endl;
+					cvNamedWindow("wyniktest");
+					imshow("wyniktest",bg.devectorize()); //jeszcze nie dziala
+					waitKey(10);
+					system("PAUSE");
 				}
 			}
 		}

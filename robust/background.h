@@ -26,6 +26,7 @@ public:
 	Mat & devectorize();
 	blok & operator()(int, int);
 	void insertAt(int, int,blok&);
+	void rep(int, int,blok&);
 	void insertBlack(int, int,blok&);
 	void reserve(int);
 	void setWidth(int);
@@ -33,4 +34,5 @@ public:
 	bool isComplete();
 	void allocate();
 	int isFilled(int x,int y);
+	int getFilled();
 };
