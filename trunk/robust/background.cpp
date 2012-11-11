@@ -20,6 +20,15 @@ void background::insertAt(int x,int y, blok & blk){
 	nrfilled++;
 	filltable[x][y]=true;
 }
+void background::rep(int x,int y, blok & blk){
+	vector<blok>::iterator it;
+	it = content->begin();
+	for(int i=0;i<x*width+y;i++)
+		++it;
+	content->erase(it);
+	insertAt(x,y,blk);
+
+}
 void background::insertBlack(int x,int y, blok & blk){
 	vector<blok>::iterator it;
 
@@ -60,7 +69,7 @@ void background::setHeight(int _height){
 	height=_height;
 }
 bool background::isComplete(){
-	if(width*height==nrfilled)
+	if(nrfilled>=width*height)
 		return true;
 	else return false;
 }
@@ -68,10 +77,13 @@ void background::allocate(){
 	filltable=new int*[height];
 	for(int i=0;i<height;i++)
 		filltable[i]=new int[width];
-	for(int i=0;i<height;i++)
-		for(int j=0;j<width;j++)
-			filltable[i][j]=0;
+	for(int i=0;i<width;i++)
+		for(int j=0;j<height;j++)
+			filltable[j][i]=0;
 }
 int background::isFilled(int x,int y){
 	return filltable[x][y];
+}
+int background::getFilled(){
+	return nrfilled;
 }
