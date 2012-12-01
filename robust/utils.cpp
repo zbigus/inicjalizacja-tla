@@ -38,3 +38,35 @@ double cost(Mat C, Mat D,int size, double alpha, int weight){
 	suma*=exp(-alpha*weight);
 	return suma;
 }
+Mat hadamard(Mat macierz ){
+	Size siz=macierz.size();
+	//Mat tmp=Mat(siz.height,siz.height,CV_8SC1);
+	//macierz.convertTo(tmp,CV_8SC1);
+	Mat tmphadamard(siz.height,siz.height,CV_32FC1);
+	Mat wynikhadamard=hadamardmat(siz.height);
+	wynikhadamard.convertTo(tmphadamard,CV_32FC1);
+	Mat wynik=tmphadamard*macierz*tmphadamard;
+	return wynik;
+
+	
+}
+Mat hadamardmat(int size){
+	int data[4]={1,1,1,-1};
+	
+	if (size==2)
+	{
+		Mat wynik=Mat(2, 2, CV_8SC1, &data);
+			return wynik;
+	}
+	else{
+		Mat wynik=Mat(size,size,CV_8SC1);
+		Mat macierz=hadamardmat(size/2);
+		macierz.copyTo((wynik)(Rect(0, 0, size/2, size/2)));
+		macierz.copyTo((wynik)(Rect(size/2, 0, size/2, size/2)));
+		macierz.copyTo((wynik)(Rect(0, size/2, size/2, size/2)));
+		macierz*=-1;
+		macierz.copyTo((wynik)(Rect(size/2, size/2, size/2, size/2)));
+		return wynik;
+	}
+
+}

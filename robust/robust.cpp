@@ -31,7 +31,7 @@ background bg(0,0);
 bool init=true;
 double T1=0.8;
 double T2=10;
-int size = 12;
+int size = 4;
 //Matqueue** history;
 
 
@@ -80,7 +80,7 @@ int main(int argc, const char** argv) {
 		cvNamedWindow("kolor", CV_WINDOW_AUTOSIZE);
 		while (1) {
 			klatka++;
-			if(klatka==20)
+			if(klatka==3)
 				break;
 			cout<<"Obrobka klatki nr: "<<klatka<<endl;
 			vcap >> color;
@@ -243,7 +243,8 @@ int main(int argc, const char** argv) {
 						prawydol.devectorize().copyTo((*superblok)(Rect(bloksize, bloksize, bloksize, bloksize)));
 					Mat superblokf;
 					superblok->convertTo(superblokf,CV_32FC1);
-					cv::dct(superblokf,*C,0);
+					//cv::dct(superblokf,*C,0);
+					*C=hadamard(superblokf);
 					int nrnajlepszegobloku=0;
 					double kosztnajlepszegobloku=0;
 					bool poczatekobliczen=true;
@@ -266,7 +267,8 @@ int main(int argc, const char** argv) {
 							tmp.devectorize().copyTo((*superblok2)(Rect(size, size, bloksize, bloksize)));
 						Mat superblok2f;
 						superblok2->convertTo(superblok2f,CV_32FC1);
-						cv::dct(superblok2f,*D,0);
+						//cv::dct(superblok2f,*D,0);
+						*D=hadamard(superblok2f);
 						double koszt=cost(*C,*D,bloksize,1,tmp.getWeight());
 						if(poczatekobliczen==true || koszt<kosztnajlepszegobloku)
 						{
@@ -280,7 +282,7 @@ int main(int argc, const char** argv) {
 					cvNamedWindow("wyniktest");
 					imshow("wyniktest",bg.devectorize()); //jeszcze nie dziala
 					waitKey(10);
-					system("PAUSE");
+					//system("PAUSE");
 				}
 			}
 		}
@@ -341,6 +343,8 @@ int main(int argc, const char** argv) {
 	}
 
 	char wynik_char=(char) waitKey(10);
+	Mat g=hadamardmat(2);
+	cout<<g;
 	system("PAUSE");	
 	clock_t after = clock();
 
