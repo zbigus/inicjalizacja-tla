@@ -1,0 +1,26 @@
+﻿Build started 2012-12-01 20:52:25.
+     1>Project "E:\projekt\simple_pixel_methods\simple_pixel_methods\simple_pixel_methods.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\simple_pixel_methods.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         D:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt cachedMethods.cpp
+         cachedMethods.cpp
+       Link:
+         D:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\projekt\simple_pixel_methods\Debug\simple_pixel_methods.exe" /NOLOGO E:\opencv\build\x86\vc10\lib\opencv_calib3d240.lib E:\opencv\build\x86\vc10\lib\opencv_calib3d240d.lib E:\opencv\build\x86\vc10\lib\opencv_contrib240.lib E:\opencv\build\x86\vc10\lib\opencv_contrib240d.lib E:\opencv\build\x86\vc10\lib\opencv_core240.lib E:\opencv\build\x86\vc10\lib\opencv_core240d.lib E:\opencv\build\x86\vc10\lib\opencv_features2d240.lib E:\opencv\build\x86\vc10\lib\opencv_features2d240d.lib E:\opencv\build\x86\vc10\lib\opencv_flann240.lib E:\opencv\build\x86\vc10\lib\opencv_flann240d.lib E:\opencv\build\x86\vc10\lib\opencv_gpu240.lib E:\opencv\build\x86\vc10\lib\opencv_gpu240d.lib E:\opencv\build\x86\vc10\lib\opencv_haartraining_engine.lib E:\opencv\build\x86\vc10\lib\opencv_haartraining_engined.lib E:\opencv\build\x86\vc10\lib\opencv_highgui240.lib E:\opencv\build\x86\vc10\lib\opencv_highgui240d.lib E:\opencv\build\x86\vc10\lib\opencv_imgproc240.lib E:\opencv\build\x86\vc10\lib\opencv_imgproc240d.lib E:\opencv\build\x86\vc10\lib\opencv_legacy240.lib E:\opencv\build\x86\vc10\lib\opencv_legacy240d.lib E:\opencv\build\x86\vc10\lib\opencv_ml240.lib E:\opencv\build\x86\vc10\lib\opencv_ml240d.lib E:\opencv\build\x86\vc10\lib\opencv_nonfree240.lib E:\opencv\build\x86\vc10\lib\opencv_nonfree240d.lib E:\opencv\build\x86\vc10\lib\opencv_objdetect240.lib E:\opencv\build\x86\vc10\lib\opencv_objdetect240d.lib E:\opencv\build\x86\vc10\lib\opencv_photo240.lib E:\opencv\build\x86\vc10\lib\opencv_photo240d.lib E:\opencv\build\x86\vc10\lib\opencv_stitching240.lib E:\opencv\build\x86\vc10\lib\opencv_stitching240d.lib E:\opencv\build\x86\vc10\lib\opencv_ts240.lib E:\opencv\build\x86\vc10\lib\opencv_ts240d.lib E:\opencv\build\x86\vc10\lib\opencv_video240.lib E:\opencv\build\x86\vc10\lib\opencv_video240d.lib E:\opencv\build\x86\vc10\lib\opencv_videostab240.lib E:\opencv\build\x86\vc10\lib\opencv_videostab240d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\simple_pixel_methods.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\projekt\simple_pixel_methods\Debug\simple_pixel_methods.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\projekt\simple_pixel_methods\Debug\simple_pixel_methods.lib" /MACHINE:X86 Debug\alpha.obj
+         Debug\background.obj
+         Debug\blok.obj
+         Debug\grid.obj
+         Debug\main.obj
+         Debug\cachedMethods.obj
+         LINK : E:\projekt\simple_pixel_methods\Debug\simple_pixel_methods.exe not found or not built by the last incremental link; performing full link
+         simple_pixel_methods.vcxproj -> E:\projekt\simple_pixel_methods\Debug\simple_pixel_methods.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"E:\projekt\simple_pixel_methods\Debug\simple_pixel_methods.exe;#1" /manifest Debug\simple_pixel_methods.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Debug\simple_pixel_methods.unsuccessfulbuild".
+         Touching "Debug\simple_pixel_methods.lastbuildstate".
+     1>Done Building Project "E:\projekt\simple_pixel_methods\simple_pixel_methods\simple_pixel_methods.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.92
