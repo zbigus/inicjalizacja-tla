@@ -31,7 +31,7 @@ background bg(0,0);
 bool init=true;
 double T1=0.8;
 double T2=10;
-int size = 4;
+int size = 16;
 //Matqueue** history;
 
 
@@ -80,7 +80,7 @@ int main(int argc, const char** argv) {
 		cvNamedWindow("kolor", CV_WINDOW_AUTOSIZE);
 		while (1) {
 			klatka++;
-			if(klatka==3)
+			if(klatka==50)
 				break;
 			cout<<"Obrobka klatki nr: "<<klatka<<endl;
 			vcap >> color;
