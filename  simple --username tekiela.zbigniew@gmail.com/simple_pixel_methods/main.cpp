@@ -12,10 +12,10 @@
 #include <math.h>
 #include "alpha.h"
 #include "cachedMethods.h"
+#include "movingMean.h"
 using namespace cv;
 using namespace std;
 
-//typedef deque<Mat> Matqueue;
 
 Mat color;
 Mat gray;
@@ -23,17 +23,17 @@ Mat bg;
 VideoCapture vcap;
 int movie_width;
 int movie_height;
-int grid_width;
-int grid_height;
 bool init=true;
-double T1=0.8;
-double T2=10;
 int size = 12;
+int method =0;
+double alphaparam =0.95;
 
 
 int main(int argc, const char** argv) {
 	int method = 0;
 	string str_null("null");
+	string str_m0("0");
+
 	Mat** tmp;
 
 	clock_t before = clock();
@@ -47,6 +47,21 @@ int main(int argc, const char** argv) {
 		vcap.open(argv[1]);
 		cout << "zrodlo obrazu: " << argv[1] << endl;
 	}
+
+	if (argc > 2 ) {
+		cout << argv[2] << endl;
+		if(str_m0.compare(argv[2]) == 0){
+			method=0;
+			if (argc > 3 ) {
+				double inputalpha = strtod(argv[3], NULL);
+				if(inputalpha>0 && inputalpha<1)
+					alphaparam = inputalpha;
+			}
+		}else{
+			method=1;
+		}
+	} 
+
 	if (!vcap.isOpened()) {
 		cout << "blad - nie mozna odczytac obrazu z podanego zrodla\n";
 		return -1;
@@ -65,8 +80,9 @@ int main(int argc, const char** argv) {
 
 		
 		Mat img,fgmask, fgimg;
-		cachedMethods cached;
-		alpha alphaMethod = alpha(0.95);
+		//cachedMethods cached;
+		alpha alphaMethod = alpha(alphaparam);
+		movingMean meanbg = movingMean();
 		while (1) {
 			klatka++;
 			vcap >> img;
@@ -77,10 +93,15 @@ int main(int argc, const char** argv) {
 			if( fgimg.empty() )
 				fgimg.create(img.size(), img.type());
 
-			cached.processMean(gray,bg);
-			//alphaMethod.process(gray,bg);
-			//img.copyTo(background, background);
-
+			//cached.processMean(gray,bg);
+			switch(method){
+			case 0:
+				alphaMethod.process(gray,bg);
+				break;
+			case 1:
+				meanbg.process(gray,bg);
+				break;
+			}		
 
 			imshow("window 1 - obraz z kamery", img);
 			imshow("window 2 - szary obraz", gray);
@@ -89,9 +110,50 @@ int main(int argc, const char** argv) {
 
 
 			char k = (char)waitKey(10);
-			//cout << "img: " << img.size <<endl;
-			//cout << "gray: " << img.size <<endl;
-			//cout << "bg: " << img.size <<endl;
+			if(k=='q')break;
+			if(method==0 && (k=='='||k=='+')){
+				alphaMethod.setAplha(alphaMethod.getAplha()+0.01);
+				cout << "alpha: " << alphaMethod.getAplha() << endl;
+			}
+			if(method==0 && (k=='-'||k=='_')){
+				alphaMethod.setAplha(alphaMethod.getAplha()-0.01);
+				cout << "alpha: " << alphaMethod.getAplha() << endl;
+			}
+
+			if(k=='m'){
+				method++;
+				method=method%2;
+				cout << method <<endl;
+				if(method==0){
+					cout << "Alpha" <<endl;
+				}
+				if(method==1){
+					cout << "Srednia" <<endl;
+				}
+			}
+
+			if(k=='s')
+			{
+				Mat save_img;
+				img.convertTo(save_img,CV_8U);
+				Mat save_gray;
+				img.convertTo(save_gray,CV_8U);
+				Mat save_bg;
+				img.convertTo(save_bg,CV_8U);
+				stringstream filename_img;
+				filename_img << "image_" << klatka << ".png";
+				cout << filename_img.str() <<endl;
+				imwrite( filename_img.str(), save_img );
+				stringstream filename_gray;
+				filename_gray << "image_" << klatka << ".png";
+				cout << filename_gray.str() <<endl;
+				imwrite( filename_gray.str(), save_gray );
+				stringstream filename_bg;
+				filename_bg << "image_" << klatka << ".png";
+				cout << filename_bg.str() <<endl;
+				imwrite( filename_bg.str(), save_bg );
+
+			}
 		}
 
 	char wynik_char=(char) waitKey(10);
