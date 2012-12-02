@@ -18,7 +18,7 @@ using namespace cv;
 using namespace std;
 
 //typedef deque<Mat> Matqueue;
-
+string str_m0("1");
 Mat color;
 Mat gray;
 VideoCapture vcap;
@@ -26,12 +26,14 @@ int movie_width;
 int movie_height;
 int grid_width;
 int grid_height;
+int ileklatek;
 grid grd(0,0);
 background bg(0,0);
 bool init=true;
 double T1=0.8;
 double T2=10;
 int size = 16;
+int dctmethod=1;
 //Matqueue** history;
 
 
@@ -45,9 +47,34 @@ int size = 16;
 
 int main(int argc, const char** argv) {
 	int method = 0;
+	ileklatek=50;
 	string str_null("null");
 	Mat** tmp;
-
+			if (argc > 2 ) {
+				if(atoi(argv[2]) == 0){
+					method=1; //uruchom mog
+				}
+				else{
+					ileklatek=atoi(argv[2]);
+				}
+			}
+			if(argc>3){
+				if(argv[3] ==0)
+					dctmethod=0;
+			}
+			if(argc>4){
+					size=atoi(argv[4]);
+			}
+			if (argc > 5 ) {
+				double inputT1 = strtod(argv[5], NULL);
+				if(inputT1>0 && inputT1<1)
+					T1 = inputT1;
+			}if (argc > 6 ) {
+				double inputT2 = strtod(argv[6], NULL);
+				if(inputT2>0 && inputT2<1)
+					T2 = inputT2;
+			}
+		
 	clock_t before = clock();
 	int x = 0, y = 0;
 
@@ -80,7 +107,7 @@ int main(int argc, const char** argv) {
 		cvNamedWindow("kolor", CV_WINDOW_AUTOSIZE);
 		while (1) {
 			klatka++;
-			if(klatka==50)
+			if(ileklatek >1 && klatka==ileklatek)
 				break;
 			cout<<"Obrobka klatki nr: "<<klatka<<endl;
 			vcap >> color;
@@ -243,7 +270,9 @@ int main(int argc, const char** argv) {
 						prawydol.devectorize().copyTo((*superblok)(Rect(bloksize, bloksize, bloksize, bloksize)));
 					Mat superblokf;
 					superblok->convertTo(superblokf,CV_32FC1);
-					//cv::dct(superblokf,*C,0);
+					if(dctmethod==1)
+					cv::dct(superblokf,*C,0);
+					else
 					*C=hadamard(superblokf);
 					int nrnajlepszegobloku=0;
 					double kosztnajlepszegobloku=0;
@@ -267,7 +296,9 @@ int main(int argc, const char** argv) {
 							tmp.devectorize().copyTo((*superblok2)(Rect(size, size, bloksize, bloksize)));
 						Mat superblok2f;
 						superblok2->convertTo(superblok2f,CV_32FC1);
-						//cv::dct(superblok2f,*D,0);
+						if(dctmethod==1)
+						cv::dct(superblok2f,*D,0);
+						else
 						*D=hadamard(superblok2f);
 						double koszt=cost(*C,*D,bloksize,1,tmp.getWeight());
 						if(poczatekobliczen==true || koszt<kosztnajlepszegobloku)
