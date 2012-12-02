@@ -30,3 +30,13 @@ void alpha::process(const cv::Mat &img_input, cv::Mat &img_output)
   background.copyTo(img_output);
   firstTime = false;
 }
+
+double alpha::getAplha(){
+	return alphaParam;
+}
+
+void alpha::setAplha(double al){
+	if(al>0 && al <1){
+		alphaParam = al;
+	}
+}

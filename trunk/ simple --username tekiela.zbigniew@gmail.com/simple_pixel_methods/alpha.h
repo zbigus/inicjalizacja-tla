@@ -29,4 +29,6 @@ public:
 	void dump();
 	int getWidth();
 	int getHeight();
+	double getAplha();
+	void setAplha(double);
 };
