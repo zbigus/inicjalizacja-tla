@@ -18,12 +18,14 @@
 using namespace cv;
 using namespace std;
 
-int framesize; //dziekuje :D
+int framesize; 
+bool changedsomething;
 
 //typedef deque<Mat> Matqueue;
 string str_m0("1");
 Mat color;
 Mat gray;
+Mat save_img;
 VideoCapture vcap;
 int movie_width;
 int movie_height;
@@ -37,6 +39,7 @@ double T1=0.8;
 double T2=10;
 int size = 16;
 int dctmethod=1;
+stringstream filename_img;
 //Matqueue** history;
 
 
@@ -211,7 +214,10 @@ int main(int argc, const char** argv) {
 				char cdd=(char) waitKey(10);
 				//system("PAUSE");
 				if(grd(i,j).size()==1)
-				bg.insertAt(i,j,grd(i,j).at(0)); //testowe,moze krzaczyc
+				{
+					bg.insertAt(i,j,grd(i,j).at(0)); //testowe,moze krzaczyc
+					cout<<bg.getFilled()<<endl;
+				}
 				else
 				{
 					Mat zeromat=Mat(size,size,CV_8UC1,Scalar(0));
@@ -223,8 +229,9 @@ int main(int argc, const char** argv) {
 		imshow("wynik",bg.devectorize()); //jeszcze nie dziala
 		waitKey(10);
 //ETAP 3
-		while(!bg.isComplete()){
-			
+		changedsomething=true;
+		while(changedsomething && !bg.isComplete() ){
+			changedsomething=false;
 			for(int i=0;i<::grid_height-1;i++)
 				for(int j=0;j<::grid_width-1;j++)
 				{
@@ -312,6 +319,7 @@ int main(int argc, const char** argv) {
 						}
 					}
 					bg.rep(a,b,grd(a,b).at(nrnajlepszegobloku));
+					changedsomething=true;
 					cout<<"Uzupe³niono "<<bg.getFilled()<<"\\"<<grd.getHeight()*grd.getWidth()<<endl;
 					cvNamedWindow("wyniktest");
 					imshow("wyniktest",bg.devectorize()); //jeszcze nie dziala
@@ -322,6 +330,11 @@ int main(int argc, const char** argv) {
 		}
 		cvNamedWindow("wynik2");
 		imshow("wynik2",bg.devectorize());
+		
+		bg.devectorize().convertTo(save_img,CV_8U);
+		filename_img << (dctmethod==0?"dct_":"had_") << ileklatek<<"_"<< T1 << "_"<<T2 << ".png";
+		cout << filename_img.str() <<endl;
+		imwrite( filename_img.str(), save_img );
 		break;
 
 	case 1:
@@ -377,9 +390,8 @@ int main(int argc, const char** argv) {
 	}
 
 	char wynik_char=(char) waitKey(10);
-	Mat g=hadamardmat(2);
-	cout<<g;
-	system("PAUSE");	
+	
+	//system("PAUSE");	
 	clock_t after = clock();
 
 	cout << endl << "czas[ms]" << after - before << endl;
