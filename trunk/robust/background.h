@@ -12,6 +12,7 @@
 #include <deque>
 #include <math.h>
 #include "blok.h"
+#include "robust.h"
 using namespace cv;
 using namespace std;
 class background{

@@ -14,8 +14,11 @@
 #include "blok.h"
 #include "grid.h"
 #include "background.h"
+#include "robust.h"
 using namespace cv;
 using namespace std;
+
+int framesize; //dziekuje :D
 
 //typedef deque<Mat> Matqueue;
 string str_m0("1");
@@ -97,7 +100,7 @@ int main(int argc, const char** argv) {
 		<< movie_height << "px" << endl;
 
 	int klatka=0;
-
+	framesize=size;
 	switch(method){
 
 
@@ -256,7 +259,7 @@ int main(int argc, const char** argv) {
 						a=i+1;
 						b=j+1;
 					}
-					int bloksize=bg(0,0).getSqrtSize();
+					int bloksize=size;
 					Mat * superblok=new Mat(bloksize*2,bloksize*2,CV_8UC1,Scalar(0));
 					Mat *C =new Mat(bloksize*2,bloksize*2,CV_32FC1,Scalar(0));
 					Mat *D =new Mat(bloksize*2,bloksize*2,CV_32FC1,Scalar(0));
