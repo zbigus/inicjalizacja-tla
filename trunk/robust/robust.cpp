@@ -108,14 +108,14 @@ int main(int argc, const char** argv) {
 
 
 	case 0:
-		cvNamedWindow("inicjalizacja-tla", CV_WINDOW_AUTOSIZE);
+		//cvNamedWindow("inicjalizacja-tla", CV_WINDOW_AUTOSIZE);
 		//cvNamedWindow("kawalek", CV_WINDOW_AUTOSIZE);
-		cvNamedWindow("kolor", CV_WINDOW_AUTOSIZE);
+		//cvNamedWindow("kolor", CV_WINDOW_AUTOSIZE);
 		while (1) {
 			klatka++;
 			if(ileklatek >1 && klatka==ileklatek)
 				break;
-			cout<<"Obrobka klatki nr: "<<klatka<<endl;
+			//cout<<"Obrobka klatki nr: "<<klatka<<endl;
 			vcap >> color;
 			if (color.empty()) {
 				cout << "ERROR: pusta ramka...\n";
@@ -143,8 +143,8 @@ int main(int argc, const char** argv) {
 						init=false;
 					}
 				
-			imshow("kolor",color);
-			imshow("inicjalizacja-tla", gray);
+			//imshow("kolor",color);
+			//imshow("inicjalizacja-tla", gray);
 			char cc = (char) waitKey(10);
 			tmp = grid_cut(gray, size);
 			for(int i=0;i<::grid_width;i++)
@@ -207,11 +207,11 @@ int main(int argc, const char** argv) {
 			cout<<endl;
 			for (int j=0;j<::grid_width;j++)
 			{
-				cout<<grd(i,j).size()<<","<<grd(i,j).at(0).getWeight()<<" ";
-				Mat tmp=grd(i,j).at(0).devectorize();
-				cvNamedWindow("test");
-				imshow("test",tmp);
-				char cdd=(char) waitKey(10);
+				//cout<<grd(i,j).size()<<","<<grd(i,j).at(0).getWeight()<<" ";
+				//Mat tmp=grd(i,j).at(0).devectorize();
+				//cvNamedWindow("test");
+				//imshow("test",tmp);
+				//char cdd=(char) waitKey(10);
 				//system("PAUSE");
 				if(grd(i,j).size()==1)
 				{
@@ -225,9 +225,9 @@ int main(int argc, const char** argv) {
 				}
 			}
 		}
-		cvNamedWindow("wynik");
-		imshow("wynik",bg.devectorize()); //jeszcze nie dziala
-		waitKey(10);
+		//cvNamedWindow("wynik");
+		//imshow("wynik",bg.devectorize()); //jeszcze nie dziala
+		//waitKey(10);
 //ETAP 3
 		changedsomething=true;
 		while(changedsomething && !bg.isComplete() ){
@@ -321,19 +321,19 @@ int main(int argc, const char** argv) {
 					bg.rep(a,b,grd(a,b).at(nrnajlepszegobloku));
 					changedsomething=true;
 					cout<<"Uzupe³niono "<<bg.getFilled()<<"\\"<<grd.getHeight()*grd.getWidth()<<endl;
-					cvNamedWindow("wyniktest");
-					imshow("wyniktest",bg.devectorize()); //jeszcze nie dziala
-					waitKey(10);
+					//cvNamedWindow("wyniktest");
+					//imshow("wyniktest",bg.devectorize()); //jeszcze nie dziala
+					//waitKey(10);
 					//system("PAUSE");
 				}
 			}
 		}
-		cvNamedWindow("wynik2");
-		imshow("wynik2",bg.devectorize());
+		//cvNamedWindow("wynik2");
+		//imshow("wynik2",bg.devectorize());
 		
 		bg.devectorize().convertTo(save_img,CV_8U);
 		filename_img << (dctmethod==0?"dct_":"had_") << ileklatek<<"_"<< T1 << "_"<<T2 << ".png";
-		cout << filename_img.str() <<endl;
+		//cout << filename_img.str() <<endl;
 		imwrite( filename_img.str(), save_img );
 		break;
 
