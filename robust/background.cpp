@@ -1,4 +1,5 @@
 #include "background.h"
+#include "robust.h"
 background::background(){}
 background::background(int _width, int _height){
 	width=_width;
@@ -38,18 +39,18 @@ void background::insertBlack(int x,int y, blok & blk){
 	content->insert(it,blk);
 }
 Mat & background::devectorize(){
-	Mat *tmp=new Mat(height*content->at(0).getSqrtSize(),width*content->at(0).getSqrtSize(),CV_8UC1,Scalar(0));
+	Mat *tmp=new Mat(height*::framesize,width*16,CV_8UC1,Scalar(0));
 	//cout<<content->at(0).getSize();
 	//cout<<"POJ:"<<content->capacity();
 	//cout<<width*height;
 	//for(unsigned int a=0;a<width*height;a++)
 	vector<blok>::iterator it=content->begin();
-		int size=content->at(0).getSqrtSize();
+		//int size=content->at(1).getSqrtSize();
 	for (int i = 0; i < height; i++) {
 		for (int j = 0; j < width; j++) {
 			
 			if(it->getSize())
-			it->devectorize().copyTo((*tmp)(Rect(j*size, i*size, size, size)));
+			it->devectorize().copyTo((*tmp)(Rect(j*::framesize, i*::framesize, ::framesize, ::framesize)));
 			it++;
 			}
 		
