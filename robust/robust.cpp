@@ -33,6 +33,7 @@ int grid_width;
 int grid_height;
 int ileklatek;
 grid grd(0,0);
+char filename[100];
 background bg(0,0);
 bool init=true;
 double T1=0.8;
@@ -77,8 +78,7 @@ int main(int argc, const char** argv) {
 					T1 = inputT1;
 			}if (argc > 6 ) {
 				double inputT2 = strtod(argv[6], NULL);
-				if(inputT2>0 && inputT2<1)
-					T2 = inputT2;
+				T2 = inputT2;
 			}
 		
 	clock_t before = clock();
@@ -115,7 +115,7 @@ int main(int argc, const char** argv) {
 			klatka++;
 			if(ileklatek >1 && klatka==ileklatek)
 				break;
-			//cout<<"Obrobka klatki nr: "<<klatka<<endl;
+			cout<<"Obrobka klatki nr: "<<klatka<<endl;
 			vcap >> color;
 			if (color.empty()) {
 				cout << "ERROR: pusta ramka...\n";
@@ -332,8 +332,9 @@ int main(int argc, const char** argv) {
 		//imshow("wynik2",bg.devectorize());
 		
 		bg.devectorize().convertTo(save_img,CV_8U);
-		filename_img << (dctmethod==0?"dct_":"had_") << ileklatek<<"_"<< T1 << "_"<<T2 << ".png";
-		//cout << filename_img.str() <<endl;
+		_splitpath(argv[1],NULL,NULL,filename,NULL);
+		filename_img << filename<<"_"<<(dctmethod==1?"dct_":"had_") << ileklatek<<"_"<< T1 << "_"<<T2 << ".png";
+		cout << filename_img.str() <<endl;
 		imwrite( filename_img.str(), save_img );
 		break;
 
