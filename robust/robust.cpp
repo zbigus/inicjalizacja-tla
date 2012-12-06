@@ -39,7 +39,7 @@ bool init=true;
 double T1=0.8;
 double T2=10;
 int size = 16;
-int dctmethod=1;
+bool dctmethod=false;
 stringstream filename_img;
 //Matqueue** history;
 
@@ -67,7 +67,7 @@ int main(int argc, const char** argv) {
 			}
 			if(argc>3){
 				if(argv[3] ==0)
-					dctmethod=0;
+					dctmethod=true;
 			}
 			if(argc>4){
 					size=atoi(argv[4]);
@@ -280,7 +280,7 @@ int main(int argc, const char** argv) {
 						prawydol.devectorize().copyTo((*superblok)(Rect(bloksize, bloksize, bloksize, bloksize)));
 					Mat superblokf;
 					superblok->convertTo(superblokf,CV_32FC1);
-					if(dctmethod==1)
+					if(dctmethod==true)
 					cv::dct(superblokf,*C,0);
 					else
 					*C=hadamard(superblokf);
@@ -306,7 +306,7 @@ int main(int argc, const char** argv) {
 							tmp.devectorize().copyTo((*superblok2)(Rect(size, size, bloksize, bloksize)));
 						Mat superblok2f;
 						superblok2->convertTo(superblok2f,CV_32FC1);
-						if(dctmethod==1)
+						if(dctmethod==true)
 						cv::dct(superblok2f,*D,0);
 						else
 						*D=hadamard(superblok2f);
@@ -333,7 +333,7 @@ int main(int argc, const char** argv) {
 		
 		bg.devectorize().convertTo(save_img,CV_8U);
 		_splitpath(argv[1],NULL,NULL,filename,NULL);
-		filename_img << filename<<"_"<<(dctmethod==1?"dct_":"had_") << ileklatek<<"_"<< T1 << "_"<<T2 << ".png";
+		filename_img << filename<<"_"<<(dctmethod==true?"dct_":"had_") << ileklatek<<"_"<< T1 << "_"<<T2 << ".png";
 		cout << filename_img.str() <<endl;
 		imwrite( filename_img.str(), save_img );
 		break;
