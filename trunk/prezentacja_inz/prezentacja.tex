@@ -1,7 +1,7 @@
 \documentclass{beamer}
-\usepackage[utf8]{inputenc}
+\usepackage[cp1250]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\usepackage[polish]{babel}
 \usepackage{graphicx}
 \usepackage{times}
 \usepackage[normalem]{ulem}
@@ -11,14 +11,14 @@
 \usepackage{amsmath}
 \usetheme{AGH}
 
-\title[Inicjalizacja tÅ‚a]{Metody Inicjalizacji modelu tÅ‚a}
+\title[Inicjalizacja t³a]{Metody Inicjalizacji modelu t³a}
 
 \author[J.Gola, Z.Tekiela]{Jakub Gola, Zbigniew Tekiela }
 
 \date[2012]{22.11.2012}
 
 \institute[AGH-UST]
-{WydziaÅ‚ EAIiIB\\ 
+{Wydzia³ EAIiIB\\ 
 Informatyka Stosowana
 }
 
@@ -47,11 +47,11 @@ Informatyka Stosowana
 
 \begin{frame}
 \frametitle{Metody przestrzenne}
-\begin{block}{ZaÅ‚oÅ¼enia}
+\begin{block}{Za³o¿enia}
 \begin{itemize}
-\item Obliczenia sÄ… wykonywane na kwadratowych blokach
-\item TÅ‚em zostaje najczÄ™Å›ciej powtarzajÄ…cy siÄ™ blok
-\item Do dobrania najlepszego bloku jest uÅ¼ywana transformata operujÄ…ca w dziedzinie czÄ™stotliwoÅ›ci
+\item Obliczenia s¹ wykonywane na kwadratowych blokach
+\item T³em zostaje najczêœciej powtarzaj¹cy siê blok
+\item Do dobrania najlepszego bloku jest u¿ywana transformata operuj¹ca w dziedzinie czêstotliwoœci
 \end{itemize}
 \end{block}
 
@@ -63,9 +63,9 @@ Informatyka Stosowana
 \begin{block}{Fazy algorytmu}
 
 \begin{enumerate}
-\item Kolekcjonowanie kandydatÃ³w
-\item CzÄ™Å›ciowa rekonstrukcja tÅ‚a
-\item KoÅ„cowa rekonstrukcja tÅ‚a z wykorzystaniem transformaty
+\item Kolekcjonowanie kandydatów
+\item Czêœciowa rekonstrukcja t³a
+\item Koñcowa rekonstrukcja t³a z wykorzystaniem transformaty
 \end{enumerate}
 \end{block}
 
@@ -74,17 +74,17 @@ Informatyka Stosowana
 %---------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Metody przestrzenne}
-\begin{block}{Kolekcjonowanie kandydatÃ³w}
+\begin{block}{Kolekcjonowanie kandydatów}
 
 \begin{enumerate}
-\item Podziel ramkÄ™ na bloki
-\item Dla kaÅ¼dego bloku wykonaj
+\item Podziel ramkê na bloki
+\item Dla ka¿dego bloku wykonaj
 	\begin{enumerate}
-	\item JeÅ›li to pierwszy blok, dodaj go do zbioru reprezentantÃ³w
-	\item JeÅ›li to kolejny blok, porÃ³wnaj go z kaÅ¼dym innym w zbiorze reprezentantÃ³w
+	\item Jeœli to pierwszy blok, dodaj go do zbioru reprezentantów
+	\item Jeœli to kolejny blok, porównaj go z ka¿dym innym w zbiorze reprezentantów
 		\begin{itemize}
-		\item JeÅ›li znajdziesz wystarczajÄ…co podobny blok, uaktualnij go
-		\item W przeciwnym wypadku dodaj blok do zbioru reprezentantÃ³w
+		\item Jeœli znajdziesz wystarczaj¹co podobny blok, uaktualnij go
+		\item W przeciwnym wypadku dodaj blok do zbioru reprezentantów
 		\end{itemize}
 	\end{enumerate}
 \end{enumerate}
@@ -95,7 +95,7 @@ Informatyka Stosowana
 %---------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Metody przestrzenne}
-\begin{block}{Kryteria podobieÅ„stwa blokÃ³w}
+\begin{block}{Kryteria podobieñstwa bloków}
 \begin{equation}
 \label{Tcorr}
 T_{corr}=\frac{{(r_k(i,j)-\mu_{r_k}(i,j)}^T(b_f(i,j)-\mu_{b_f})}{\sigma_{r_k}\sigma_{b_f}}
@@ -110,8 +110,8 @@ T_{MAD}=\sum_{n=0}^{N^2-1}\left|b_{f_n}(i,j)-r_{k_f}(i,j)\right|
 %---------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Metody przestrzenne}
-\begin{block}{CzÄ™Å›ciowa rekonstrukcja tÅ‚a}
-Dla kaÅ¼dego bloku, w ktÃ³rego zbiorze reprezentatywnym jest tylko jeden kandydat, zostaje on uznany za tÅ‚o
+\begin{block}{Czêœciowa rekonstrukcja t³a}
+Dla ka¿dego bloku, w którego zbiorze reprezentatywnym jest tylko jeden kandydat, zostaje on uznany za t³o
 \end{block}
 
 
@@ -119,7 +119,7 @@ Dla kaÅ¼dego bloku, w ktÃ³rego zbiorze reprezentatywnym jest tylko jeden kandyda
 %---------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Metody przestrzenne}
-\begin{block}{PojÄ™cie superbloku}
+\begin{block}{Pojêcie superbloku}
 \begin{center}
 \includegraphics{superblok.png}
 \end{center}
@@ -132,17 +132,17 @@ Dla kaÅ¼dego bloku, w ktÃ³rego zbiorze reprezentatywnym jest tylko jeden kandyda
 %---------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Metody przestrzenne}
-\begin{block}{KoÅ„cowa rekonstrukcja tÅ‚a}
-DopÃ³ki tÅ‚o nie zostanie w caÅ‚oÅ›ci uzupeÅ‚nione
+\begin{block}{Koñcowa rekonstrukcja t³a}
+Dopóki t³o nie zostanie w ca³oœci uzupe³nione
 \begin{enumerate}
-\item PrzesuÅ„ ramkÄ™ superbloku o jednÄ… pozycjÄ™ 
-\item SprawdÅº, czy w superbloku sÄ… 3 bloki posiadajÄ…ce tÅ‚o
-\item JeÅ›li tak, wykonaj transformatÄ™ i oblicz funkcjÄ™ kosztu na 2 wersjach superbloku:
+\item Przesuñ ramkê superbloku o jedn¹ pozycjê 
+\item SprawdŸ, czy w superbloku s¹ 3 bloki posiadaj¹ce t³o
+\item Jeœli tak, wykonaj transformatê i oblicz funkcjê kosztu na 2 wersjach superbloku:
 	\begin{enumerate}
-	\item Ustaw blok z nieznanym tÅ‚em na zero (biaÅ‚a ramka)
-	\item Ustaw bloki ze znanym tÅ‚em na zero i podstawiaj do nieznanego bloku kolejnych kandydatÃ³w
+	\item Ustaw blok z nieznanym t³em na zero (bia³a ramka)
+	\item Ustaw bloki ze znanym t³em na zero i podstawiaj do nieznanego bloku kolejnych kandydatów
 	\end{enumerate}
-\item Wstaw w brakujÄ…ce miejsce blok o najniÅ¼szym koszcie
+\item Wstaw w brakuj¹ce miejsce blok o najni¿szym koszcie
 
 \end{enumerate}
 
@@ -168,7 +168,7 @@ DopÃ³ki tÅ‚o nie zostanie w caÅ‚oÅ›ci uzupeÅ‚nione
   \omega_k=\frac{W_k}{\sum_{k=0}^{L-1}W_k}
    \end{equation} 
    $W_k$ - waga elementu $r_k$,
-   L  - iloÅ›Ä‡ elementÃ³w zbioru $r_k$, $C(v,u0)$ - wynik transformaty nr 1, $D_k(v,u)$ - wynik transformaty nr 2 na elemencie k ze zbioru kandydatÃ³w
+   L  - iloœæ elementów zbioru $r_k$, $C(v,u0)$ - wynik transformaty nr 1, $D_k(v,u)$ - wynik transformaty nr 2 na elemencie k ze zbioru kandydatów
 \end{block}
 
 
@@ -223,7 +223,7 @@ X_{k1,k2}=\sum_{n_1=0}^{N_1-1}\sum_{n_2=0}^{N_2-1}x_{n_1,n_2}\cos\left[\frac{\pi
 %---------------------------------------------------------------------------
 \begin{frame}
 \begin{center}
-\Huge{Metody operujÄ…ce na pikselach}
+\Huge{Metody operuj¹ce na pikselach}
 \end{center}
 
 
@@ -232,12 +232,12 @@ X_{k1,k2}=\sum_{n_1=0}^{N_1-1}\sum_{n_2=0}^{N_2-1}x_{n_1,n_2}\cos\left[\frac{\pi
 %---------------------------------------------------------------------------
 
 \begin{frame}
-\frametitle{Metody operujÄ…ce na pikselach}
-\begin{block}{ZaÅ‚oÅ¼enia}
+\frametitle{Metody operuj¹ce na pikselach}
+\begin{block}{Za³o¿enia}
 \begin{itemize}
-\item Obliczenia sÄ… wykonywane dla pojedynczych pikseli
-\item NajczÄ™Å›ciej proste algotrymy
-\item Wybieranie piksela naleÅ¼Ä…cego do tÅ‚a uzaleÅ¼nione jest od odpowiednich algorytmÃ³w
+\item Obliczenia s¹ wykonywane dla pojedynczych pikseli
+\item Najczêœciej proste algotrymy
+\item Wybieranie piksela nale¿¹cego do t³a uzale¿nione jest od odpowiednich algorytmów
 \end{itemize}
 \end{block}
 
@@ -246,11 +246,11 @@ X_{k1,k2}=\sum_{n_1=0}^{N_1-1}\sum_{n_2=0}^{N_2-1}x_{n_1,n_2}\cos\left[\frac{\pi
 %---------------------------------------------------------------------------
 
 \begin{frame}
-\frametitle{Metody operujÄ…ce na pikselach}
-\begin{block}{WÅ‚aÅ›ciwoÅ›ci}
+\frametitle{Metody operuj¹ce na pikselach}
+\begin{block}{W³aœciwoœci}
 \begin{itemize}
-\item NajczÄ™Å›ciej nie uwzglÄ™dniajÄ… wÅ‚aÅ›ciwoÅ›ci swojego otoczenia
-\item CzÄ™sto moÅ¼liwe jest wykonywanie w czasie rzeczywistym
+\item Najczêœciej nie uwzglêdniaj¹ w³aœciwoœci swojego otoczenia
+\item Czêsto mo¿liwe jest wykonywanie w czasie rzeczywistym
 \end{itemize}
 \end{block}
 
@@ -259,10 +259,10 @@ X_{k1,k2}=\sum_{n_1=0}^{N_1-1}\sum_{n_2=0}^{N_2-1}x_{n_1,n_2}\cos\left[\frac{\pi
 %---------------------------------------------------------------------------
 
 \begin{frame}
-\frametitle{Metody operujÄ…ce na pikselach}
-\begin{block}{PodziaÅ‚}
+\frametitle{Metody operuj¹ce na pikselach}
+\begin{block}{Podzia³}
 \begin{itemize}
-\item Metody wykorzysujÄ…ce bufor
+\item Metody wykorzysuj¹ce bufor
 \item Metody bezbuforowe
 \end{itemize}
 \end{block}
@@ -272,11 +272,11 @@ X_{k1,k2}=\sum_{n_1=0}^{N_1-1}\sum_{n_2=0}^{N_2-1}x_{n_1,n_2}\cos\left[\frac{\pi
 %---------------------------------------------------------------------------
 
 \begin{frame}
-\frametitle{Metody operujÄ…ce na pikselach}
-\begin{block}{Metody wykorzysujÄ…ce bufor}
+\frametitle{Metody operuj¹ce na pikselach}
+\begin{block}{Metody wykorzysuj¹ce bufor}
 \begin{itemize}
-\item Bufor zawiera okreÅ›lonÄ… iloÅ›Ä‡ ramek
-\item TÅ‚o jest obliczane na podstawie kombinacji wielu ramek
+\item Bufor zawiera okreœlon¹ iloœæ ramek
+\item T³o jest obliczane na podstawie kombinacji wielu ramek
 \end{itemize}
 \end{block}
 
@@ -285,11 +285,11 @@ X_{k1,k2}=\sum_{n_1=0}^{N_1-1}\sum_{n_2=0}^{N_2-1}x_{n_1,n_2}\cos\left[\frac{\pi
 %---------------------------------------------------------------------------
 
 \begin{frame}
-\frametitle{Metody operujÄ…ce na pikselach}
-\begin{block}{Metoda Å›redniej kroczÄ…cej}
+\frametitle{Metody operuj¹ce na pikselach}
+\begin{block}{Metoda œredniej krocz¹cej}
 \begin{itemize}
-\item WartoÅ›Ä‡ piksela tÅ‚a obliczana jest jako Å›rednia z bufora
-\item MoÅ¼liwe wprowadzenie wag dla poszczegÃ³lnych ramek
+\item Wartoœæ piksela t³a obliczana jest jako œrednia z bufora
+\item Mo¿liwe wprowadzenie wag dla poszczególnych ramek
 \end{itemize}
 \end{block}
 
@@ -298,8 +298,8 @@ X_{k1,k2}=\sum_{n_1=0}^{N_1-1}\sum_{n_2=0}^{N_2-1}x_{n_1,n_2}\cos\left[\frac{\pi
 %---------------------------------------------------------------------------
 
 \begin{frame}
-\frametitle{Metody operujÄ…ce na pikselach}
-\begin{block}{Metoda Å›redniej kroczÄ…cej}
+\frametitle{Metody operuj¹ce na pikselach}
+\begin{block}{Metoda œredniej krocz¹cej}
 \begin{columns}
 \column{0.45\textwidth}
 \begin{block}{Zalety}
@@ -310,8 +310,8 @@ X_{k1,k2}=\sum_{n_1=0}^{N_1-1}\sum_{n_2=0}^{N_2-1}x_{n_1,n_2}\cos\left[\frac{\pi
 \column{0.45\textwidth}
 \begin{block}{Wady}
 \begin{itemize}
-\item MaÅ‚a dokÅ‚adnoÅ›Ä‡
-\item DuÅ¼a iloÅ›Ä‡ obliczeÅ„ czy wiÄ™kszych buforach
+\item Ma³a dok³adnoœæ
+\item Du¿a iloœæ obliczeñ czy wiêkszych buforach
 \end{itemize}
 \end{block}
 \end{columns}
@@ -334,11 +334,11 @@ X_{k1,k2}=\sum_{n_1=0}^{N_1-1}\sum_{n_2=0}^{N_2-1}x_{n_1,n_2}\cos\left[\frac{\pi
 
 
 \begin{frame}
-\frametitle{Metody operujÄ…ce na pikselach}
+\frametitle{Metody operuj¹ce na pikselach}
 \begin{block}{Metody bezbuforowe}
 \begin{itemize}
 \item Brak bufora
-\item TÅ‚o jest obliczane na podstawie podstawie obecnej ramki i tÅ‚a
+\item T³o jest obliczane na podstawie podstawie obecnej ramki i t³a
 \end{itemize}
 \end{block}
 
@@ -347,10 +347,10 @@ X_{k1,k2}=\sum_{n_1=0}^{N_1-1}\sum_{n_2=0}^{N_2-1}x_{n_1,n_2}\cos\left[\frac{\pi
 %---------------------------------------------------------------------------
 
 \begin{frame}
-\frametitle{Metody operujÄ…ce na pikselach}
-\begin{block}{Metoda wykorzystujÄ…ca parametr alfa}
+\frametitle{Metody operuj¹ce na pikselach}
+\begin{block}{Metoda wykorzystuj¹ca parametr alfa}
 \begin{itemize}
-\item WartoÅ›Ä‡ piksela tÅ‚a obliczana jest jako Å›rednia waÅ¼ona tÅ‚a z obecnÄ… ramkÄ…
+\item Wartoœæ piksela t³a obliczana jest jako œrednia wa¿ona t³a z obecn¹ ramk¹
 \end{itemize}
 \end{block}
 
@@ -359,15 +359,15 @@ X_{k1,k2}=\sum_{n_1=0}^{N_1-1}\sum_{n_2=0}^{N_2-1}x_{n_1,n_2}\cos\left[\frac{\pi
 %---------------------------------------------------------------------------
 
 \begin{frame}
-\frametitle{Metody operujÄ…ce na pikselach}
-\begin{block}{WartoÅ›Ä‡ piksela tÅ‚a}
+\frametitle{Metody operuj¹ce na pikselach}
+\begin{block}{Wartoœæ piksela t³a}
   \begin{equation}
   \label{alpha}
   B_{n} = F_{n} * \alpha + B_{n-1} * (1-\alpha)
   \end{equation}
-  $B_n$ - wartoÅ›Ä‡ piksela tÅ‚a,\newline
-  $F_n$ - wartoÅ›Ä‡ piksela obecnej ramki,\newline
-  $B_{n-1}$ - poprzednia wartoÅ›Ä‡ piksela tÅ‚a  
+  $B_n$ - wartoœæ piksela t³a,\newline
+  $F_n$ - wartoœæ piksela obecnej ramki,\newline
+  $B_{n-1}$ - poprzednia wartoœæ piksela t³a  
 \end{block}
 
 
@@ -375,20 +375,20 @@ X_{k1,k2}=\sum_{n_1=0}^{N_1-1}\sum_{n_2=0}^{N_2-1}x_{n_1,n_2}\cos\left[\frac{\pi
 %---------------------------------------------------------------------------
 
 \begin{frame}
-\frametitle{Metody operujÄ…ce na pikselach}
-\begin{block}{Metoda wykorzystujÄ…ca parametr alfa}
+\frametitle{Metody operuj¹ce na pikselach}
+\begin{block}{Metoda wykorzystuj¹ca parametr alfa}
 \begin{columns}
 \column{0.45\textwidth}
 \begin{block}{Zalety}
 \begin{itemize}
 \item Prosty algorytm
-\item Bardzo maÅ‚a iloÅ›Ä‡ obliczeÅ„ (mnoÅ¼enie + dodawanie)
+\item Bardzo ma³a iloœæ obliczeñ (mno¿enie + dodawanie)
 \end{itemize}
 \end{block}
 \column{0.45\textwidth}
 \begin{block}{Wady}
 \begin{itemize}
-\item MaÅ‚a dokÅ‚adnoÅ›Ä‡
+\item Ma³a dok³adnoœæ
 \end{itemize}
 \end{block}
 \end{columns}
@@ -412,12 +412,12 @@ X_{k1,k2}=\sum_{n_1=0}^{N_1-1}\sum_{n_2=0}^{N_2-1}x_{n_1,n_2}\cos\left[\frac{\pi
 
 
 \begin{frame}
-\frametitle{Metody operujÄ…ce na pikselach}
+\frametitle{Metody operuj¹ce na pikselach}
 \begin{block}{Metoda Mixture of Gaussians \(MOG\)}
 \begin{itemize}
-\item Oparta o rozkÅ‚ad prawdopodobieÅ„stwa Gaussa
-\item Piksel naleÅ¼y do tÅ‚a jeÅ›li speÅ‚nia warunek przynaleÅ¼noÅ›ci do jednego z rozkÅ‚adÃ³w
-\item Warunkiem przynaleÅ¼noÅ›ci jest wartoÅ›Ä‡ w zakresie do 2,5 odchylenia standardowego z danego rozkÅ‚adu
+\item Oparta o rozk³ad prawdopodobieñstwa Gaussa
+\item Piksel nale¿y do t³a jeœli spe³nia warunek przynale¿noœci do jednego z rozk³adów
+\item Warunkiem przynale¿noœci jest wartoœæ w zakresie do 2,5 odchylenia standardowego z danego rozk³adu
 \end{itemize}
 \end{block}
 
@@ -430,14 +430,14 @@ X_{k1,k2}=\sum_{n_1=0}^{N_1-1}\sum_{n_2=0}^{N_2-1}x_{n_1,n_2}\cos\left[\frac{\pi
 
 
 \begin{frame}
-\frametitle{Metody operujÄ…ce na pikselach}
+\frametitle{Metody operuj¹ce na pikselach}
 \begin{block}{Metoda Mixture of Gaussians \(MOG\)}
 \begin{columns}
 \column{0.45\textwidth}
 \begin{block}{Zalety}
 \begin{itemize}
 \item Dobre rezultaty pracy
-\item ZÅ‚oÅ¼onoÅ›Ä‡ obliczeniowa pozwalajÄ…ca na pracÄ™ w czasie rzeczywistym
+\item Z³o¿onoœæ obliczeniowa pozwalaj¹ca na pracê w czasie rzeczywistym
 \end{itemize}
 \end{block}
 \column{0.45\textwidth}
@@ -459,7 +459,7 @@ X_{k1,k2}=\sum_{n_1=0}^{N_1-1}\sum_{n_2=0}^{N_2-1}x_{n_1,n_2}\cos\left[\frac{\pi
 
 \begin{center}
 
-\Huge{DziÄ™kujemy za uwagÄ™}
+\Huge{Dziêkujemy za uwagê}
 \end{center}
 \end{frame}
 

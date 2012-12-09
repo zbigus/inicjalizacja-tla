@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.10.27)  3 DEC 2012 07:39
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.10.27)  9 DEC 2012 23:16
 entering extended mode
 **prezentacja.tex
-("C:\Users\Zbigu\Desktop\prezentacja - grafika\prezentacja.tex"
+(E:\prezentacja_inz\prezentacja.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -715,219 +715,8 @@ Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks40
 \inpenc@posthook=\toks41
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
-File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
-Now handling font encoding OML ...
-... no UTF-8 mapping file for font encoding OML
-Now handling font encoding T1 ...
-... processing UTF-8 mapping file for font encoding T1
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
-File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
-   defining Unicode char U+00A1 (decimal 161)
-   defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00AB (decimal 171)
-   defining Unicode char U+00BB (decimal 187)
-   defining Unicode char U+00BF (decimal 191)
-   defining Unicode char U+00C0 (decimal 192)
-   defining Unicode char U+00C1 (decimal 193)
-   defining Unicode char U+00C2 (decimal 194)
-   defining Unicode char U+00C3 (decimal 195)
-   defining Unicode char U+00C4 (decimal 196)
-   defining Unicode char U+00C5 (decimal 197)
-   defining Unicode char U+00C6 (decimal 198)
-   defining Unicode char U+00C7 (decimal 199)
-   defining Unicode char U+00C8 (decimal 200)
-   defining Unicode char U+00C9 (decimal 201)
-   defining Unicode char U+00CA (decimal 202)
-   defining Unicode char U+00CB (decimal 203)
-   defining Unicode char U+00CC (decimal 204)
-   defining Unicode char U+00CD (decimal 205)
-   defining Unicode char U+00CE (decimal 206)
-   defining Unicode char U+00CF (decimal 207)
-   defining Unicode char U+00D0 (decimal 208)
-   defining Unicode char U+00D1 (decimal 209)
-   defining Unicode char U+00D2 (decimal 210)
-   defining Unicode char U+00D3 (decimal 211)
-   defining Unicode char U+00D4 (decimal 212)
-   defining Unicode char U+00D5 (decimal 213)
-   defining Unicode char U+00D6 (decimal 214)
-   defining Unicode char U+00D8 (decimal 216)
-   defining Unicode char U+00D9 (decimal 217)
-   defining Unicode char U+00DA (decimal 218)
-   defining Unicode char U+00DB (decimal 219)
-   defining Unicode char U+00DC (decimal 220)
-   defining Unicode char U+00DD (decimal 221)
-   defining Unicode char U+00DE (decimal 222)
-   defining Unicode char U+00DF (decimal 223)
-   defining Unicode char U+00E0 (decimal 224)
-   defining Unicode char U+00E1 (decimal 225)
-   defining Unicode char U+00E2 (decimal 226)
-   defining Unicode char U+00E3 (decimal 227)
-   defining Unicode char U+00E4 (decimal 228)
-   defining Unicode char U+00E5 (decimal 229)
-   defining Unicode char U+00E6 (decimal 230)
-   defining Unicode char U+00E7 (decimal 231)
-   defining Unicode char U+00E8 (decimal 232)
-   defining Unicode char U+00E9 (decimal 233)
-   defining Unicode char U+00EA (decimal 234)
-   defining Unicode char U+00EB (decimal 235)
-   defining Unicode char U+00EC (decimal 236)
-   defining Unicode char U+00ED (decimal 237)
-   defining Unicode char U+00EE (decimal 238)
-   defining Unicode char U+00EF (decimal 239)
-   defining Unicode char U+00F0 (decimal 240)
-   defining Unicode char U+00F1 (decimal 241)
-   defining Unicode char U+00F2 (decimal 242)
-   defining Unicode char U+00F3 (decimal 243)
-   defining Unicode char U+00F4 (decimal 244)
-   defining Unicode char U+00F5 (decimal 245)
-   defining Unicode char U+00F6 (decimal 246)
-   defining Unicode char U+00F8 (decimal 248)
-   defining Unicode char U+00F9 (decimal 249)
-   defining Unicode char U+00FA (decimal 250)
-   defining Unicode char U+00FB (decimal 251)
-   defining Unicode char U+00FC (decimal 252)
-   defining Unicode char U+00FD (decimal 253)
-   defining Unicode char U+00FE (decimal 254)
-   defining Unicode char U+00FF (decimal 255)
-   defining Unicode char U+0102 (decimal 258)
-   defining Unicode char U+0103 (decimal 259)
-   defining Unicode char U+0104 (decimal 260)
-   defining Unicode char U+0105 (decimal 261)
-   defining Unicode char U+0106 (decimal 262)
-   defining Unicode char U+0107 (decimal 263)
-   defining Unicode char U+010C (decimal 268)
-   defining Unicode char U+010D (decimal 269)
-   defining Unicode char U+010E (decimal 270)
-   defining Unicode char U+010F (decimal 271)
-   defining Unicode char U+0110 (decimal 272)
-   defining Unicode char U+0111 (decimal 273)
-   defining Unicode char U+0118 (decimal 280)
-   defining Unicode char U+0119 (decimal 281)
-   defining Unicode char U+011A (decimal 282)
-   defining Unicode char U+011B (decimal 283)
-   defining Unicode char U+011E (decimal 286)
-   defining Unicode char U+011F (decimal 287)
-   defining Unicode char U+0130 (decimal 304)
-   defining Unicode char U+0131 (decimal 305)
-   defining Unicode char U+0132 (decimal 306)
-   defining Unicode char U+0133 (decimal 307)
-   defining Unicode char U+0139 (decimal 313)
-   defining Unicode char U+013A (decimal 314)
-   defining Unicode char U+013D (decimal 317)
-   defining Unicode char U+013E (decimal 318)
-   defining Unicode char U+0141 (decimal 321)
-   defining Unicode char U+0142 (decimal 322)
-   defining Unicode char U+0143 (decimal 323)
-   defining Unicode char U+0144 (decimal 324)
-   defining Unicode char U+0147 (decimal 327)
-   defining Unicode char U+0148 (decimal 328)
-   defining Unicode char U+014A (decimal 330)
-   defining Unicode char U+014B (decimal 331)
-   defining Unicode char U+0150 (decimal 336)
-   defining Unicode char U+0151 (decimal 337)
-   defining Unicode char U+0152 (decimal 338)
-   defining Unicode char U+0153 (decimal 339)
-   defining Unicode char U+0154 (decimal 340)
-   defining Unicode char U+0155 (decimal 341)
-   defining Unicode char U+0158 (decimal 344)
-   defining Unicode char U+0159 (decimal 345)
-   defining Unicode char U+015A (decimal 346)
-   defining Unicode char U+015B (decimal 347)
-   defining Unicode char U+015E (decimal 350)
-   defining Unicode char U+015F (decimal 351)
-   defining Unicode char U+0160 (decimal 352)
-   defining Unicode char U+0161 (decimal 353)
-   defining Unicode char U+0162 (decimal 354)
-   defining Unicode char U+0163 (decimal 355)
-   defining Unicode char U+0164 (decimal 356)
-   defining Unicode char U+0165 (decimal 357)
-   defining Unicode char U+016E (decimal 366)
-   defining Unicode char U+016F (decimal 367)
-   defining Unicode char U+0170 (decimal 368)
-   defining Unicode char U+0171 (decimal 369)
-   defining Unicode char U+0178 (decimal 376)
-   defining Unicode char U+0179 (decimal 377)
-   defining Unicode char U+017A (decimal 378)
-   defining Unicode char U+017B (decimal 379)
-   defining Unicode char U+017C (decimal 380)
-   defining Unicode char U+017D (decimal 381)
-   defining Unicode char U+017E (decimal 382)
-   defining Unicode char U+200C (decimal 8204)
-   defining Unicode char U+2013 (decimal 8211)
-   defining Unicode char U+2014 (decimal 8212)
-   defining Unicode char U+2018 (decimal 8216)
-   defining Unicode char U+2019 (decimal 8217)
-   defining Unicode char U+201A (decimal 8218)
-   defining Unicode char U+201C (decimal 8220)
-   defining Unicode char U+201D (decimal 8221)
-   defining Unicode char U+201E (decimal 8222)
-   defining Unicode char U+2030 (decimal 8240)
-   defining Unicode char U+2031 (decimal 8241)
-   defining Unicode char U+2039 (decimal 8249)
-   defining Unicode char U+203A (decimal 8250)
-   defining Unicode char U+2423 (decimal 9251)
-)
-Now handling font encoding OT1 ...
-... processing UTF-8 mapping file for font encoding OT1
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
-File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
-   defining Unicode char U+00A1 (decimal 161)
-   defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00B8 (decimal 184)
-   defining Unicode char U+00BF (decimal 191)
-   defining Unicode char U+00C5 (decimal 197)
-   defining Unicode char U+00C6 (decimal 198)
-   defining Unicode char U+00D8 (decimal 216)
-   defining Unicode char U+00DF (decimal 223)
-   defining Unicode char U+00E6 (decimal 230)
-   defining Unicode char U+00EC (decimal 236)
-   defining Unicode char U+00ED (decimal 237)
-   defining Unicode char U+00EE (decimal 238)
-   defining Unicode char U+00EF (decimal 239)
-   defining Unicode char U+00F8 (decimal 248)
-   defining Unicode char U+0131 (decimal 305)
-   defining Unicode char U+0141 (decimal 321)
-   defining Unicode char U+0142 (decimal 322)
-   defining Unicode char U+0152 (decimal 338)
-   defining Unicode char U+0153 (decimal 339)
-   defining Unicode char U+2013 (decimal 8211)
-   defining Unicode char U+2014 (decimal 8212)
-   defining Unicode char U+2018 (decimal 8216)
-   defining Unicode char U+2019 (decimal 8217)
-   defining Unicode char U+201C (decimal 8220)
-   defining Unicode char U+201D (decimal 8221)
-)
-Now handling font encoding OMS ...
-... processing UTF-8 mapping file for font encoding OMS
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
-File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
-   defining Unicode char U+00A7 (decimal 167)
-   defining Unicode char U+00B6 (decimal 182)
-   defining Unicode char U+00B7 (decimal 183)
-   defining Unicode char U+2020 (decimal 8224)
-   defining Unicode char U+2021 (decimal 8225)
-   defining Unicode char U+2022 (decimal 8226)
-)
-Now handling font encoding OMX ...
-... no UTF-8 mapping file for font encoding OMX
-Now handling font encoding U ...
-... no UTF-8 mapping file for font encoding U
-Now handling font encoding PD1 ...
-... no UTF-8 mapping file for font encoding PD1
-   defining Unicode char U+00A9 (decimal 169)
-   defining Unicode char U+00AA (decimal 170)
-   defining Unicode char U+00AE (decimal 174)
-   defining Unicode char U+00BA (decimal 186)
-   defining Unicode char U+02C6 (decimal 710)
-   defining Unicode char U+02DC (decimal 732)
-   defining Unicode char U+200C (decimal 8204)
-   defining Unicode char U+2026 (decimal 8230)
-   defining Unicode char U+2122 (decimal 8482)
-   defining Unicode char U+2423 (decimal 9251)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\cp1250.def"
+File: cp1250.def 2008/03/30 v1.1d Input encoding file
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
@@ -945,8 +734,8 @@ Package: babel 2008/07/08 v3.8m The Babel package
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
 File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\english.ldf"
-Language: english 2005/03/30 v3.3o English support from the babel system
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\polish.ldf"
+Language: polish 2005/03/31 v1.2l Polish support from the babel system
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2008/07/08 v3.8m Babel common definitions
@@ -954,9 +743,11 @@ LaTeX Info: Redefining \textlatin on input line 82.
 \babel@savecnt=\count153
 \U@D=\dimen184
 )
-\l@canadian = a dialect from \language\l@american 
-\l@australian = a dialect from \language\l@british 
-\l@newzealand = a dialect from \language\l@british 
+Package babel Info: Making " an active character on input line 83.
+\pl@left=\dimen185
+\pl@down=\dimen186
+\pl@right=\dimen187
+\pl@temp=\dimen188
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\times.sty"
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
@@ -966,26 +757,26 @@ Package: times 2005/04/12 PSNFSS-v9.2a (SPQR)
 \UL@hyphenbox=\box54
 \UL@skip=\skip57
 \UL@hook=\toks42
-\UL@height=\dimen185
+\UL@height=\dimen189
 \UL@pe=\count154
-\UL@pixel=\dimen186
+\UL@pixel=\dimen190
 \ULC@box=\box55
 Package: ulem 2012/05/18
-\ULdepth=\dimen187
+\ULdepth=\dimen191
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.sty"
 \lst@mode=\count155
 \lst@gtempboxa=\box56
 \lst@token=\toks43
 \lst@length=\count156
-\lst@currlwidth=\dimen188
+\lst@currlwidth=\dimen192
 \lst@column=\count157
 \lst@pos=\count158
-\lst@lostspace=\dimen189
-\lst@width=\dimen190
+\lst@lostspace=\dimen193
+\lst@width=\dimen194
 \lst@newlines=\count159
 \lst@lineno=\count160
-\lst@maxwidth=\dimen191
+\lst@maxwidth=\dimen195
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
@@ -1005,8 +796,8 @@ Package: mathtools 2012/04/24 v1.12 mathematical typesetting tools
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count163
 \calc@Bcount=\count164
-\calc@Adimen=\dimen192
-\calc@Bdimen=\dimen193
+\calc@Adimen=\dimen196
+\calc@Bdimen=\dimen197
 \calc@Askip=\skip58
 \calc@Bskip=\skip59
 LaTeX Info: Redefining \setlength on input line 76.
@@ -1018,16 +809,16 @@ LaTeX Info: Redefining \addtolength on input line 77.
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
 \g_MT_multlinerow_int=\count166
-\l_MT_multwidth_dim=\dimen194
+\l_MT_multwidth_dim=\dimen198
 \origjot=\skip61
-\l_MT_shortvdotswithinadjustabove_dim=\dimen195
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen196
-\l_MT_above_intertext_dim=\dimen197
-\l_MT_below_intertext_dim=\dimen198
-\l_MT_above_shortintertext_dim=\dimen199
-\l_MT_below_shortintertext_dim=\dimen200
+\l_MT_shortvdotswithinadjustabove_dim=\dimen199
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen200
+\l_MT_above_intertext_dim=\dimen201
+\l_MT_below_intertext_dim=\dimen202
+\l_MT_above_shortintertext_dim=\dimen203
+\l_MT_below_shortintertext_dim=\dimen204
 )
-("C:\Users\Zbigu\Desktop\prezentacja - grafika\beamerthemeAGH.sty"
+(E:\prezentacja_inz\beamerthemeAGH.sty
 Package: beamerthemeAGH 2011/01/21  (rcs-revision 1.0)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\beamer\base\themes\inner\beamerin
@@ -1041,8 +832,7 @@ Package: beamercolorthemestructure 2010/06/17  (rcs-revision d02a7cf4d8ae)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\beamer\base\themes\font\beamerfon
 tthemeserif.sty"
 Package: beamerfontthemeserif 2010/06/17  (rcs-revision d02a7cf4d8ae)
-))
-("C:\Users\Zbigu\Desktop\prezentacja - grafika\prezentacja.aux")
+)) (E:\prezentacja_inz\prezentacja.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
@@ -1099,13 +889,13 @@ File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count167
-\scratchdimen=\dimen201
+\scratchdimen=\dimen205
 \scratchbox=\box58
 \nofMPsegments=\count168
 \nofMParguments=\count169
 \everyMPshowfont=\toks44
 \MPscratchCnt=\count170
-\MPscratchDim=\dimen202
+\MPscratchDim=\dimen206
 \MPnumerator=\count171
 \makeMPintoPDFobject=\count172
 \everyMPtoPDFconversion=\toks45
@@ -1125,8 +915,7 @@ LaTeX Info: Redefining \ref on input line 27.
 LaTeX Info: Redefining \pageref on input line 27.
 LaTeX Info: Redefining \nameref on input line 27.
 
-("C:\Users\Zbigu\Desktop\prezentacja - grafika\prezentacja.out")
-("C:\Users\Zbigu\Desktop\prezentacja - grafika\prezentacja.out")
+(E:\prezentacja_inz\prezentacja.out) (E:\prezentacja_inz\prezentacja.out)
 \@outlinefile=\write5
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
@@ -1194,7 +983,7 @@ Dictionary: translator-theorem-dictionary, Language: English
 LaTeX Info: Redefining \includegraphics on input line 27.
 \c@lstlisting=\count174
 
-("C:\Users\Zbigu\Desktop\prezentacja - grafika\prezentacja.nav")
+(E:\prezentacja_inz\prezentacja.nav)
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 34.
 
@@ -1229,16 +1018,16 @@ Package pdftex.def Info: titlepagepl.png used on input line 34.
 
 [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Zbigu/Desktop/pr
-ezentacja - grafika/titlepagepl.png>]
-<page.png, id=47, 1066.98625pt x 799.98875pt>
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <E:/prezentacja_inz/titlep
+agepl.png>] <page.png, id=47, 1066.98625pt x 799.98875pt>
 File: page.png Graphic file (type png)
  <use page.png>
 Package pdftex.def Info: page.png used on input line 44.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
- [2
 
- <C:/Users/Zbigu/Desktop/prezentacja - grafika/page.png>]
+[2
+
+ <E:/prezentacja_inz/page.png>]
 LaTeX Font Info:    Try loading font information for U+msa on input line 59.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
@@ -1302,16 +1091,17 @@ Package pdftex.def Info: page.png used on input line 130.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [8
 
- <C:/Users/Zbigu/Desktop/prezentacja - grafika/superblok.png>]
+ <E:/prezentacja_inz/superblok.png>]
 File: page.png Graphic file (type png)
-<use page.png>
+ <use page.png>
 Package pdftex.def Info: page.png used on input line 152.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [9
 
 ]
 File: page.png Graphic file (type png)
- <use page.png>
+
+<use page.png>
 Package pdftex.def Info: page.png used on input line 175.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [10
@@ -1328,15 +1118,15 @@ File: page.png Graphic file (type png)
  <use page.png>
 Package pdftex.def Info: page.png used on input line 222.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
-
-[12
+ [12
 
 ]
 File: page.png Graphic file (type png)
  <use page.png>
 Package pdftex.def Info: page.png used on input line 230.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
- [13
+
+[13
 
 ]
 File: page.png Graphic file (type png)
@@ -1354,15 +1144,15 @@ Package pdftex.def Info: page.png used on input line 258.
 
 ]
 File: page.png Graphic file (type png)
-
-<use page.png>
+ <use page.png>
 Package pdftex.def Info: page.png used on input line 271.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [16
 
 ]
 File: page.png Graphic file (type png)
- <use page.png>
+
+<use page.png>
 Package pdftex.def Info: page.png used on input line 284.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [17
@@ -1379,15 +1169,15 @@ File: page.png Graphic file (type png)
  <use page.png>
 Package pdftex.def Info: page.png used on input line 323.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
-
-[19
+ [19
 
 ]
 File: page.png Graphic file (type png)
  <use page.png>
 Package pdftex.def Info: page.png used on input line 346.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
- [20
+
+[20
 
 ]
 File: page.png Graphic file (type png)
@@ -1405,15 +1195,15 @@ Package pdftex.def Info: page.png used on input line 374.
 
 ]
 File: page.png Graphic file (type png)
-
-<use page.png>
+ <use page.png>
 Package pdftex.def Info: page.png used on input line 400.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [23
 
 ]
 File: page.png Graphic file (type png)
- <use page.png>
+
+<use page.png>
 Package pdftex.def Info: page.png used on input line 424.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [24
@@ -1430,8 +1220,7 @@ File: page.png Graphic file (type png)
  <use page.png>
 Package pdftex.def Info: page.png used on input line 464.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
-
-[26
+ [26
 
 ]
 \tf@nav=\write6
@@ -1439,7 +1228,8 @@ Package pdftex.def Info: page.png used on input line 464.
 \tf@snm=\write8
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 467.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 467.
- ("C:\Users\Zbigu\Desktop\prezentacja - grafika\prezentacja.aux")
+
+(E:\prezentacja_inz\prezentacja.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 467.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 467.
 Package rerunfilecheck Info: File `prezentacja.out' has not changed.
@@ -1447,13 +1237,13 @@ Package rerunfilecheck Info: File `prezentacja.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 467.
  ) 
 Here is how much of TeX's memory you used:
- 18320 strings out of 494045
- 332982 string characters out of 3145968
- 415034 words of memory out of 3000000
- 21100 multiletter control sequences out of 15000+200000
+ 18225 strings out of 494045
+ 332095 string characters out of 3145968
+ 415304 words of memory out of 3000000
+ 21014 multiletter control sequences out of 15000+200000
  68112 words of font info for 83 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 49i,19n,56p,428b,1041s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 49i,19n,56p,430b,1081s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fi
