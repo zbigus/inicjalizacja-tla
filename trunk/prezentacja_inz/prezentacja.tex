@@ -33,193 +33,6 @@ Informatyka Stosowana
    \titlepage
  \end{frame}
 }
-
-%---------------------------------------------------------------------------
-\begin{frame}
-\begin{center}
-\Huge{Metody przestrzenne}
-\end{center}
-
-
-\end{frame}
-
-%---------------------------------------------------------------------------
-
-\begin{frame}
-\frametitle{Metody przestrzenne}
-\begin{block}{Za³o¿enia}
-\begin{itemize}
-\item Obliczenia s¹ wykonywane na kwadratowych blokach
-\item T³em zostaje najczêœciej powtarzaj¹cy siê blok
-\item Do dobrania najlepszego bloku jest u¿ywana transformata operuj¹ca w dziedzinie czêstotliwoœci
-\end{itemize}
-\end{block}
-
-
-\end{frame}
-%---------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Metody przestrzenne}
-\begin{block}{Fazy algorytmu}
-
-\begin{enumerate}
-\item Kolekcjonowanie kandydatów
-\item Czêœciowa rekonstrukcja t³a
-\item Koñcowa rekonstrukcja t³a z wykorzystaniem transformaty
-\end{enumerate}
-\end{block}
-
-
-\end{frame}
-%---------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Metody przestrzenne}
-\begin{block}{Kolekcjonowanie kandydatów}
-
-\begin{enumerate}
-\item Podziel ramkê na bloki
-\item Dla ka¿dego bloku wykonaj
-	\begin{enumerate}
-	\item Jeœli to pierwszy blok, dodaj go do zbioru reprezentantów
-	\item Jeœli to kolejny blok, porównaj go z ka¿dym innym w zbiorze reprezentantów
-		\begin{itemize}
-		\item Jeœli znajdziesz wystarczaj¹co podobny blok, uaktualnij go
-		\item W przeciwnym wypadku dodaj blok do zbioru reprezentantów
-		\end{itemize}
-	\end{enumerate}
-\end{enumerate}
-\end{block}
-
-
-\end{frame}
-%---------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Metody przestrzenne}
-\begin{block}{Kryteria podobieñstwa bloków}
-\begin{equation}
-\label{Tcorr}
-T_{corr}=\frac{{(r_k(i,j)-\mu_{r_k}(i,j)}^T(b_f(i,j)-\mu_{b_f})}{\sigma_{r_k}\sigma_{b_f}}
-\end{equation}
-\begin{equation}
-T_{MAD}=\sum_{n=0}^{N^2-1}\left|b_{f_n}(i,j)-r_{k_f}(i,j)\right|
-\end{equation}
-\end{block}
-
-
-\end{frame}
-%---------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Metody przestrzenne}
-\begin{block}{Czêœciowa rekonstrukcja t³a}
-Dla ka¿dego bloku, w którego zbiorze reprezentatywnym jest tylko jeden kandydat, zostaje on uznany za t³o
-\end{block}
-
-
-\end{frame}
-%---------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Metody przestrzenne}
-\begin{block}{Pojêcie superbloku}
-\begin{center}
-\includegraphics{superblok.png}
-\end{center}
-
-\end{block}
-
-
-\end{frame}
-%---------------------------------------------------------------------------
-%---------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Metody przestrzenne}
-\begin{block}{Koñcowa rekonstrukcja t³a}
-Dopóki t³o nie zostanie w ca³oœci uzupe³nione
-\begin{enumerate}
-\item Przesuñ ramkê superbloku o jedn¹ pozycjê 
-\item SprawdŸ, czy w superbloku s¹ 3 bloki posiadaj¹ce t³o
-\item Jeœli tak, wykonaj transformatê i oblicz funkcjê kosztu na 2 wersjach superbloku:
-	\begin{enumerate}
-	\item Ustaw blok z nieznanym t³em na zero (bia³a ramka)
-	\item Ustaw bloki ze znanym t³em na zero i podstawiaj do nieznanego bloku kolejnych kandydatów
-	\end{enumerate}
-\item Wstaw w brakuj¹ce miejsce blok o najni¿szym koszcie
-
-\end{enumerate}
-
-\end{block}
-
-
-\end{frame}
-%---------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Metody przestrzenne}
-\begin{block}{Funkcja kosztu}
-  \begin{equation}
-  \label{costfun}
-  cost(k)=\left(\sum_{v=0}^{M-1}\sum_{u=0}^{M-1}\left|C(v,u)+D_k(v,u)\right|\right)\lambda_k
-  \end{equation}
-  \begin{equation}
-  \lambda_k=e^{-\alpha\omega_k}
-  \end{equation}
-   \begin{equation}
-  a\in\langle0,1\rangle
-   \end{equation} 
-   \begin{equation}
-  \omega_k=\frac{W_k}{\sum_{k=0}^{L-1}W_k}
-   \end{equation} 
-   $W_k$ - waga elementu $r_k$,
-   L  - iloœæ elementów zbioru $r_k$, $C(v,u0)$ - wynik transformaty nr 1, $D_k(v,u)$ - wynik transformaty nr 2 na elemencie k ze zbioru kandydatów
-\end{block}
-
-
-\end{frame}
-%---------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Metody przestrzenne}
-\begin{block}{Transformata DCT}
-\begin{equation}
-X_{k1,k2}=\sum_{n_1=0}^{N_1-1}\sum_{n_2=0}^{N_2-1}x_{n_1,n_2}\cos\left[\frac{\pi}{N_1}\left(n_1+\frac{1}{2}\right)k_1\right]\cos\left[\frac{\pi}{N_2}\left(n_2+\frac{1}{2}\right)k_2\right]
-\end{equation}
-\end{block}
-
-
-\end{frame}
-%---------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Metody przestrzenne}
-\begin{block}{Transformata Hadamarda}
- \begin{equation}
-    H_1=\left[1\right] 
-    \end{equation}
-    \begin{equation}
-           H_2N=\begin{bmatrix}
-           H_N&H_N \\
-           H_N&-H_N \\
-           \end{bmatrix}
-    \end{equation}
-       \begin{equation}
-       F=MXM
-       \end{equation}
-          \begin{equation}F=
-          \begin{bmatrix}
-          H& H\\
-          H & -H
-          \end{bmatrix}
-          \begin{bmatrix}
-          A& B\\
-          C& D
-          \end{bmatrix}
-             \begin{bmatrix}
-             H& H\\
-             H & -H
-             \end{bmatrix}
-          \end{equation}
-
-
-\end{block}
-
-
-\end{frame}
 %---------------------------------------------------------------------------
 \begin{frame}
 \begin{center}
@@ -454,6 +267,245 @@ X_{k1,k2}=\sum_{n_1=0}^{N_1-1}\sum_{n_2=0}^{N_2-1}x_{n_1,n_2}\cos\left[\frac{\pi
 
 \end{frame}
 %---------------------------------------------------------------------------
+\begin{frame}
+\begin{center}
+\Huge{Metody przestrzenne}
+\end{center}
+
+
+\end{frame}
+
+%---------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Metody przestrzenne}
+\begin{block}{Za³o¿enia}
+\begin{itemize}
+\item Obliczenia s¹ wykonywane na kwadratowych blokach
+\item T³em zostaje najczêœciej powtarzaj¹cy siê blok
+\item Do dobrania najlepszego bloku jest u¿ywana transformata operuj¹ca w dziedzinie czêstotliwoœci
+\end{itemize}
+\end{block}
+
+
+\end{frame}
+%---------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Metody przestrzenne}
+\begin{block}{Fazy algorytmu}
+
+\begin{enumerate}
+\item Kolekcjonowanie kandydatów
+\item Czêœciowa rekonstrukcja t³a
+\item Koñcowa rekonstrukcja t³a z wykorzystaniem transformaty
+\end{enumerate}
+\end{block}
+
+
+\end{frame}
+%---------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Metody przestrzenne}
+\begin{block}{Kolekcjonowanie kandydatów}
+
+\begin{enumerate}
+\item Podziel ramkê na bloki
+\item Dla ka¿dego bloku wykonaj
+	\begin{enumerate}
+	\item Jeœli to pierwszy blok, dodaj go do zbioru reprezentantów
+	\item Jeœli to kolejny blok, porównaj go z ka¿dym innym w zbiorze reprezentantów
+		\begin{itemize}
+		\item Jeœli znajdziesz wystarczaj¹co podobny blok, uaktualnij go
+		\item W przeciwnym wypadku dodaj blok do zbioru reprezentantów
+		\end{itemize}
+	\end{enumerate}
+\end{enumerate}
+\end{block}
+
+
+\end{frame}
+%---------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Metody przestrzenne}
+\begin{block}{Kryteria podobieñstwa bloków}
+\begin{equation}
+\label{Tcorr}
+T_{corr}=\frac{{(r_k(i,j)-\mu_{r_k}(i,j)}^T(b_f(i,j)-\mu_{b_f})}{\sigma_{r_k}\sigma_{b_f}}
+\end{equation}
+\begin{equation}
+T_{MAD}=\sum_{n=0}^{N^2-1}\left|b_{f_n}(i,j)-r_{k_f}(i,j)\right|
+\end{equation}
+\end{block}
+
+
+\end{frame}
+%---------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Metody przestrzenne}
+\begin{block}{Czêœciowa rekonstrukcja t³a}
+Dla ka¿dego bloku, w którego zbiorze reprezentatywnym jest tylko jeden kandydat, zostaje on uznany za t³o
+\end{block}
+
+
+\end{frame}
+%---------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Metody przestrzenne}
+\begin{block}{Pojêcie superbloku}
+\begin{center}
+\includegraphics{superblok.png}
+\end{center}
+
+\end{block}
+
+
+\end{frame}
+%---------------------------------------------------------------------------
+%---------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Metody przestrzenne}
+\begin{block}{Koñcowa rekonstrukcja t³a}
+Dopóki t³o nie zostanie w ca³oœci uzupe³nione
+\begin{enumerate}
+\item Przesuñ ramkê superbloku o jedn¹ pozycjê 
+\item SprawdŸ, czy w superbloku s¹ 3 bloki posiadaj¹ce t³o
+\item Jeœli tak, wykonaj transformatê i oblicz funkcjê kosztu na 2 wersjach superbloku:
+	\begin{enumerate}
+	\item Ustaw blok z nieznanym t³em na zero (bia³a ramka)
+	\item Ustaw bloki ze znanym t³em na zero i podstawiaj do nieznanego bloku kolejnych kandydatów
+	\end{enumerate}
+\item Wstaw w brakuj¹ce miejsce blok o najni¿szym koszcie
+
+\end{enumerate}
+
+\end{block}
+
+
+\end{frame}
+%---------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Metody przestrzenne}
+\begin{block}{Funkcja kosztu}
+  \begin{equation}
+  \label{costfun}
+  cost(k)=\left(\sum_{v=0}^{M-1}\sum_{u=0}^{M-1}\left|C(v,u)+D_k(v,u)\right|\right)\lambda_k
+  \end{equation}
+  \begin{equation}
+  \lambda_k=e^{-\alpha\omega_k}
+  \end{equation}
+   \begin{equation}
+  a\in\langle0,1\rangle
+   \end{equation} 
+   \begin{equation}
+  \omega_k=\frac{W_k}{\sum_{k=0}^{L-1}W_k}
+   \end{equation} 
+   $W_k$ - waga elementu $r_k$,
+   L  - iloœæ elementów zbioru $r_k$, $C(v,u0)$ - wynik transformaty nr 1, $D_k(v,u)$ - wynik transformaty nr 2 na elemencie k ze zbioru kandydatów
+\end{block}
+
+
+\end{frame}
+%---------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Metody przestrzenne}
+\begin{block}{Transformata DCT}
+\begin{equation}
+X_{k1,k2}=\sum_{n_1=0}^{N_1-1}\sum_{n_2=0}^{N_2-1}x_{n_1,n_2}\cos\left[\frac{\pi}{N_1}\left(n_1+\frac{1}{2}\right)k_1\right]\cos\left[\frac{\pi}{N_2}\left(n_2+\frac{1}{2}\right)k_2\right]
+\end{equation}
+\end{block}
+
+
+\end{frame}
+%---------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Metody przestrzenne}
+\begin{block}{Transformata Hadamarda}
+ \begin{equation}
+    H_1=\left[1\right] 
+    \end{equation}
+    \begin{equation}
+           H_2N=\begin{bmatrix}
+           H_N&H_N \\
+           H_N&-H_N \\
+           \end{bmatrix}
+    \end{equation}
+       \begin{equation}
+       F=MXM
+       \end{equation}
+          \begin{equation}F=
+          \begin{bmatrix}
+          H& H\\
+          H & -H
+          \end{bmatrix}
+          \begin{bmatrix}
+          A& B\\
+          C& D
+          \end{bmatrix}
+             \begin{bmatrix}
+             H& H\\
+             H & -H
+             \end{bmatrix}
+          \end{equation}
+
+
+\end{block}
+
+
+\end{frame}
+
+%---------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Rezultaty}
+
+\begin{center}
+\includegraphics[width=130px]{clip_01_ref.png} \;
+\includegraphics[width=130px]{clip_01_dct_200_06_10.png}\\ 
+\includegraphics[width=130px]{clip_01_dct_200_07_20.png} \;
+\includegraphics[width=130px]{clip_01_dct_200_08_20.png}
+\end{center}
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Rezultaty}
+
+\begin{center}
+\includegraphics[width=130px]{clip_03_ref.png} \;
+\includegraphics[width=130px]{clip_03_dct_200_06_10.png}\\ 
+\includegraphics[width=130px]{clip_03_dct_200_06_20.png} \;
+\includegraphics[width=130px]{clip_03_dct_200_09_20.png}
+\end{center}
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Rezultaty}
+
+\begin{center}
+\includegraphics[width=130px]{fountain_ref.png} \;
+\includegraphics[width=130px]{fountain_dct_200_06_10.png}\\ 
+\includegraphics[width=130px]{fountain_dct_200_06_20.png} \;
+\includegraphics[width=130px]{fountain_dct_200_09_10.png}
+\end{center}
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Rezultaty}
+
+\begin{center}
+\includegraphics[width=130px,height=97.5px]{pedestrians_ref.png} \;
+\includegraphics[width=130px]{pedestrians_dct_200_07_20.png}\\ 
+\includegraphics[width=130px]{pedestrians_dct_200_08_20.png} \;
+\includegraphics[width=130px]{pedestrians_dct_200_09_10.png}
+\end{center}
+
+
+\end{frame}
 
 \begin{frame}
 
