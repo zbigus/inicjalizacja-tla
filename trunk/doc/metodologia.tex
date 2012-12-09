@@ -13,5 +13,75 @@ W niniejszej pracy do oceny jakoœci algorytmów inicjalizacji t³a u¿yto pierwszyc
 \end{enumerate}
 
 \section{U¿yte metryki}
+W celu porównania skutecznoœci algorytmów dla ka¿dej z wy¿ej wymienionych sekwencji zosta³y wyliczone modele t³a z u¿yciem ró¿nych metod i wspó³czynników.
 
+Dla metod wykorzystuj¹cych transformatê DCT oraz rekursywn¹ transformatê Hadamarda(Walsha) obliczenia zosta³y wykonane dla wartoœci wspó³czynnika $T_1 =  \{ 0.6, 0.7, 0.8, 0.9 \}$ oraz $T_2 =  \{ 10, 20 \}$.
+
+Tam, gdzie jest to mo¿liwe zosta³a wybrana ramka referencyjna, najlepiej oddaj¹ca t³o w danej sekwencji. Nastêpnie obliczone modele t³a zosta³y przyrównane do tej¿e ramki nastêpuj¹cymi metrykami:
+
+\begin{enumerate}
+\item B³¹d œredniokwadratowy (Mean Squared Error, MSE) 
+\begin{equation}
+MSE(I_r,I_b) = \frac{1}{N*M}\sum_{i=0}^{N-1}\sum_{j=0}^{M-1}(I_r(i,j)-I_b(i,j))^2
+\end{equation}
+Gdzie $I_r$ to ramka referencyjna, $I_b$ to obliczony model t³a, $N$ to wysokoœæ, a $M$ to szerokoœæ ramki
+
+\item Procent podobieñstwa o zadanym progu
+
+Wspó³czynnik ten okreœla, ile pikseli w wygenerowanym modelu t³a jest podobnych (z zadanym progiem) do odpowiadaj¹cych pikseli w ramce referencyjnej
+
+\begin{equation}
+P(I_r, I_b)= \sum_{i=0}^{N-1}\sum_{j=0}^{M-1} F(I_r(i,j), I_b(i,j))
+\end{equation}
+
+\begin{equation}
+F(p_r, p_b)= 
+\begin{cases} 
+1, \, gdy \, |p_r-p_b|<(1-\alpha)*255\\
+0, \, gdy \, |p_r-p_b|\ge(1-\alpha)*255\\
+\end{cases}
+\end{equation}
+Gdzie $\alpha \in\space <0,1>$ oznacza wymagany próg podobieñstwa piksela, $I_r$ to ramka referencyjna, $I_b$ to obliczony model t³a,  $N$ to wysokoœæ, a $M$ to szerokoœæ ramki, $p_r$ to wartoœæ piksela ramki referencyjnej, $p_b$ to wartoœæ piksela wygenerowane modelu t³a.
+
+\item Obraz ró¿nicowy
+
+Metryka ta jest g³ównie przeznaczona do wizualnej oceny efektywnoœci algorytmu
+\begin{equation}
+AbsDiff(I_r, I_b)= |I_r - I_b|
+\end{equation}
+
+\item Histogram
+
+Metryka ta okreœla iloœæ pikseli o danej wartoœci, pos³u¿y ona do wizualnej oceny ró¿nic obrazów.
+
+\begin{equation}
+H(i,I)=\sum_{x=0}^{N-1}\sum_{y=0}^{M-1} p(i,I(x,y))
+\end{equation}
+
+\begin{equation}
+p(i,px)=
+\begin{cases} 
+1,\,gdy \, px =i\\
+0,\,gdy \, px \ne i\\
+\end{cases}
+\end{equation}
+
+
+\item Histogram ró¿nicowy
+
+Metryka ta okreœla ró¿nicê iloœci pikseli o danej wartoœci
+
+\begin{equation}
+H(i,I_1,I_2)=\left(\sum_{x=0}^{N-1}\sum_{y=0}^{M-1} p(i,I_1(x,y))\right) - \left(\sum_{x=0}^{N-1}\sum_{y=0}^{M-1} p(i,I_2(x,y))\right)
+\end{equation}
+
+\begin{equation}
+p(i,px)=
+\begin{cases} 
+1,\,gdy \, px =i\\
+0,\,gdy \, px \ne i\\
+\end{cases}
+\end{equation}
+
+\end{enumerate}
 
