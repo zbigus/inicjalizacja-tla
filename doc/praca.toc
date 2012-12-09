@@ -24,4 +24,5 @@
 \contentsline {chapter}{\numberline {4}Metodologia bada\'n}{17}
 \contentsline {section}{\numberline {4.1}U\.zyte sekwencje}{17}
 \contentsline {section}{\numberline {4.2}U\.zyte metryki}{17}
-\contentsline {chapter}{\numberline {5}S\IeC {\l }ownik u\.zytych poj\k e\'c}{19}
+\contentsline {chapter}{\numberline {5}Badania}{19}
+\contentsline {chapter}{\numberline {6}S\IeC {\l }ownik u\.zytych poj\k e\'c}{20}
