@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.10.27)  9 DEC 2012 23:16
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.10.27)  9 DEC 2012 23:48
 entering extended mode
 **prezentacja.tex
 (E:\prezentacja_inz\prezentacja.tex
@@ -1022,30 +1022,30 @@ Package pdftex.def Info: titlepagepl.png used on input line 34.
 agepl.png>] <page.png, id=47, 1066.98625pt x 799.98875pt>
 File: page.png Graphic file (type png)
  <use page.png>
-Package pdftex.def Info: page.png used on input line 44.
+Package pdftex.def Info: page.png used on input line 43.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
 
 [2
 
  <E:/prezentacja_inz/page.png>]
-LaTeX Font Info:    Try loading font information for U+msa on input line 59.
+LaTeX Font Info:    Try loading font information for U+msa on input line 58.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 59.
+LaTeX Font Info:    Try loading font information for U+msb on input line 58.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 59.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 58.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 File: page.png Graphic file (type png)
  <use page.png>
-Package pdftex.def Info: page.png used on input line 59.
+Package pdftex.def Info: page.png used on input line 58.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
 
 [3
@@ -1053,194 +1053,334 @@ Package pdftex.def Info: page.png used on input line 59.
 ]
 File: page.png Graphic file (type png)
  <use page.png>
-Package pdftex.def Info: page.png used on input line 73.
+Package pdftex.def Info: page.png used on input line 71.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [4
 
 ]
 File: page.png Graphic file (type png)
  <use page.png>
-Package pdftex.def Info: page.png used on input line 94.
+Package pdftex.def Info: page.png used on input line 84.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [5
 
 ]
 File: page.png Graphic file (type png)
  <use page.png>
-Package pdftex.def Info: page.png used on input line 109.
+Package pdftex.def Info: page.png used on input line 97.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [6
 
 ]
 File: page.png Graphic file (type png)
  <use page.png>
-Package pdftex.def Info: page.png used on input line 118.
+Package pdftex.def Info: page.png used on input line 110.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
 
 [7
 
-] <superblok.png, id=227, 116.68594pt x 94.10156pt>
-File: superblok.png Graphic file (type png)
- <use superblok.png>
-Package pdftex.def Info: superblok.png used on input line 130.
-(pdftex.def)             Requested size: 116.68564pt x 94.10132pt.
+]
 File: page.png Graphic file (type png)
-
-<use page.png>
-Package pdftex.def Info: page.png used on input line 130.
+ <use page.png>
+Package pdftex.def Info: page.png used on input line 136.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [8
 
- <E:/prezentacja_inz/superblok.png>]
+]
 File: page.png Graphic file (type png)
  <use page.png>
-Package pdftex.def Info: page.png used on input line 152.
+Package pdftex.def Info: page.png used on input line 159.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [9
 
 ]
 File: page.png Graphic file (type png)
-
-<use page.png>
-Package pdftex.def Info: page.png used on input line 175.
+ <use page.png>
+Package pdftex.def Info: page.png used on input line 171.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [10
 
 ]
 File: page.png Graphic file (type png)
  <use page.png>
-Package pdftex.def Info: page.png used on input line 186.
+Package pdftex.def Info: page.png used on input line 187.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
- [11
+
+[11
 
 ]
 File: page.png Graphic file (type png)
  <use page.png>
-Package pdftex.def Info: page.png used on input line 222.
+Package pdftex.def Info: page.png used on input line 213.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [12
 
 ]
 File: page.png Graphic file (type png)
  <use page.png>
-Package pdftex.def Info: page.png used on input line 230.
+Package pdftex.def Info: page.png used on input line 237.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
-
-[13
+ [13
 
 ]
 File: page.png Graphic file (type png)
  <use page.png>
-Package pdftex.def Info: page.png used on input line 245.
+Package pdftex.def Info: page.png used on input line 268.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [14
 
 ]
 File: page.png Graphic file (type png)
- <use page.png>
-Package pdftex.def Info: page.png used on input line 258.
+
+<use page.png>
+Package pdftex.def Info: page.png used on input line 276.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [15
 
 ]
 File: page.png Graphic file (type png)
  <use page.png>
-Package pdftex.def Info: page.png used on input line 271.
+Package pdftex.def Info: page.png used on input line 291.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [16
 
 ]
 File: page.png Graphic file (type png)
-
-<use page.png>
-Package pdftex.def Info: page.png used on input line 284.
+ <use page.png>
+Package pdftex.def Info: page.png used on input line 305.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [17
 
 ]
 File: page.png Graphic file (type png)
  <use page.png>
-Package pdftex.def Info: page.png used on input line 297.
+Package pdftex.def Info: page.png used on input line 326.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
- [18
+
+[18
 
 ]
 File: page.png Graphic file (type png)
  <use page.png>
-Package pdftex.def Info: page.png used on input line 323.
+Package pdftex.def Info: page.png used on input line 341.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [19
 
 ]
 File: page.png Graphic file (type png)
  <use page.png>
-Package pdftex.def Info: page.png used on input line 346.
+Package pdftex.def Info: page.png used on input line 350.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
-
-[20
+ [20
 
 ]
+<superblok.png, id=574, 116.68594pt x 94.10156pt>
+File: superblok.png Graphic file (type png)
+ <use superblok.png>
+Package pdftex.def Info: superblok.png used on input line 362.
+(pdftex.def)             Requested size: 116.68564pt x 94.10132pt.
 File: page.png Graphic file (type png)
- <use page.png>
-Package pdftex.def Info: page.png used on input line 358.
+
+<use page.png>
+Package pdftex.def Info: page.png used on input line 362.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [21
 
-]
+ <E:/prezentacja_inz/superblok.png>]
 File: page.png Graphic file (type png)
  <use page.png>
-Package pdftex.def Info: page.png used on input line 374.
+Package pdftex.def Info: page.png used on input line 384.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [22
 
 ]
 File: page.png Graphic file (type png)
- <use page.png>
-Package pdftex.def Info: page.png used on input line 400.
+
+<use page.png>
+Package pdftex.def Info: page.png used on input line 407.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [23
 
 ]
 File: page.png Graphic file (type png)
-
-<use page.png>
-Package pdftex.def Info: page.png used on input line 424.
+ <use page.png>
+Package pdftex.def Info: page.png used on input line 418.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [24
 
 ]
 File: page.png Graphic file (type png)
  <use page.png>
-Package pdftex.def Info: page.png used on input line 455.
+Package pdftex.def Info: page.png used on input line 454.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [25
 
 ]
+<clip_01_ref.png, id=708, 481.8pt x 361.35pt>
+File: clip_01_ref.png Graphic file (type png)
+ <use clip_01_ref.png>
+Package pdftex.def Info: clip_01_ref.png used on input line 469.
+(pdftex.def)             Requested size: 130.48798pt x 97.86354pt.
+
+<clip_01_dct_200_06_10.png, id=709, 642.4pt x 481.8pt>
+File: clip_01_dct_200_06_10.png Graphic file (type png)
+
+<use clip_01_dct_200_06_10.png>
+Package pdftex.def Info: clip_01_dct_200_06_10.png used on input line 469.
+(pdftex.def)             Requested size: 130.48798pt x 97.86537pt.
+
+<clip_01_dct_200_07_20.png, id=710, 642.4pt x 481.8pt>
+File: clip_01_dct_200_07_20.png Graphic file (type png)
+
+<use clip_01_dct_200_07_20.png>
+Package pdftex.def Info: clip_01_dct_200_07_20.png used on input line 469.
+(pdftex.def)             Requested size: 130.48798pt x 97.86537pt.
+
+<clip_01_dct_200_08_20.png, id=711, 642.4pt x 481.8pt>
+File: clip_01_dct_200_08_20.png Graphic file (type png)
+
+<use clip_01_dct_200_08_20.png>
+Package pdftex.def Info: clip_01_dct_200_08_20.png used on input line 469.
+(pdftex.def)             Requested size: 130.48798pt x 97.86537pt.
 File: page.png Graphic file (type png)
  <use page.png>
-Package pdftex.def Info: page.png used on input line 464.
+Package pdftex.def Info: page.png used on input line 469.
 (pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
  [26
+
+ <E:/prezentacja_inz/clip_01_ref.png> <E:/prezentacja_inz/clip_01_dct_200_06_10
+.png (PNG copy)> <E:/prezentacja_inz/clip_01_dct_200_07_20.png (PNG copy)> <E:/
+prezentacja_inz/clip_01_dct_200_08_20.png (PNG copy)>] <clip_03_ref.png, id=738
+, 481.8pt x 361.35pt>
+File: clip_03_ref.png Graphic file (type png)
+
+<use clip_03_ref.png>
+Package pdftex.def Info: clip_03_ref.png used on input line 482.
+(pdftex.def)             Requested size: 130.48798pt x 97.86354pt.
+ <clip_03_dct_200_06_10.png, id=739, 642.4pt x 481.8pt>
+File: clip_03_dct_200_06_10.png Graphic file (type png)
+
+<use clip_03_dct_200_06_10.png>
+Package pdftex.def Info: clip_03_dct_200_06_10.png used on input line 482.
+(pdftex.def)             Requested size: 130.48798pt x 97.86537pt.
+
+<clip_03_dct_200_06_20.png, id=740, 642.4pt x 481.8pt>
+File: clip_03_dct_200_06_20.png Graphic file (type png)
+
+<use clip_03_dct_200_06_20.png>
+Package pdftex.def Info: clip_03_dct_200_06_20.png used on input line 482.
+(pdftex.def)             Requested size: 130.48798pt x 97.86537pt.
+
+<clip_03_dct_200_09_20.png, id=741, 642.4pt x 481.8pt>
+File: clip_03_dct_200_09_20.png Graphic file (type png)
+
+<use clip_03_dct_200_09_20.png>
+Package pdftex.def Info: clip_03_dct_200_09_20.png used on input line 482.
+(pdftex.def)             Requested size: 130.48798pt x 97.86537pt.
+File: page.png Graphic file (type png)
+ <use page.png>
+Package pdftex.def Info: page.png used on input line 482.
+(pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
+ [27
+
+ <E:/prezentacja_inz/clip_03_ref.png> <E:/prezentacja_inz/clip_03_dct_200_06_10
+.png (PNG copy)> <E:/prezentacja_inz/clip_03_dct_200_06_20.png (PNG copy)> <E:/
+prezentacja_inz/clip_03_dct_200_09_20.png (PNG copy)>] <fountain_ref.png, id=76
+8, 240.9pt x 180.675pt>
+File: fountain_ref.png Graphic file (type png)
+
+<use fountain_ref.png>
+Package pdftex.def Info: fountain_ref.png used on input line 495.
+(pdftex.def)             Requested size: 130.48798pt x 97.86905pt.
+ <fountain_dct_200_06_10.png, id=769, 321.2pt x 240.9pt>
+File: fountain_dct_200_06_10.png Graphic file (type png)
+
+<use fountain_dct_200_06_10.png>
+Package pdftex.def Info: fountain_dct_200_06_10.png used on input line 495.
+(pdftex.def)             Requested size: 130.48798pt x 97.86905pt.
+
+<fountain_dct_200_06_20.png, id=770, 321.2pt x 240.9pt>
+File: fountain_dct_200_06_20.png Graphic file (type png)
+
+<use fountain_dct_200_06_20.png>
+Package pdftex.def Info: fountain_dct_200_06_20.png used on input line 495.
+(pdftex.def)             Requested size: 130.48798pt x 97.86905pt.
+
+<fountain_dct_200_09_10.png, id=771, 321.2pt x 240.9pt>
+File: fountain_dct_200_09_10.png Graphic file (type png)
+
+<use fountain_dct_200_09_10.png>
+Package pdftex.def Info: fountain_dct_200_09_10.png used on input line 495.
+(pdftex.def)             Requested size: 130.48798pt x 97.86905pt.
+File: page.png Graphic file (type png)
+ <use page.png>
+Package pdftex.def Info: page.png used on input line 495.
+(pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
+ [28
+
+ <E:/prezentacja_inz/fountain_ref.png> <E:/prezentacja_inz/fountain_dct_200_06_
+10.png (PNG copy)> <E:/prezentacja_inz/fountain_dct_200_06_20.png (PNG copy)> <
+E:/prezentacja_inz/fountain_dct_200_09_10.png (PNG copy)>]
+<pedestrians_ref.png, id=798, 542.025pt x 433.62pt>
+File: pedestrians_ref.png Graphic file (type png)
+ <use pedestrians_ref.png>
+Package pdftex.def Info: pedestrians_ref.png used on input line 508.
+(pdftex.def)             Requested size: 130.48564pt x 97.86464pt.
+
+<pedestrians_dct_200_07_20.png, id=799, 321.2pt x 240.9pt>
+File: pedestrians_dct_200_07_20.png Graphic file (type png)
+
+<use pedestrians_dct_200_07_20.png>
+Package pdftex.def Info: pedestrians_dct_200_07_20.png used on input line 508.
+(pdftex.def)             Requested size: 130.48798pt x 97.86905pt.
+
+<pedestrians_dct_200_08_20.png, id=800, 321.2pt x 240.9pt>
+File: pedestrians_dct_200_08_20.png Graphic file (type png)
+
+<use pedestrians_dct_200_08_20.png>
+Package pdftex.def Info: pedestrians_dct_200_08_20.png used on input line 508.
+(pdftex.def)             Requested size: 130.48798pt x 97.86905pt.
+
+<pedestrians_dct_200_09_10.png, id=801, 321.2pt x 240.9pt>
+File: pedestrians_dct_200_09_10.png Graphic file (type png)
+
+<use pedestrians_dct_200_09_10.png>
+Package pdftex.def Info: pedestrians_dct_200_09_10.png used on input line 508.
+(pdftex.def)             Requested size: 130.48798pt x 97.86905pt.
+File: page.png Graphic file (type png)
+ <use page.png>
+Package pdftex.def Info: page.png used on input line 508.
+(pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
+ [29
+
+ <E:/prezentacja_inz/pedestrians_ref.png> <E:/prezentacja_inz/pedestrians_dct_2
+00_07_20.png (PNG copy)> <E:/prezentacja_inz/pedestrians_dct_200_08_20.png (PNG
+ copy)> <E:/prezentacja_inz/pedestrians_dct_200_09_10.png (PNG copy)>]
+File: page.png Graphic file (type png)
+ <use page.png>
+Package pdftex.def Info: page.png used on input line 516.
+(pdftex.def)             Requested size: 364.19536pt x 273.05457pt.
+ [30
 
 ]
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 467.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 467.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 519.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 519.
 
 (E:\prezentacja_inz\prezentacja.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 467.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 467.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 519.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 519.
 Package rerunfilecheck Info: File `prezentacja.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 467.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 519.
  ) 
 Here is how much of TeX's memory you used:
- 18225 strings out of 494045
- 332095 string characters out of 3145968
+ 18321 strings out of 494045
+ 334439 string characters out of 3145968
  415304 words of memory out of 3000000
- 21014 multiletter control sequences out of 15000+200000
+ 21086 multiletter control sequences out of 15000+200000
  68112 words of font info for 83 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  49i,19n,56p,430b,1081s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1258,9 +1398,9 @@ MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2
 .9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on prezentacja.pdf (26 pages, 458393 bytes).
+Output written on prezentacja.pdf (30 pages, 3712605 bytes).
 PDF statistics:
- 788 PDF objects out of 1000 (max. 8388607)
- 56 named destinations out of 1000 (max. 500000)
- 106 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 909 PDF objects out of 1000 (max. 8388607)
+ 64 named destinations out of 1000 (max. 500000)
+ 186 words of extra memory for PDF output out of 10000 (max. 10000000)
 
