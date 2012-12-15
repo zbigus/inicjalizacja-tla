@@ -2,43 +2,43 @@
 \label{cha:Metody operuj¹ce na poziomie pikseli}
 \section{Mixture of Gaussians (MOG)}
 \subsection{Wprowadzenie}
-T³o sceny zawiera wiele dynamicznych obiektów jak poruszane na wietrze ga³êzie i liœcie drzew czy krzewów. Zmiany w~obrazie nimi wywo³ane powoduj¹, ¿e wartoœæ intensywnoœci danego piksela w czasie mog¹ siê bardzo ró¿niæ od siebie. Z tego powodu wykorzystanie pojedynczego przybli¿enia rozk³adu prawdopodobieñstwa przy u¿yciu krzywej Gaussa daje z³e rezultaty. Zamiast tego w opisywanej metodzie u¿yto podejœcia bazuj¹cego na wykorzystaniu kilku rozk³adów Gaussa o ró¿nych parametrach w celu zamodelowania takich zmian \cite{7}.
+T³o sceny zawiera wiele dynamicznych obiektów jak poruszane na wietrze ga³êzie i~liœcie drzew czy krzewów. Zmiany w~obrazie nimi wywo³ane powoduj¹, ¿e wartoœæ intensywnoœci danego piksela w~czasie mog¹ siê bardzo ró¿niæ od siebie. Z~tego powodu wykorzystanie pojedynczego przybli¿enia rozk³adu prawdopodobieñstwa przy u¿yciu krzywej Gaussa daje z³e rezultaty. Zamiast tego w~opisywanej metodzie u¿yto podejœcia bazuj¹cego na wykorzystaniu kilku rozk³adów Gaussa o~ró¿nych parametrach w~celu zamodelowania takich zmian \cite{7}.
 
-Standardowe adaptacyjne modele t³a polegaj¹ na tworzeniu aproksymacji t³a, które jest podobne do obecnej statycznej sceny za wyj¹tkiem miejsc w których odby³ siê ruch. Podejœcie takie jest efektywne w~sytuacjach gdy obiekty poruszaj¹ siê stale, a t³o jest widoczne znaczn¹ czêœæ czasu, jednak¿e nie sprawdza siê ono dla scen zawieraj¹cych du¿o poruszaj¹cych siê obiektów, a w szczególnoœci, gdy obiekty te poruszaj¹ siê powoli. Nie potrafi tak¿e poradziæ sobie z t³ami posiadaj¹cymi rozk³ad dwumodalny, powoli odtwarza t³o jeœli zostanie ono odkryte i ma jeden ustalony próg dla ca³ej sceny. 
+Standardowe adaptacyjne modele t³a polegaj¹ na tworzeniu aproksymacji t³a, które jest podobne do obecnej statycznej sceny za wyj¹tkiem miejsc w~których odby³ siê ruch. Podejœcie takie jest efektywne w~sytuacjach gdy obiekty poruszaj¹ siê stale, a~t³o jest widoczne znaczn¹ czêœæ czasu, jednak¿e nie sprawdza siê ono dla scen zawieraj¹cych du¿o poruszaj¹cych siê obiektów, a~w szczególnoœci, gdy obiekty te poruszaj¹ siê powoli. Nie potrafi tak¿e poradziæ sobie z~t³ami posiadaj¹cymi rozk³ad dwumodalny, powoli odtwarza t³o jeœli zostanie ono odkryte i~ma jeden ustalony próg dla ca³ej sceny. 
 
-W opisywanej metodzie zamiast modelowaæ wartoœci wszystkich pikseli jako wy³¹cznie jeden typ rozk³adu, wartoœci dla ka¿dego piksela modelowane s¹ mieszanka rozk³adów Gaussa. Bazuj¹c na trwa³oœci i wariancji ka¿dego u¿ytego do mieszanki rozk³adu Gaussa okreœlane jest które z nich mog¹ odnosiæ siê do kolorów t³a. Wartoœci pikseli, które nie mieszcz¹ siê w ¿adnym rozk³adzie t³a uznawane s¹ za piksele nale¿¹ce do pierwszego planu. Taki stan pikseli utrzymuje siê do czasu kiedy zaczn¹ wystarczaj¹co dobrze pasowaæ do któregoœ z rozk³adów t³a. 
+W opisywanej metodzie zamiast modelowaæ wartoœci wszystkich pikseli jako wy³¹cznie jeden typ rozk³adu, wartoœci dla ka¿dego piksela modelowane s¹ mieszanka rozk³adów Gaussa. Bazuj¹c na trwa³oœci i~wariancji ka¿dego u¿ytego do mieszanki rozk³adu Gaussa okreœlane jest które z~nich mog¹ odnosiæ siê do kolorów t³a. Wartoœci pikseli, które nie mieszcz¹ siê w~¿adnym rozk³adzie t³a uznawane s¹ za piksele nale¿¹ce do pierwszego planu. Taki stan pikseli utrzymuje siê do czasu kiedy zaczn¹ wystarczaj¹co dobrze pasowaæ do któregoœ z~rozk³adów t³a. 
 
-Opisywana metoda dostosowuje siê aby radziæ sobie ze zmianami oœwietlenia, powtarzalnymi ruchami elementów t³a, powolnie poruszaj¹cymi siê elementami pierwszego planu oraz wprowadzaniu lub usuwaniu elementów ze sceny. Powolnie poruszaj¹ce siê elementy potrzebuj¹ wiêcej czasu aby wpasowaæ siê w t³o, poniewa¿ rozk³ad do którego pasuj¹ ma wiêksz¹ wariancjê ni¿ t³o. Powtarzaj¹ce siê zmiany równie¿ s¹ uwzglêdniane, a model rozk³adu t³a jest utrzymywany nawet jeœli jest chwilowo zamieniony przez inny rozk³ad, co prowadzi do szybszego odtworzenia t³a w przypadku usuniêcia obiektów ze sceny.
+Opisywana metoda dostosowuje siê aby radziæ sobie ze zmianami oœwietlenia, powtarzalnymi ruchami elementów t³a, powolnie poruszaj¹cymi siê elementami pierwszego planu oraz wprowadzaniu lub usuwaniu elementów ze sceny. Powolnie poruszaj¹ce siê elementy potrzebuj¹ wiêcej czasu aby wpasowaæ siê w~t³o, poniewa¿ rozk³ad do którego pasuj¹ ma wiêksz¹ wariancjê ni¿ t³o. Powtarzaj¹ce siê zmiany równie¿ s¹ uwzglêdniane, a~model rozk³adu t³a jest utrzymywany nawet jeœli jest chwilowo zamieniony przez inny rozk³ad, co prowadzi do szybszego odtworzenia t³a w~przypadku usuniêcia obiektów ze sceny.
 Metoda ta wykorzystuje dwa podstawowe parametry: 
 \begin{lstlisting}
 a - sta³a uczenia
-T - porcja danych jaka powinna byæ uwzglêdniona w tle
+T - porcja danych jaka powinna byæ uwzglêdniona w~tle
 \end{lstlisting}
 
-Zak³adaj¹c, ¿e ka¿dy piksel obrazu bêdzie pochodzi³ z jednej p³aszczyzny przy zmiennym œwietleniu, to do wydzielenia t³a z takiego obrazu wystarczy u¿ycie pojedynczej adaptacyjnej aproksymacji rozk³adem Gaussa dla ka¿dego piksela. Jednak¿e w rzeczywistych warunkach na obrazie wystêpuje wiele powierzchni oraz zmienne oœwietlenie, co sprawia, ¿e potrzebne staje siê u¿ycie kilku adaptacyjnych rozk³adów Gaussa. W opisywanej metodzie u¿yta jest mieszanka kilku takich rozk³adów o ró¿nych parametrach. Za ka¿dym razem, gdy parametry rozk³adu s¹ aktualizowane, nastêpuje proces oceny dostêpnych rozk³adów w celu okreœlenia tego najbardziej prawdopodobnego. 
+Zak³adaj¹c, ¿e ka¿dy piksel obrazu bêdzie pochodzi³ z~jednej p³aszczyzny przy zmiennym œwietleniu, to do wydzielenia t³a z~takiego obrazu wystarczy u¿ycie pojedynczej adaptacyjnej aproksymacji rozk³adem Gaussa dla ka¿dego piksela. Jednak¿e w~rzeczywistych warunkach na obrazie wystêpuje wiele powierzchni oraz zmienne oœwietlenie, co sprawia, ¿e potrzebne staje siê u¿ycie kilku adaptacyjnych rozk³adów Gaussa. W~opisywanej metodzie u¿yta jest mieszanka kilku takich rozk³adów o~ró¿nych parametrach. Za ka¿dym razem, gdy parametry rozk³adu s¹ aktualizowane, nastêpuje proces oceny dostêpnych rozk³adów w~celu okreœlenia tego najbardziej prawdopodobnego. 
 
 \subsection{Opis metody}
 \subsubsection{Model mieszanki}
 
-Niech kolejne wartoœci danego piksela w czasie nazywaj¹ siê histori¹ piksela. Zatem historia piksela jest to seria wartoœci danego piksela, gdzie dla obrazów w skali szaroœci s¹ to wartoœci skalarne, a dla obrazów kolorowych s¹ to wektory. O danym pikselu $\{x_0,y_0\}$ w danej chwili czasu t, mo¿na powiedzieæ, ¿e znana jest jego historia
+Niech kolejne wartoœci danego piksela w~czasie nazywaj¹ siê histori¹ piksela. Zatem historia piksela jest to seria wartoœci danego piksela, gdzie dla obrazów w~skali szaroœci s¹ to wartoœci skalarne, a~dla obrazów kolorowych s¹ to wektory. O~danym pikselu $\{x_0,y_0\}$ w~danej chwili czasu t, mo¿na powiedzieæ, ¿e znana jest jego historia
 \begin{equation}
 \{X_1,\dots,X_t\}=\{I(x_0,y_0,i):1\le i \le t\}
 \end{equation}
 gdzie $I$ jest sekwencj¹ ramek.
 
-Niedawna historia dla ka¿dego piksela modelowana jest mieszanin¹ K rozk³adów Gaussa. Prawdopodobieñstwo zaobserwowania obecnego piksela okreœla siê wzorem
+Niedawna historia dla ka¿dego piksela modelowana jest mieszanin¹ K~rozk³adów Gaussa. Prawdopodobieñstwo zaobserwowania obecnego piksela okreœla siê wzorem
 
 \begin{equation}
 P(X_t)=\sum_{i=1}^{K} \omega_{i,t} * \eta(X_t, \mu_{i,t} , \Sigma_{i,t})
 \end{equation}
 
-gdzie K jest iloœci¹ rozk³adów,  $\omega_{i,t}$ jest oszacowan¹ wag¹ $i$-tego rozk³adu w mieszance w chwili $t$, $\mu_{i,t}$ jest œredni¹ wartoœci¹  $i$-tego rozk³adu w mieszance w chwili $t$, $\Sigma_{i,t}$ jest macierz¹ kowariancji $i$-tego rozk³adu w mieszance w chwili $t$,$\eta$ jest funkcj¹ gêstoœci prawdopodobieñstwa Gaussa
+gdzie K~jest iloœci¹ rozk³adów,  $\omega_{i,t}$ jest oszacowan¹ wag¹ $i$-tego rozk³adu w~mieszance w~chwili $t$, $\mu_{i,t}$ jest œredni¹ wartoœci¹  $i$-tego rozk³adu w~mieszance w~chwili $t$, $\Sigma_{i,t}$ jest macierz¹ kowariancji $i$-tego rozk³adu w~mieszance w~chwili $t$,$\eta$ jest funkcj¹ gêstoœci prawdopodobieñstwa Gaussa
 
 \begin{equation}
 \eta(X_t,\mu,\Sigma)=\frac{1}{(2\pi)^\frac{n}{2} |\Sigma|^\frac{1}{2}}e^{-\frac{1}{2}(X_t-\mu_t)^T \Sigma^{-1} (W_t -\mu_t)}
 \end{equation}
 
-gdzie K okreœlane jest przez dostêpn¹ pamiêæ oraz moc obliczeniow¹ jednostki na której wykonywany jest algorytm. Najczêœciej spotykana wartoœæ mieœci siê w zakresie od 3 do 5. W celu zmniejszenia iloœci obliczeñ przyjmuje siê, ¿e macierz kowariancji ma postaæ:
+gdzie K~okreœlane jest przez dostêpn¹ pamiêæ oraz moc obliczeniow¹ jednostki na której wykonywany jest algorytm. Najczêœciej spotykana wartoœæ mieœci siê w~zakresie od 3~do 5. W~celu zmniejszenia iloœci obliczeñ przyjmuje siê, ¿e macierz kowariancji ma postaæ:
 
 \begin{equation}
 \Sigma_{k,t}=\sigma^2_kI
@@ -46,33 +46,33 @@ gdzie K okreœlane jest przez dostêpn¹ pamiêæ oraz moc obliczeniow¹ jednostki na 
 
 Takie rozwi¹zanie zak³ada, ¿e wartoœci dla poszczególnych kolorów sk³adowych ka¿dego piksela maj¹ tak¹ sam¹ wariancjê.Za³o¿enie to obci¹¿one jest pewnymi b³êdami, lecz pozwala omin¹æ odwracanie macierzy, co jest zadaniem bardzo kosztownym, za cenê mniejszej precyzji. 
 
-Zatem rozk³ad ostatnio obserwowanych wartoœci dla ka¿dego piksela w obrazie opisany jest mieszank¹ rozk³adów Gaussa. Nowa wartoœæ piksela bêdzie na ogó³ reprezentowana przez jeden z g³ównych sk³adników mieszanki. 
+Zatem rozk³ad ostatnio obserwowanych wartoœci dla ka¿dego piksela w~obrazie opisany jest mieszank¹ rozk³adów Gaussa. Nowa wartoœæ piksela bêdzie na ogó³ reprezentowana przez jeden z~g³ównych sk³adników mieszanki. 
 
-%If  the pixel process could be considered a sta- 
-%tionary process, a standard method for maximizing 
+%If  the pixel process could be considered a~sta- 
+%tionary process, a~standard method for maximizing 
 %the likelihood  of  the observed data is  expectation 
 %maxzmizatzon[ 11.  Unfortunately, each pixel process 
 %varies over time as the state of the world changes, 
 %so we use an approximate method which essentially 
-%treats each new observation as a sample set of size 1 
+%treats each new observation as a~sample set of size 1~
 %and uses standard learning rules to integrate the new 
 %data. 
-%Because there is a mixture model for every pixel in 
+%Because there is a~mixture model for every pixel in 
 %the image, implementing an exact EM algorithm on 
 %a window of recent data would be costly. 
 
-Do obliczenia wartoœci nowego piksela u¿yta zosta³a metoda on-line K-means approximation. Ka¿da wartoœæ piksela jest sprawdzana pod k¹tem dopasowania do jednego z K rozk³adów. Warunkiem przynale¿noœci jest wartoœæ w zakresie do 2,5 odchylenia standardowego z danego rozk³adu. Zmiana opisanego wczeœniej progu ma niewielki wp³yw na wydajnoœæ algorytmu. Opisany sposób wyboru odpowiednich pikseli jest bardzo u¿yteczny dla obszarów z ró¿nym oœwietleniem, poniewa¿ obiekty znajduj¹ce siê w zacienionych obszarach maj¹ mniejszy szum ni¿ obiekty znajduj¹ce siê w jaœniejszych regionach.
+Do obliczenia wartoœci nowego piksela u¿yta zosta³a metoda on-line K-means approximation. Ka¿da wartoœæ piksela jest sprawdzana pod k¹tem dopasowania do jednego z~K rozk³adów. Warunkiem przynale¿noœci jest wartoœæ w~zakresie do 2,5 odchylenia standardowego z~danego rozk³adu. Zmiana opisanego wczeœniej progu ma niewielki wp³yw na wydajnoœæ algorytmu. Opisany sposób wyboru odpowiednich pikseli jest bardzo u¿yteczny dla obszarów z~ró¿nym oœwietleniem, poniewa¿ obiekty znajduj¹ce siê w~zacienionych obszarach maj¹ mniejszy szum ni¿ obiekty znajduj¹ce siê w~jaœniejszych regionach.
 
-W przypadku gdy ¿aden rozk³ad nie zosta³ dopasowany do danego piksela, to rozk³ad z najmniejsz¹ wag¹ jest zastêpowany nowym z wartoœci¹ piksela jako now¹ wartoœci¹ oczekiwan¹, du¿¹ wariancj¹ i nisk¹ wag¹.
+W przypadku gdy ¿aden rozk³ad nie zosta³ dopasowany do danego piksela, to rozk³ad z~najmniejsz¹ wag¹ jest zastêpowany nowym z~wartoœci¹ piksela jako now¹ wartoœci¹ oczekiwan¹, du¿¹ wariancj¹ i~nisk¹ wag¹.
 
-Wczeœniejsze wagi K rozk³adów w czasie t s¹ aktualizowane wg wzoru 
+Wczeœniejsze wagi K~rozk³adów w~czasie t~s¹ aktualizowane wg wzoru 
 
 \begin{equation}
 \omega_{k,t}=(1-\alpha)\omega_{k,t-1}+\alpha(M_{k,t})
 \end{equation}
-gdzie $\alpha$ to tempo uczenia, a $M_{k,t}$ jest 1 dla dopasowanego rozk³adu i 0 dla pozosta³ych rozk³adów. Po dokonaniu aproksymacji wagi s¹ normalizowane. $\frac{1}{\alpha}$ oznacza sta³¹ czasow¹ okreœlaj¹c¹ prêdkoœæ z jak¹ parametry rozk³adów siê zmieniaj¹.
+gdzie $\alpha$ to tempo uczenia, a~$M_{k,t}$ jest 1~dla dopasowanego rozk³adu i~0 dla pozosta³ych rozk³adów. Po dokonaniu aproksymacji wagi s¹ normalizowane. $\frac{1}{\alpha}$ oznacza sta³¹ czasow¹ okreœlaj¹c¹ prêdkoœæ z~jak¹ parametry rozk³adów siê zmieniaj¹.
 
-Dla rozk³adów niedopasowanych do danego piksela wartoœci $\mu$ i $\sigma$ pozostaj¹ niezmienione. Dla rozk³adów, które zosta³y dopasowane wartoœci $\mu$ i $\sigma$ obliczane s¹ nastêpuj¹co:
+Dla rozk³adów niedopasowanych do danego piksela wartoœci $\mu$ i~$\sigma$ pozostaj¹ niezmienione. Dla rozk³adów, które zosta³y dopasowane wartoœci $\mu$ i~$\sigma$ obliczane s¹ nastêpuj¹co:
 
 \begin{equation}
 \mu_t=(1-\rho)\mu_{t-1}+\rho X_t
@@ -87,26 +87,26 @@ przy czym
 \rho = \alpha\eta(X_t|\mu_k,\sigma_k)
 \end{equation}
 
-Jedn¹ z najwiêkszych zalet opisanego rozwi¹zania jest fakt, ¿e kiedy jakiœ obiekt zostanie dodany do t³a, to nie niszczy on istniej¹cego modelu t³a. Oryginalny kolor t³a zostaje zachowany w mieszance do czasu a¿ stanie siê najmniej prawdopodobnym kolorem oraz zostanie zaobserwowany nowy kolor. Zatem jeœli obiekt pozostanie nieruchomy wystarczaj¹co d³ugo aby staæ siê czêœci¹ t³a, a nastêpnie siê poruszy, to rozk³ad opisuj¹cy poprzednie t³o ci¹gle istnieje w tymi samymi $\mu$ i $\sigma^2$, ale mniejszym $\omega$ przez co mo¿e zostaæ szybko ponownie do³¹czony do modelu t³a.
+Jedn¹ z~najwiêkszych zalet opisanego rozwi¹zania jest fakt, ¿e kiedy jakiœ obiekt zostanie dodany do t³a, to nie niszczy on istniej¹cego modelu t³a. Oryginalny kolor t³a zostaje zachowany w~mieszance do czasu a¿ stanie siê najmniej prawdopodobnym kolorem oraz zostanie zaobserwowany nowy kolor. Zatem jeœli obiekt pozostanie nieruchomy wystarczaj¹co d³ugo aby staæ siê czêœci¹ t³a, a~nastêpnie siê poruszy, to rozk³ad opisuj¹cy poprzednie t³o ci¹gle istnieje w~tymi samymi $\mu$ i~$\sigma^2$, ale mniejszym $\omega$ przez co mo¿e zostaæ szybko ponownie do³¹czony do modelu t³a.
 
 \subsubsection{Estymacja modelu t³a}
 
 
-Podczas gdy parametry modelu mieszanki dla ka¿dego piksela zmieniaj¹ siê, nale¿y okreœliæ które rozk³ady z mieszanki daj¹ najwiêksze prawdopodobieñstwo bycia wygenerowanymi przez procesy t³a. Z heurystycznego punktu widzenia najbardziej interesuj¹ce s¹ rozk³ady, które daj¹ najlepsze dopasowanie i najmniejsz¹ wariancjê
+Podczas gdy parametry modelu mieszanki dla ka¿dego piksela zmieniaj¹ siê, nale¿y okreœliæ które rozk³ady z~mieszanki daj¹ najwiêksze prawdopodobieñstwo bycia wygenerowanymi przez procesy t³a. Z~heurystycznego punktu widzenia najbardziej interesuj¹ce s¹ rozk³ady, które daj¹ najlepsze dopasowanie i~najmniejsz¹ wariancjê
 
 
-W celu wybrania odpowiednich rozk³adów nale¿y uszeregowaæ je wed³ug wartoœci $\omega$/$\sigma$. Wartoœæ ta zwiêksza siê zarówno przy zwiêkszeniu dopasowania, jak i przy zmniejszeniu wariancji. W praktyce tak uszeregowana lista daje zbiór rozk³adów, gdzie najbardziej prawdopodobni kandydaci znajduj¹ siê na pocz¹tku, a najmniej prawdopodobni na koñcu.
+W celu wybrania odpowiednich rozk³adów nale¿y uszeregowaæ je wed³ug wartoœci $\omega$/$\sigma$. Wartoœæ ta zwiêksza siê zarówno przy zwiêkszeniu dopasowania, jak i~przy zmniejszeniu wariancji. W~praktyce tak uszeregowana lista daje zbiór rozk³adów, gdzie najbardziej prawdopodobni kandydaci znajduj¹ siê na pocz¹tku, a~najmniej prawdopodobni na koñcu.
 Pierwsze rozk³ady wybrane jako model t³a wybiera siê za pomoc¹ wzoru 
 
 \begin{equation}
 B = argmin_b\left(\sum_{k=1}^{b}\omega_k>T\right)
 \end{equation}
-gdzie T jest miar¹ minimalnej iloœci danych jaka powinna byæ prana pod uwagê. Rozwi¹zanie takie bierze pod uwagê najlepiej dostosowany rozk³ad dot¹d, a¿ pewna porcja T danych jest rozwa¿ona. Jeœli T jest jest wartoœci¹ ma³¹, to tedy model t³a zazwyczaj jest unimodalny. Jeœli T jest wartoœci¹ wiêksz¹, multimodalny rozk³ad wywo³any powtarzalnymi ruchami w tle mo¿e skutkowaæ uwzglêdnieniem w modelu t³a wiêcej ni¿ jednego koloru. Skutkuje to efektem przezroczystoœci, który pozwala modelowi przyjmowaæ dwa lub wiêcej oddzielnych kolorów. 
+gdzie T~jest miar¹ minimalnej iloœci danych jaka powinna byæ prana pod uwagê. Rozwi¹zanie takie bierze pod uwagê najlepiej dostosowany rozk³ad dot¹d, a¿ pewna porcja T~danych jest rozwa¿ona. Jeœli T~jest jest wartoœci¹ ma³¹, to tedy model t³a zazwyczaj jest unimodalny. Jeœli T~jest wartoœci¹ wiêksz¹, multimodalny rozk³ad wywo³any powtarzalnymi ruchami w~tle mo¿e skutkowaæ uwzglêdnieniem w~modelu t³a wiêcej ni¿ jednego koloru. Skutkuje to efektem przezroczystoœci, który pozwala modelowi przyjmowaæ dwa lub wiêcej oddzielnych kolorów. 
 
 
-\section{Œrednia z bufora ramek}
+\section{Œrednia z~bufora ramek}
 \subsection{Wprowadzenie}
-Œrednia z bufora ramek jest jednym z najprostszych mo¿liwych algorytmów generacji t³a. Algorytm ten opiera siê na wyliczaniu œredniej arytmetycznej dla ka¿dej pozycji piksela na obrazie spoœród ramek zgromadzonych w buforze.
+Œrednia z~bufora ramek jest jednym z~najprostszych mo¿liwych algorytmów generacji t³a. Algorytm ten opiera siê na wyliczaniu œredniej arytmetycznej dla ka¿dej pozycji piksela na obrazie spoœród ramek zgromadzonych w~buforze.
 
 \subsection{Opis metody}
 Wartoœæ dla ka¿dego piksela t³a wyliczana jest ze wzoru.
@@ -115,13 +115,13 @@ Wartoœæ dla ka¿dego piksela t³a wyliczana jest ze wzoru.
 B(x,y)=\frac{1}{n} \sum_{i=1}^{n} P(x_i,y_i)
 \end{equation}
 
-Gdzie $B(x,y)$ oznacza obecn¹ wartoœæ piksela t³a w miejscu (x,y), $n$ oznacza rozmiar bufora, $P(x_i,y_i)$ oznacza wartoœæ piksela na pozycji (x,y) w $i$-tej ramce w buforze.
+Gdzie $B(x,y)$ oznacza obecn¹ wartoœæ piksela t³a w~miejscu (x,y), $n$ oznacza rozmiar bufora, $P(x_i,y_i)$ oznacza wartoœæ piksela na pozycji (x,y) w~$i$-tej ramce w~buforze.
 
 
 \section{Aproksymacja œredniej przy u¿yciu parametru alfa}
 \subsection{Wprowadzenie}
 
-Algorytm ten jest prób¹ aproksymacji œredniej z bufora ramek. Jest on modyfikacj¹ poprzedniego algorytmu i daje podobne rezultaty. Jednak¿e w przeciwieñstwie do swojego pierwowzoru nie wykorzystuje on bufora oraz wymaga mniejszej iloœci obliczeñ.
+Algorytm ten jest prób¹ aproksymacji œredniej z~bufora ramek. Jest on modyfikacj¹ poprzedniego algorytmu i~daje podobne rezultaty. Jednak¿e w~przeciwieñstwie do swojego pierwowzoru nie wykorzystuje on bufora oraz wymaga mniejszej iloœci obliczeñ.
 
 \subsection{Opis metody}
 Wartoœæ dla ka¿dego piksela t³a wyliczana jest ze wzoru.
@@ -131,4 +131,4 @@ Wartoœæ dla ka¿dego piksela t³a wyliczana jest ze wzoru.
 B_{n}(x,y) = P_{n}(x,y) * \alpha + B_{n-1}(x,y) * (1-\alpha)
 \end{equation}
 
-Gdzie $B_{n}(x,y)$ oznacza obecn¹ wartoœæ piksela t³a w miejscu (x,y), $P_{n}(x,y)$ oznacza wartoœæ piksela na pozycji (x,y) w obecnej ramce, $B_{n-1}$ oznacza wartoœæ piksela na pozycji (x,y) w poprzednim modelu t³a
+Gdzie $B_{n}(x,y)$ oznacza obecn¹ wartoœæ piksela t³a w~miejscu (x,y), $P_{n}(x,y)$ oznacza wartoœæ piksela na pozycji (x,y) w~obecnej ramce, $B_{n-1}$ oznacza wartoœæ piksela na pozycji (x,y) w~poprzednim modelu t³a
