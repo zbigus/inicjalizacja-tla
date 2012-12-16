@@ -4,9 +4,11 @@
 \label{blo:wstep}
 Metody przestrzenne, w~przeciwieñstwie do punktowych, rozwa¿aj¹ ramkê wideo jako grupê bloków o~okreœlonym rozmiarze oraz wspó³rzêdnych, lokalizuj¹cych jednoznacznie dany blok w~danej ramce. 
 Za³o¿enie tej klasy algorytmów polega na przypuszczeniu, i¿ blok który pojawia siê najczêœciej w~danej sekwencji wideo jest najlepszym kandydatem na bycie fragmentem t³a. Bloki o~tych samych wspó³rzêdnych s¹ porównywane miêdzy sob¹ w~kolejnych ramkach sekwencji wideo (np. przy u¿yciu wspó³czynnika korelacji poszczególnych pikseli) w celu utworzenia grupy kandydatów - zbioru bloków, które z pewnym prawdopodobieñstwem nalez¹ do t³a i na podstawie którego (z u¿yciem odpowiednich transformat) t³o to zostanie odtworzone. 
-Proces ten mo¿na zilustrowaæ nastêpuj¹cym schematem blokowym:
-TU WSTAWIÆ SCHEMAT !!!!!!
+Pierwszy etap tego procesu mo¿na przedstawiæ za pomoc¹ schematu blokowego
+
+
 W dalszej czêœci tego rozdzia³u zostan¹ omówione szczegó³owe zasady dzia³ania tej rodziny algorytmów, jak i~równie¿ zostan¹ przedstawione dwie metody, stosowane do wyboru najlepszego bloku z~grupy kandydatów, wykorzystuj¹ce odpowiednio transformatê DCT oraz rekursywn¹ transformatê Hadamarda.
+
 \section{Algorytm dzia³ania}
 \label{blo:algorytm}
 Podstawow¹ jednostk¹, na której operuje ta klasa algorytmów, jest blok. Ka¿dy blok jest okreœlony przez jego wagê oraz piksele, które zawiera. Dodatkowo, dla ca³ej sekwencji, dla ka¿dej lokalizacji blokowej (czyli miejsca na obrazie, gdzie znajduj¹ siê bloki o~okreœlonych wspó³rzêdnych) jest utrzymywana tzw. grupa kandydatów - bloków, które z~pewnym prawdopodobieñstwem nale¿¹ do t³a. Waga danego bloku z~tej grupy okreœla, jak czêsto w~sekwencji wideo pojawia³ siê blok podobny do niego (tzn. spe³niaj¹cy okreœlone kryteria, omówione w~sekcji \ref{blo:kandydaci})
