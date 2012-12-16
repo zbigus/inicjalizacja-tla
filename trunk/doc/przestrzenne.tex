@@ -20,14 +20,14 @@ Za \cite{Reddy2009} przyjêto nastêpuj¹ce oznaczenia, u¿ywane w~dalszej czêœci ni
 \item $R(i,j)$ -zbiór kandydatów (grupa kandydatów) dla lokalizacji blokowej o~wspó³rzêdnych $(i,j)$,
 \item $r_k(i,j)$ - k-ty blok z~grupy kandydatów  $R(i,j)$ po wektoryzacji,
 \item $W_k(i,j)$ - waga k-tego bloku z~grupy kandydatów  $R(i,j)$,
-\item $\mu_{r_k}$, $\mu{b_f}$ - œrednia z~elementów bloków odpowiednio $r_k$ oraz $b_f$,
-\item $\sigma_{r_k}$, $\sigma{b_f}$ - odchylenie standardowe z~elementów bloków odpowiednio $r_k$ oraz $b_f$.
+\item $\mu_{r_k}$, $\mu{b_f}$ - œrednia z~elementów wektorów blokowych odpowiednio $r_k$ oraz $b_f$,
+\item $\sigma_{r_k}$, $\sigma{b_f}$ - odchylenie standardowe z~elementów wektorów blokowych odpowiednio $r_k$ oraz $b_f$.
 \end{itemize}
 Ka¿d¹ z~opisywanych metod mo¿na podzieliæ na trzy zasadnicze fazy: 
 \begin{enumerate}
-\item Kolekcjonowanie kandydatów - bloków, które mog¹ siê zawieraæ w~tle
-\item Czêœciow¹ rekonstrukcjê t³a
-\item Estymacjê t³a na podstawie grup kandydatów
+\item Kolekcjonowanie kandydatów - bloków, które mog¹ siê zawieraæ w~tle.
+\item Czêœciow¹ rekonstrukcjê t³a.
+\item Estymacjê t³a na podstawie grup kandydatów.
 \end{enumerate}
 W kolejnych sekcjach ka¿da z~faz zostanie szczegó³owo omówiona. 
 
@@ -44,7 +44,7 @@ W_k(i,j)=W_k(i,j)+1
 Kluczowe dla prawid³owego dzia³ania algorytmu jest dobranie odpowiednich kryteriów podobieñstwa bloków (a raczej wektorów blokowych, gdy¿ na nich wykonywane s¹ obliczenia). Najczeœciej w~tym celu u¿ywa siê wspó³czynnika korelacji oraz wspó³czynnika MAD\footnote{MAD - Mean of Absolute Differences}. S¹ one wyliczane nastepuj¹co:
 \begin{equation}
 \label{Tcorr}
-T_{corr}=\frac{{(r_k(i,j)-\mu_{r_k}(i,j)}^T(b_f(i,j)-\mu_{b_f})}{\sigma_{r_k}\sigma_{b_f}}
+T_{corr}=\frac{{(r_k(i,j)-\mu_{r_k}(i,j))}^T(b_f(i,j)-\mu_{b_f}(i,j))}{\sigma_{r_k}(i,j)\sigma_{b_f}(i,j)}
 \end{equation}
 \begin{equation}
 T_{MAD}=\frac{1}{N^2}\sum_{n=0}^{N^2-1}\left|b_{f_n}(i,j)-r_{k_f}(i,j)\right|
