@@ -5,24 +5,24 @@ Dla ka¿dej z u¿ytych sekwencji wideo zostan¹ przedstawione w postaci tabel dwie 
 \section{Sekwencja clip\_01.mpg}
 
 \begin{table}[ht]
-\begin{tabular}{|*{14}{l|}}
-\cline{1-13}
+\begin{tabular}{|*{10}{l|}}
+\cline{1-9}
  \multirow{2}{*}{metryka} &
  \multirow{2}{*}{œrednia}& \multirow{2}{*}{mediana} &
- \multirow{2}{*}{MOG} & \multicolumn{9}{|c|}{aproksymacja œredniej przy u¿yciu parametru $\alpha$} \\
- \cline{5-14}
- & & & & 0.1 & 0.2 & 0.3 & 0.4 & 0.5 & 0.6 & 0.7 & 0.8 & 0.9 & wspó³czynnik $\alpha$ \\
+ \multirow{2}{*}{MOG} & \multicolumn{5}{|c|}{aproksymacja œredniej przy u¿yciu parametru $\alpha$} \\
+ \cline{5-10}
+ & & & & 0.80 &  0.90 & 0.95 & 0.97 & 0.99 & $\alpha$ \\
  \hline
  MSE \\ 
- \cline{1-13}
+ \cline{1-9}
  PP (80 \%) \\ 
- \cline{1-13}
+ \cline{1-9}
  PP (90 \%) \\ 
- \cline{1-13}
+ \cline{1-9}
  PP (98 \%) \\ 
- \cline{1-13}
+ \cline{1-9}
  PP (99 \%) \\ 
-  \cline{1-13}
+  \cline{1-9}
 \end{tabular}
 \caption{Wartoœci metryk porównawczych dla metod pikselowych - sekwencja clip\_01.mpg}
 \end{table}
@@ -36,16 +36,16 @@ Dla ka¿dej z u¿ytych sekwencji wideo zostan¹ przedstawione w postaci tabel dwie 
  \cline{2-10}
  & 0.6 & 0.7 & 0.8 & 0.9 & 0.6 & 0.7 & 0.8 & 0.9 & $T_{corr}$ \\
 \hline
-MSE & 6.73 & 6.90 & 7.37 & 8.00 & 7.40 & 7.55 & 8.12 \\ 
+MSE & 48.2812 & 47.2416 & 46.2450 & 43.1881 & 59.0277 & 56.8871 & 54.1390 & 47.4516 \\
+\cline{1-9} 
+PP (80 \%) & 0.9932 & 0.9932 & 0.9905 & 0.9891 & 0.9876 & 0.9878 & 0.9871 & 0.9857 \\
+\cline{1-9} 
+PP (90 \%) & 0.9779 & 0.9782 & 0.9760 & 0.9752 & 0.9652 & 0.9674 & 0.9690 & 0.9696 \\ 
 \cline{1-9}
-PP (80 \% ) & 99.94 & 99.96 & 99.84 & 99.82 & 99.74 & 99.76 & 99.70\\
-\cline{1-9}
-PP (90 \% ) & 99.77 & 99.75 & 99.64 & 99.56 & 99.31 & 99.34 & 99.26\\
-\cline{1-9}
-PP (98 \% ) & 94.18 & 94.06 & 93.78 & 93.38 & 94.11 & 93.96 & 93.59\\
-\cline{1-9}
-PP (99 \% ) & 84.73& 84.48 & 84.06 & 83.30 & 85.25 & 84.83& 84.13\\
-\cline{1-9}
+PP (98 \%) & 0.6329 & 0.6357 & 0.6409 & 0.6564 & 0.5874 & 0.5949 & 0.6047 & 0.6355 \\
+\cline{1-9} 
+PP (99 \% ) & 0.3422 & 0.3429 & 0.3451 & 0.3545 & 0.3169 & 0.3202 & 0.3247 & 0.3433 \\ 
+\cline{1-9} 
 \end{tabular}
 \caption{Wartoœci metryk porównawczych dla metody z transformat¹ DCT - sekwencja clip\_01.mpg}
 \end{table}
@@ -59,16 +59,160 @@ PP (99 \% ) & 84.73& 84.48 & 84.06 & 83.30 & 85.25 & 84.83& 84.13\\
  \cline{2-10}
  & 0.6 & 0.7 & 0.8 & 0.9 & 0.6 & 0.7 & 0.8 & 0.9 & $T_{corr}$ \\
 \hline
-MSE & 6.73 & 6.90 & 7.37 & 8.00 & 7.40 & 7.55 & 8.12 \\ 
+MSE & 48.2920 & 47.1993 & 46.2278 & 43.1868 & 59.1575 & 56.8728 & 54.0997 & 47.6793 \\
+\cline{1-9} 
+PP (80\%) & 0.9932 & 0.9932 & 0.9905 & 0.9891 & 0.9877 & 0.9879 & 0.9872 & 0.9849\\ 
 \cline{1-9}
-PP (80 \% ) & 99.94 & 99.96 & 99.84 & 99.82 & 99.74 & 99.76 & 99.70\\
+PP (90\%) & 0.9779 & 0.9783 & 0.9760 & 0.9752 & 0.9651 & 0.9675 & 0.9690 & 0.9688\\ 
 \cline{1-9}
-PP (90 \% ) & 99.77 & 99.75 & 99.64 & 99.56 & 99.31 & 99.34 & 99.26\\
-\cline{1-9}
-PP (98 \% ) & 94.18 & 94.06 & 93.78 & 93.38 & 94.11 & 93.96 & 93.59\\
-\cline{1-9}
-PP (99 \% ) & 84.73& 84.48 & 84.06 & 83.30 & 85.25 & 84.83& 84.13\\
+PP (95\%) & 0.6328 & 0.6360 & 0.6409 & 0.6564 & 0.5872 & 0.5951 & 0.6049 & 0.6349 \\
+\cline{1-9} 
+PP (98\%) & 0.3421 & 0.3431 & 0.3451 & 0.3546 & 0.3169 & 0.3203 & 0.3248 & 0.3432\\ 
 \cline{1-9}
 \end{tabular}
 \caption{Wartoœci metryk porównawczych dla metody z transformat¹ Hadamarda - sekwencja clip\_01.mpg}
+\end{table}
+
+\newpage
+\section{Sekwencja clip\_02.mpg}
+
+\begin{table}[ht]
+\begin{tabular}{|*{10}{l|}}
+\cline{1-9}
+ \multirow{2}{*}{metryka} &
+ \multirow{2}{*}{œrednia}& \multirow{2}{*}{mediana} &
+ \multirow{2}{*}{MOG} & \multicolumn{5}{|c|}{aproksymacja œredniej przy u¿yciu parametru $\alpha$} \\
+ \cline{5-10}
+ & & & & 0.80 &  0.90 & 0.95 & 0.97 & 0.99 & $\alpha$ \\
+ \hline
+ MSE \\ 
+ \cline{1-9}
+ PP (80 \%) \\ 
+ \cline{1-9}
+ PP (90 \%) \\ 
+ \cline{1-9}
+ PP (98 \%) \\ 
+ \cline{1-9}
+ PP (99 \%) \\ 
+  \cline{1-9}
+\end{tabular}
+\caption{Wartoœci metryk porównawczych dla metod pikselowych - sekwencja clip\_02.mpg}
+\end{table}
+\begin{table}[ht]
+\begin{tabular}{|*{10}{l|}}
+\cline{1-9}
+  \multirow{3}{*}{metryka} &
+  \multicolumn{8}{|c|}{transformata DCT} \\
+\cline{2-10}
+ & \multicolumn{4}{|c|}{10} & \multicolumn{4}{|c|}{20} & $T_{mad}$ \\
+ \cline{2-10}
+ & 0.6 & 0.7 & 0.8 & 0.9 & 0.6 & 0.7 & 0.8 & 0.9 & $T_{corr}$ \\
+\hline
+MSE & 45.2942 & 43.3337 & 68.5479 & 64.8730 & 56.1752 & 51.5964 & 45.5199 & 37.5261 \\
+\cline{1-9}
+PP (80 \%) & 0.9983 & 0.9983 & 0.8632 & 0.8604 & 0.9978 & 0.9979 & 0.9980 & 0.9982 \\
+\cline{1-9} 
+PP (90 \%) & 0.9894 & 0.9899 & 0.8571 & 0.8550 & 0.9841 & 0.9860 & 0.9879 & 0.9899 \\
+\cline{1-9}
+PP (95 \%) & 0.6086 & 0.6196 & 0.5600 & 0.5925 & 0.5551 & 0.5774 & 0.6096 & 0.6670 \\ 
+\cline{1-9}
+PP (98 \%) & 0.2739 & 0.2785 & 0.2488 & 0.2785 & 0.2438 & 0.2544 & 0.2696 & 0.3128 \\ 
+\cline{1-9}
+\end{tabular}
+\caption{Wartoœci metryk porównawczych dla metody z transformat¹ DCT - sekwencja clip\_02.mpg}
+\end{table}
+\begin{table}[ht]
+\begin{tabular}{|*{10}{l|}}
+\cline{1-9}
+  \multirow{3}{*}{metryka} &
+  \multicolumn{8}{|c|}{transformata Hadamarda} \\
+\cline{2-10}
+ & \multicolumn{4}{|c|}{10} & \multicolumn{4}{|c|}{20} & $T_{mad}$ \\
+ \cline{2-10}
+ & 0.6 & 0.7 & 0.8 & 0.9 & 0.6 & 0.7 & 0.8 & 0.9 & $T_{corr}$ \\
+\hline
+MSE & 45.2998 & 43.3337 & 68.4959 & 64.8535 & 56.0116 & 51.5867 & 45.4975 & 37.5051 \\ 
+\cline{1-9}
+PP(80 \%) & 0.9983 & 0.9983 & 0.8632 & 0.8604 & 0.9978 & 0.9979 & 0.9980 & 0.9982 \\ 
+\cline{1-9}
+PP(90 \%) & 0.9893 & 0.9898 & 0.8571 & 0.8550 & 0.9841 & 0.9860 & 0.9879 & 0.9899 \\ 
+\cline{1-9}
+PP(95 \%) & 0.6081 & 0.6197 & 0.5604 & 0.5929 & 0.5559 & 0.5773 & 0.6096 & 0.6674 \\ 
+\cline{1-9}
+PP(98 \%) & 0.2731 & 0.2788 & 0.2489 & 0.2792 & 0.2441 & 0.2544 & 0.2701 & 0.3134 \\ 
+\cline{1-9}
+\end{tabular}
+\caption{Wartoœci metryk porównawczych dla metody z transformat¹ Hadamarda - sekwencja clip\_02.mpg}
+\end{table}
+
+\newpage
+\section{Sekwencja clip\_03.mpg}
+
+\begin{table}[ht]
+\begin{tabular}{|*{10}{l|}}
+\cline{1-9}
+ \multirow{2}{*}{metryka} &
+ \multirow{2}{*}{œrednia}& \multirow{2}{*}{mediana} &
+ \multirow{2}{*}{MOG} & \multicolumn{5}{|c|}{aproksymacja œredniej przy u¿yciu parametru $\alpha$} \\
+ \cline{5-10}
+ & & & & 0.80 &  0.90 & 0.95 & 0.97 & 0.99 & $\alpha$ \\
+ \hline
+ MSE \\ 
+ \cline{1-9}
+ PP (80 \%) \\ 
+ \cline{1-9}
+ PP (90 \%) \\ 
+ \cline{1-9}
+ PP (98 \%) \\ 
+ \cline{1-9}
+ PP (99 \%) \\ 
+  \cline{1-9}
+\end{tabular}
+\caption{Wartoœci metryk porównawczych dla metod pikselowych - sekwencja clip\_03.mpg}
+\end{table}
+\begin{table}[ht]
+\begin{tabular}{|*{10}{l|}}
+\cline{1-9}
+  \multirow{3}{*}{metryka} &
+  \multicolumn{8}{|c|}{transformata DCT} \\
+\cline{2-10}
+ & \multicolumn{4}{|c|}{10} & \multicolumn{4}{|c|}{20} & $T_{mad}$ \\
+ \cline{2-10}
+ & 0.6 & 0.7 & 0.8 & 0.9 & 0.6 & 0.7 & 0.8 & 0.9 & $T_{corr}$ \\
+\hline
+MSE & 200,6954 & 200,2586 & 199,9264 & 201,1174 & 184,9569 & 184,5701 & 184,0976 & 183,3507\\
+\cline{1-9} 
+PP (80 \% ) & 0,8113 & 0,8115 & 0,8116 & 0,8110 & 0,9604 & 0,9615 & 0,9644 & 0,9686\\
+\cline{1-9} 
+PP (90 \% ) & 0,6097 & 0,6110 & 0,6141 & 0,6140 & 0,6950 & 0,6986 & 0,7058 & 0,7169\\
+\cline{1-9} 
+PP (95 \% ) & 0,0839 & 0,0850 & 0,0858 & 0,0835 & 0,1174 & 0,1173 & 0,1179 & 0,1197\\
+\cline{1-9} 
+PP (98 \% ) & 0,0383 & 0,0387 & 0,0394 & 0,0387 & 0,0530 & 0,0527 & 0,0532 & 0,0545\\ 
+\cline{1-9}
+\end{tabular}
+\caption{Wartoœci metryk porównawczych dla metody z transformat¹ DCT - sekwencja clip\_03.mpg}
+\end{table}
+\begin{table}[ht]
+\begin{tabular}{|*{10}{l|}}
+\cline{1-9}
+  \multirow{3}{*}{metryka} &
+  \multicolumn{8}{|c|}{transformata Hadamarda} \\
+\cline{2-10}
+ & \multicolumn{4}{|c|}{10} & \multicolumn{4}{|c|}{20} & $T_{mad}$ \\
+ \cline{2-10}
+ & 0.6 & 0.7 & 0.8 & 0.9 & 0.6 & 0.7 & 0.8 & 0.9 & $T_{corr}$ \\
+\hline
+MSE & 45,2998 & 43,3337 & 68,4959 & 64,8535 & 56,0116 & 51,5867 & 45,4975 & 37,5051\\
+\cline{1-9}
+PP (80 \% ) & 0,9983 & 0,9983 & 0,8632 & 0,8604 & 0,9978 & 0,9979 & 0,9980 & 0,9982\\
+\cline{1-9} 
+PP (90 \% ) & 0,9893 & 0,9898 & 0,8571 & 0,8550 & 0,9841 & 0,9860 & 0,9879 & 0,9899\\ 
+\cline{1-9}
+PP (95 \% ) & 0,6081 & 0,6197 & 0,5604 & 0,5929 & 0,5559 & 0,5773 & 0,6096 & 0,6674\\ 
+\cline{1-9}
+PP (98 \% ) & 0,2731 & 0,2788 & 0,2489 & 0,2792 & 0,2441 & 0,2544 & 0,2701 & 0,3134\\ 
+\cline{1-9}
+\end{tabular}
+\caption{Wartoœci metryk porównawczych dla metody z transformat¹ Hadamarda - sekwencja clip\_03.mpg}
 \end{table}
