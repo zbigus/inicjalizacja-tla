@@ -1,29 +1,31 @@
 \select@language {polish}
-\contentsline {chapter}{\numberline {1}Wst\k ep}{6}
-\contentsline {chapter}{\numberline {2}Metody operuj\k ace na poziomie pikseli}{7}
-\contentsline {section}{\numberline {2.1}Mixture of Gaussians (MOG)}{7}
-\contentsline {subsection}{\numberline {2.1.1}Wprowadzenie}{7}
-\contentsline {subsection}{\numberline {2.1.2}Opis metody}{8}
-\contentsline {subsubsection}{\numberline {2.1.2.1}Model mieszanki}{8}
-\contentsline {subsubsection}{\numberline {2.1.2.2}Estymacja modelu t\IeC {\l }a}{9}
-\contentsline {section}{\numberline {2.2}\'Srednia z~bufora ramek}{10}
-\contentsline {subsection}{\numberline {2.2.1}Wprowadzenie}{10}
-\contentsline {subsection}{\numberline {2.2.2}Opis metody}{10}
-\contentsline {section}{\numberline {2.3}Aproksymacja \'sredniej przy u\.zyciu parametru alfa}{10}
-\contentsline {subsection}{\numberline {2.3.1}Wprowadzenie}{10}
-\contentsline {subsection}{\numberline {2.3.2}Opis metody}{10}
-\contentsline {chapter}{\numberline {3}Metody blokowe (przestrzenne)}{12}
-\contentsline {section}{\numberline {3.1}Wprowadzenie}{12}
-\contentsline {section}{\numberline {3.2}Algorytm dzia\IeC {\l }ania}{12}
-\contentsline {subsection}{\numberline {3.2.1}Kolekcjonowanie kandydat\'ow}{13}
-\contentsline {subsubsection}{\numberline {3.2.1.1}Kryteria podobie\'nstwa blok\'ow}{13}
-\contentsline {subsection}{\numberline {3.2.2}Cz\k e\'sciowa rekonstrukcja t\IeC {\l }a}{14}
-\contentsline {subsection}{\numberline {3.2.3}Estymacja brakuj\k acego t\IeC {\l }a}{14}
-\contentsline {subsubsection}{\numberline {3.2.3.1}Estymacja z~wykorzystaniem DCT}{14}
-\contentsline {subsubsection}{\numberline {3.2.3.2}Estymacja z~wykorzystaniem rekursywnej transformaty Hadamarda}{15}
-\contentsline {chapter}{\numberline {4}Metodologia bada\'n}{17}
-\contentsline {section}{\numberline {4.1}U\.zyte sekwencje}{17}
-\contentsline {section}{\numberline {4.2}U\.zyte metryki}{17}
-\contentsline {chapter}{\numberline {5}Badania}{19}
-\contentsline {section}{\numberline {5.1}Sekwencja clip\_01.mpg}{20}
-\contentsline {chapter}{\numberline {6}S\IeC {\l }ownik u\.zytych poj\k e\'c}{21}
+\contentsline {chapter}{\numberline {1}Wst\k ep}{7}
+\contentsline {chapter}{\numberline {2}Metody operuj\k ace na poziomie pikseli}{8}
+\contentsline {section}{\numberline {2.1}Mixture of Gaussians (MOG)}{8}
+\contentsline {subsection}{\numberline {2.1.1}Wprowadzenie}{8}
+\contentsline {subsection}{\numberline {2.1.2}Opis metody}{9}
+\contentsline {subsubsection}{\numberline {2.1.2.1}Model mieszanki}{9}
+\contentsline {subsubsection}{\numberline {2.1.2.2}Estymacja modelu t\IeC {\l }a}{10}
+\contentsline {section}{\numberline {2.2}\'Srednia z~bufora ramek}{11}
+\contentsline {subsection}{\numberline {2.2.1}Wprowadzenie}{11}
+\contentsline {subsection}{\numberline {2.2.2}Opis metody}{11}
+\contentsline {section}{\numberline {2.3}Aproksymacja \'sredniej przy u\.zyciu parametru alfa}{11}
+\contentsline {subsection}{\numberline {2.3.1}Wprowadzenie}{11}
+\contentsline {subsection}{\numberline {2.3.2}Opis metody}{11}
+\contentsline {chapter}{\numberline {3}Metody blokowe (przestrzenne)}{13}
+\contentsline {section}{\numberline {3.1}Wprowadzenie}{13}
+\contentsline {section}{\numberline {3.2}Algorytm dzia\IeC {\l }ania}{13}
+\contentsline {subsection}{\numberline {3.2.1}Kolekcjonowanie kandydat\'ow}{14}
+\contentsline {subsubsection}{\numberline {3.2.1.1}Kryteria podobie\'nstwa blok\'ow}{14}
+\contentsline {subsection}{\numberline {3.2.2}Cz\k e\'sciowa rekonstrukcja t\IeC {\l }a}{15}
+\contentsline {subsection}{\numberline {3.2.3}Estymacja brakuj\k acego t\IeC {\l }a}{15}
+\contentsline {subsubsection}{\numberline {3.2.3.1}Estymacja z~wykorzystaniem DCT}{15}
+\contentsline {subsubsection}{\numberline {3.2.3.2}Estymacja z~wykorzystaniem rekursywnej transformaty Hadamarda}{16}
+\contentsline {chapter}{\numberline {4}Metodologia bada\'n}{18}
+\contentsline {section}{\numberline {4.1}U\.zyte sekwencje}{18}
+\contentsline {section}{\numberline {4.2}U\.zyte metryki}{18}
+\contentsline {chapter}{\numberline {5}Badania}{20}
+\contentsline {section}{\numberline {5.1}Sekwencja clip\_01.mpg}{21}
+\contentsline {section}{\numberline {5.2}Sekwencja clip\_02.mpg}{22}
+\contentsline {section}{\numberline {5.3}Sekwencja clip\_03.mpg}{23}
+\contentsline {chapter}{\numberline {6}S\IeC {\l }ownik u\.zytych poj\k e\'c}{24}
