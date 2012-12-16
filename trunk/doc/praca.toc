@@ -25,5 +25,5 @@
 \contentsline {section}{\numberline {4.1}U\.zyte sekwencje}{17}
 \contentsline {section}{\numberline {4.2}U\.zyte metryki}{17}
 \contentsline {chapter}{\numberline {5}Badania}{19}
-\contentsline {section}{\numberline {5.1}Sekwencja clip\_01.mpg}{19}
-\contentsline {chapter}{\numberline {6}S\IeC {\l }ownik u\.zytych poj\k e\'c}{20}
+\contentsline {section}{\numberline {5.1}Sekwencja clip\_01.mpg}{20}
+\contentsline {chapter}{\numberline {6}S\IeC {\l }ownik u\.zytych poj\k e\'c}{21}
