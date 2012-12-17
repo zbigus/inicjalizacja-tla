@@ -33,4 +33,5 @@
 \contentsline {section}{\numberline {5.2}Metody przestrzenne - operuj\k ace na blokach}{25}
 \contentsline {subsection}{\numberline {5.2.1}Metoda wykorzystuj\k aca transformat\k e DCT}{25}
 \contentsline {subsection}{\numberline {5.2.2}Metoda wykorzystuj\k aca transformat\k e Hadamarda}{27}
+\contentsline {section}{\numberline {5.3}Por\'ownanie metod przestrzennych z Mixture of Gaussians}{28}
 \contentsline {chapter}{\numberline {6}S\IeC {\l }ownik u\.zytych poj\k e\'c}{29}
