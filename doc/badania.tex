@@ -3,7 +3,8 @@
 Dla ka¿dej z u¿ytych sekwencji wideo zosta³y policzone wszystkie metryki wymienione w rozdziale~4. 
 Poni¿ej, dla ka¿dej metody, przedstawiony zostanie obraz wynikowy dla dwóch przypadków: najgorszych oraz najlepszych uzyskanych metryk: MSE - b³êdu œredniokwadratowego oraz PP - Procentu podobieñstwa o zadanym progu.
 
-\section{Metoda Œredniej z bufora ramek}
+\section{Metody operuj¹ce na pikselach}
+\subsection{Metoda Œredniej z bufora ramek}
 
 Dla tej metody najlepsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_02.mpg i wynosz¹ one odpowiednio:
 
@@ -31,19 +32,19 @@ Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej se
 
 \begin{figure}[ht]
         \centering
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{clip_02_ref_gray.png}
                 \caption{Obraz referencyjny}
         \end{subfigure}
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{bg_clip_02mpg_mean_k_200.png}
                 \caption{Obraz wynikowy}
         \end{subfigure}
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
-                \includegraphics[width=\textwidth]{bg_clip_02mpg_mean_k_200.png}
+                \includegraphics[width=\textwidth]{bg_clip_02mpg_mean_k_200diff.png}
                 \caption{Obraz ró¿nicowy}
         \end{subfigure}
         \caption{Obrazy wynikowe dla sekwencji clip\_02.mpg}
@@ -77,19 +78,19 @@ Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej se
 
 \begin{figure}[ht]
         \centering
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{clip_03_ref_gray.png}
                 \caption{Obraz referencyjny}
         \end{subfigure}
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{bg_clip_03mpg_mean_k_200.png}
                 \caption{Obraz wynikowy}
         \end{subfigure}
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
-                \includegraphics[width=\textwidth]{bg_clip_03mpg_mean_k_200.png}
+                \includegraphics[width=\textwidth]{bg_clip_03mpg_mean_k_200diff.png}
                 \caption{Obraz ró¿nicowy}
         \end{subfigure}
         \caption{Obrazy wynikowe dla sekwencji clip\_03.mpg}
@@ -97,7 +98,7 @@ Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej se
 
 
 %------------------------------------------------------------------------------
-\section{Metoda mediany z bufora ramek}
+\subsection{Metoda mediany z bufora ramek}
 
 Dla tej metody najlepsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_02.mpg i wynosz¹ one odpowiednio:
 
@@ -105,15 +106,15 @@ Dla tej metody najlepsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_02
   \centering
     \begin{tabular}{|r|r|}
     \hline
-    MSE   & 13,15359824 \bigstrut\\
+    MSE   & 13,15359824 \\
     \hline
-    PP(80\%) & 0,998912656 \bigstrut\\
+    PP(80\%) & 0,998912656 \\
     \hline
-    PP(90\%) & 0,996189946 \bigstrut\\
+    PP(90\%) & 0,996189946 \\
     \hline
-    PP(98\%) & 0,894175315 \bigstrut\\
+    PP(98\%) & 0,894175315 \\
     \hline
-    PP(99\%) & 0,638897346 \bigstrut\\
+    PP(99\%) & 0,638897346 \\
     \hline
     \end{tabular}%
  \caption{Wartoœci metryk dla sekwencji clip\_02.mpg}
@@ -124,19 +125,19 @@ Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej se
 
 \begin{figure}[ht]
         \centering
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{clip_02_ref_gray.png}
                 \caption{Obraz referencyjny}
         \end{subfigure}
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{bg_clip_02mpg_median_k_200.png}
                 \caption{Obraz wynikowy}
         \end{subfigure}
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
-                \includegraphics[width=\textwidth]{bg_clip_02mpg_median_k_200.png}
+                \includegraphics[width=\textwidth]{bg_clip_02mpg_median_k_200diff.png}
                 \caption{Obraz ró¿nicowy}
         \end{subfigure}
         \caption{Obrazy wynikowe dla sekwencji clip\_02.mpg}
@@ -151,15 +152,15 @@ Najgorsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_03.mpg i wynosz¹ 
   \centering
     \begin{tabular}{|r|r|}
     \hline
-    MSE   & 201,5417845 \bigstrut\\
+    MSE   & 201,5417845 \\
     \hline
-    PP(80\%) & 0,984985952 \bigstrut\\
+    PP(80\%) & 0,984985952 \\
     \hline
-    PP(90\%) & 0,846380014 \bigstrut\\
+    PP(90\%) & 0,846380014 \\
     \hline
-    PP(98\%) & 0,090032098 \bigstrut\\
+    PP(98\%) & 0,090032098 \\
     \hline
-    PP(99\%) & 0,037495977 \bigstrut\\
+    PP(99\%) & 0,037495977 \\
     \hline
     \end{tabular}
   \caption{Wartoœci metryk dla sekwencji clip\_03.mpg}
@@ -170,19 +171,19 @@ Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej se
 
 \begin{figure}[ht]
         \centering
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{clip_03_ref_gray.png}
                 \caption{Obraz referencyjny}
         \end{subfigure}
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{bg_clip_03mpg_median_k_200.png}
                 \caption{Obraz wynikowy}
         \end{subfigure}
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
-                \includegraphics[width=\textwidth]{bg_clip_03mpg_median_k_200.png}
+                \includegraphics[width=\textwidth]{bg_clip_03mpg_median_k_200diff.png}
                 \caption{Obraz ró¿nicowy}
         \end{subfigure}
         \caption{Obrazy wynikowe dla sekwencji clip\_03.mpg}
@@ -191,7 +192,7 @@ Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej se
 
 %------------------------------------------------------------------------------
 \newpage
-\section{Metoda aproksymacji œredniej z bufora ramek}
+\subsection{Metoda aproksymacji œredniej z bufora ramek}
 
 Dla tej metody najlepsze wartoœci metryk zosta³y uzyskane dla sekwencji fountain.mpg przy parametrze $\alpha = 0.9$ i wynosz¹ one odpowiednio:
 
@@ -200,15 +201,15 @@ Dla tej metody najlepsze wartoœci metryk zosta³y uzyskane dla sekwencji fountain
   \centering
     \begin{tabular}{|r|r|}
     \hline
-    MSE   & 13,09215802 \bigstrut\\
+    MSE   & 13,09215802 \\
     \hline
-    PP(80\%) & 0,995739976 \bigstrut\\
+    PP(80\%) & 0,995739976 \\
     \hline
-    PP(90\%) & 0,980837264 \bigstrut\\
+    PP(90\%) & 0,980837264 \\
     \hline
-    PP(98\%) & 0,932871462 \bigstrut\\
+    PP(98\%) & 0,932871462 \\
     \hline
-    PP(99\%) & 0,911379717 \bigstrut\\
+    PP(99\%) & 0,911379717 \\
     \hline
     \end{tabular}%
  \caption{Wartoœci metryk dla sekwencji fountain.mpg}
@@ -220,25 +221,24 @@ Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej se
 
 \begin{figure}[ht]
         \centering
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{fountain_ref_gray.png}
                 \caption{Obraz referencyjny}
         \end{subfigure}
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{bg_fountainmpg_alpha_a099_k_200.png}
                 \caption{Obraz wynikowy}
         \end{subfigure}
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
-                \includegraphics[width=\textwidth]{bg_fountainmpg_alpha_a099_k_200.png}
+                \includegraphics[width=\textwidth]{bg_fountainmpg_alpha_a099_k_200diff.png}
                 \caption{Obraz ró¿nicowy}
         \end{subfigure}
         \caption{Obrazy wynikowe dla sekwencji fountain.mpg}
 \end{figure}
 
-\newpage
 Najgorsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_03.mpg przy parametrze $\alpha = 0.8$ i wynosz¹ one odpowiednio:
 
 
@@ -246,15 +246,15 @@ Najgorsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_03.mpg przy param
   \centering
     \begin{tabular}{|r|r|}
     \hline
-    MSE   & 208,8327099 \bigstrut\\
+    MSE   & 208,8327099 \\
     \hline
-    PP(80\%) & 0,979836289 \bigstrut\\
+    PP(80\%) & 0,979836289 \\
     \hline
-    PP(90\%) & 0,66894719 \bigstrut\\
+    PP(90\%) & 0,66894719 \\
     \hline
-    PP(98\%) & 0,085669674 \bigstrut\\
+    PP(98\%) & 0,085669674 \\
     \hline
-    PP(99\%) & 0,038291913 \bigstrut\\
+    PP(99\%) & 0,038291913 \\
     \hline
     \end{tabular}%
   \caption{Wartoœci metryk dla sekwencji clip\_03.mpg}
@@ -265,19 +265,19 @@ Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej se
 
 \begin{figure}[ht]
         \centering
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{clip_03_ref_gray.png}
                 \caption{Obraz referencyjny}
         \end{subfigure}
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{bg_clip_03mpg_alpha_a099_k_200.png}
                 \caption{Obraz wynikowy}
         \end{subfigure}
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
-                \includegraphics[width=\textwidth]{bg_clip_03mpg_alpha_a099_k_200.png}
+                \includegraphics[width=\textwidth]{bg_clip_03mpg_alpha_a099_k_200diff.png}
                 \caption{Obraz ró¿nicowy}
         \end{subfigure}
         \caption{Obrazy wynikowe dla sekwencji clip\_03.mpg}
@@ -285,7 +285,7 @@ Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej se
 
 %------------------------------------------------------------------------------
 \newpage
-\section{Metoda Mixture of Gaussians}
+\subsection{Metoda Mixture of Gaussians}
 
 Dla tej metody najlepsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_02.mpg i wynosz¹ one odpowiednio:
 
@@ -293,15 +293,15 @@ Dla tej metody najlepsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_02
   \centering
     \begin{tabular}{|r|r|}
     \hline
-    MSE   & 25,19326021 \bigstrut\\
+    MSE   & 25,19326021 \\
     \hline
-    PP(80\%) & 0,990661888 \bigstrut\\
+    PP(80\%) & 0,990661888 \\
     \hline
-    PP(90\%) & 0,9738298 \bigstrut\\
+    PP(90\%) & 0,9738298 \\
     \hline
-    PP(98\%) & 0,832057516 \bigstrut\\
+    PP(98\%) & 0,832057516 \\
     \hline
-    PP(99\%) & 0,586496055 \bigstrut\\
+    PP(99\%) & 0,586496055 \\
     \hline
     \end{tabular}%
  \caption{Wartoœci metryk dla sekwencji fountain.mpg}
@@ -313,25 +313,25 @@ Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej se
 
 \begin{figure}[ht]
         \centering
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{clip_02_ref_gray.png}
                 \caption{Obraz referencyjny}
         \end{subfigure}
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{clip_02_mog200.png}
                 \caption{Obraz wynikowy}
         \end{subfigure}
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
-                \includegraphics[width=\textwidth]{clip_02_mog200.png}
+                \includegraphics[width=\textwidth]{clip_02_mog200diff.png}
                 \caption{Obraz ró¿nicowy}
         \end{subfigure}
         \caption{Obrazy wynikowe dla sekwencji clip\_02.mpg}
 \end{figure}
 
-\newpage
+
 Najgorsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_03.mpg przy parametrze $\alpha = 0.8$ i wynosz¹ one odpowiednio:
 
 
@@ -339,15 +339,15 @@ Najgorsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_03.mpg przy param
   \centering
     \begin{tabular}{|r|r|}
     \hline
-    MSE   & 208,8327099 \bigstrut\\
+    MSE   & 208,8327099 \\
     \hline
-    PP(80\%) & 0,979836289 \bigstrut\\
+    PP(80\%) & 0,979836289 \\
     \hline
-    PP(90\%) & 0,66894719 \bigstrut\\
+    PP(90\%) & 0,66894719 \\
     \hline
-    PP(98\%) & 0,085669674 \bigstrut\\
+    PP(98\%) & 0,085669674 \\
     \hline
-    PP(99\%) & 0,038291913 \bigstrut\\
+    PP(99\%) & 0,038291913 \\
     \hline
     \end{tabular}%
   \caption{Wartoœci metryk dla sekwencji clip\_03.mpg}
@@ -358,20 +358,208 @@ Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej se
 
 \begin{figure}[ht]
         \centering
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{clip_03_ref_gray.png}
                 \caption{Obraz referencyjny}
         \end{subfigure}
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{clip_03_mog200.png}
                 \caption{Obraz wynikowy}
         \end{subfigure}
-        \begin{subfigure}[b]{0.32\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
-                \includegraphics[width=\textwidth]{clip_03_mog200.png}
+                \includegraphics[width=\textwidth]{clip_03_mog200diff.png}
                 \caption{Obraz ró¿nicowy}
         \end{subfigure}
         \caption{Obrazy wynikowe dla sekwencji clip\_03.mpg}
 \end{figure}
+
+
+%------------------------------------------------------------------------------
+
+\section{Metody przestrzenne - operuj¹ce na blokach}
+\subsection{Metoda wykorzystuj¹ca transformatê DCT}
+
+Dla tej metody najlepsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_04.mpg przy parametrach $T_{corr} = 0.9$, $T_{MAD} = 10$ i wynosz¹ one odpowiednio:
+
+\begin{table}[htbp]
+  \centering
+    \begin{tabular}{|r|r|}
+    \hline
+    MSE   & 34,17465792 \\
+    \hline
+    PP(80\%) & 0,999069233 \\
+    \hline
+    PP(90\%) & 0,989518002 \\
+    \hline
+    PP(98\%) & 0,733739855 \\
+    \hline
+    PP(99\%) & 0,378974243 \\
+    \hline
+    \end{tabular}%
+ \caption{Wartoœci metryk dla sekwencji clip\_04.mpg}
+\end{table}%
+
+
+Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej sekwencji.
+
+
+\begin{figure}[ht]
+        \centering
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{clip_04_ref_gray.png}
+                \caption{Obraz referencyjny}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{clip_04_dct_200_09_10.png}
+                \caption{Obraz wynikowy}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{clip_04_dct_200_09_10diff.png}
+                \caption{Obraz ró¿nicowy}
+        \end{subfigure}
+        \caption{Obrazy wynikowe dla sekwencji clip\_04.mpg}
+\end{figure}
+
+\newpage
+Najgorsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_03.mpg przy parametrach $T_{corr} = 0.6$, $T_{MAD} = 20$ i wynosz¹ one odpowiednio:
+
+\begin{table}[htbp]
+  \centering
+    \begin{tabular}{|r|r|}
+    \hline
+    MSE   & 184,9569325 \\
+    \hline
+    PP(80\%) & 0,960420672 \\
+    \hline
+    PP(90\%) & 0,694969511 \\
+    \hline
+    PP(98\%) & 0,117385329 \\
+    \hline
+    PP(99\%) & 0,053018902 \\
+    \hline
+    \end{tabular}%
+  \caption{Wartoœci metryk dla sekwencji clip\_03.mpg}
+\end{table}
+
+Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej sekwencji.
+
+
+\begin{figure}[ht]
+        \centering
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{clip_03_ref_gray.png}
+                \caption{Obraz referencyjny}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{clip_03_dct_200_06_20.png}
+                \caption{Obraz wynikowy}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{clip_03_dct_200_06_20diff.png}
+                \caption{Obraz ró¿nicowy}
+        \end{subfigure}
+        \caption{Obrazy wynikowe dla sekwencji clip\_03.mpg}
+\end{figure}
+
+%------------------------------------------------------------------------------
+\newpage
+\subsection{Metoda wykorzystuj¹ca transformatê Hadamarda}
+
+Dla tej metody najlepsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_04.mpg przy parametrach $T_{corr} = 0.9$, $T_{MAD} = 10$ i wynosz¹ one odpowiednio:
+
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
+\begin{table}[htbp]
+  \centering
+    \begin{tabular}{|r|r|}
+    \hline
+    MSE   & 200,9861037 \\
+    \hline
+    PP(80\%) & 0,810710775 \\
+    \hline
+    PP(90\%) & 0,61367531 \\
+    \hline
+    PP(98\%) & 0,083434094 \\
+    \hline
+    PP(99\%) & 0,038774694 \\
+    \hline
+    \end{tabular}%
+ \caption{Wartoœci metryk dla sekwencji clip\_04.mpg}
+\end{table}%
+
+Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej sekwencji.
+
+
+\begin{figure}[ht]
+        \centering
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{clip_04_ref_gray.png}
+                \caption{Obraz referencyjny}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{clip_04_had_200_09_10.png}
+                \caption{Obraz wynikowy}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{clip_04_had_200_09_10diff.png}
+                \caption{Obraz ró¿nicowy}
+        \end{subfigure}
+        \caption{Obrazy wynikowe dla sekwencji clip\_04.mpg}
+\end{figure}
+
+Najgorsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_03.mpg przy parametrach $T_{corr} = 0.6$, $T_{MAD} = 20$ i wynosz¹ one odpowiednio:
+
+\begin{table}[htbp]
+  \centering
+    \begin{tabular}{|r|r|}
+    \hline
+    MSE   & 184,9524657 \\
+    \hline
+    PP(80\%) & 0,960420672 \\
+    \hline
+    PP(90\%) & 0,69497821 \\
+    \hline
+    PP(98\%) & 0,117398377 \\
+    \hline
+    PP(99\%) & 0,053027601 \\
+    \hline
+    \end{tabular}%
+  \caption{Wartoœci metryk dla sekwencji clip\_03.mpg}
+\end{table}
+
+Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej sekwencji.
+
+\begin{figure}[ht]
+        \centering
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{clip_03_ref_gray.png}
+                \caption{Obraz referencyjny}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{clip_03_had_200_06_20.png}
+                \caption{Obraz wynikowy}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{clip_03_had_200_06_20diff.png}
+                \caption{Obraz ró¿nicowy}
+        \end{subfigure}
+        \caption{Obrazy wynikowe dla sekwencji clip\_03.mpg}
+\end{figure}
+
+
+
+
