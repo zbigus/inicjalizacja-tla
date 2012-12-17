@@ -25,7 +25,8 @@
 \contentsline {section}{\numberline {4.1}U\.zyte sekwencje}{18}
 \contentsline {section}{\numberline {4.2}U\.zyte metryki}{18}
 \contentsline {chapter}{\numberline {5}Badania}{20}
-\contentsline {section}{\numberline {5.1}Sekwencja clip\_01.mpg}{21}
-\contentsline {section}{\numberline {5.2}Sekwencja clip\_02.mpg}{22}
-\contentsline {section}{\numberline {5.3}Sekwencja clip\_03.mpg}{23}
-\contentsline {chapter}{\numberline {6}S\IeC {\l }ownik u\.zytych poj\k e\'c}{24}
+\contentsline {section}{\numberline {5.1}Metoda \'Sredniej z bufora ramek}{20}
+\contentsline {section}{\numberline {5.2}Metoda mediany z bufora ramek}{21}
+\contentsline {section}{\numberline {5.3}Metoda aproksymacji \'sredniej z bufora ramek}{23}
+\contentsline {section}{\numberline {5.4}Metoda Mixture of Gaussians}{25}
+\contentsline {chapter}{\numberline {6}S\IeC {\l }ownik u\.zytych poj\k e\'c}{27}
