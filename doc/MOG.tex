@@ -29,7 +29,7 @@ gdzie $I$ jest sekwencj¹ ramek.
 Niedawna historia dla ka¿dego piksela modelowana jest mieszank¹ K~rozk³adów Gaussa. Prawdopodobieñstwo zaobserwowania obecnego piksela okreœla siê wzorem
 
 \begin{equation}
-P(X_t)=\sum_{i=1}^{K} \omega_{i,t} * \eta(X_t, \mu_{i,t} , \Sigma_{i,t})
+P(X_t)=\sum_{i=1}^{K} \omega_{i,t} \cdot \eta(X_t, \mu_{i,t} , \Sigma_{i,t})
 \end{equation}
 
 \noindent gdzie K~jest liczb¹ rozk³adów,  $\omega_{i,t}$ jest oszacowan¹ wag¹ $i$-tego rozk³adu w~mieszance w~chwili $t$, $\mu_{i,t}$ jest œredni¹ wartoœci¹  $i$-tego rozk³adu w~mieszance w~chwili $t$, $\Sigma_{i,t}$ jest macierz¹ kowariancji w~chwili $t$,$\eta$ jest funkcj¹ gêstoœci prawdopodobieñstwa Gaussa:
@@ -115,7 +115,7 @@ Wartoœæ dla ka¿dego piksela t³a wyliczana jest ze wzoru.
 
 \begin{equation}
 \label{alpha}
-B_{n}(x,y) = P_{n}(x,y) * \alpha + B_{n-1}(x,y) * (1-\alpha)
+B_{n}(x,y) = P_{n}(x,y) \cdot (1-\alpha) + B_{n-1}(x,y) \cdot \alpha
 \end{equation}
 
 \noindent gdzie $B_{n}(x,y)$ oznacza obecn¹ wartoœæ piksela t³a w~miejscu (x,y), $P_{n}(x,y)$ oznacza wartoœæ piksela na pozycji (x,y) w~obecnej ramce, $B_{n-1}$ oznacza wartoœæ piksela na pozycji (x,y) w~poprzednim modelu t³a
