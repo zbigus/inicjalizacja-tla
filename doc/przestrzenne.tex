@@ -4,10 +4,15 @@
 \label{blo:wstep}
 Metody przestrzenne, w~przeciwieñstwie do punktowych, rozwa¿aj¹ ramkê wideo jako grupê bloków o~okreœlonym rozmiarze oraz wspó³rzêdnych, lokalizuj¹cych jednoznacznie dany blok w~danej ramce. 
 Za³o¿enie tej klasy algorytmów polega na przypuszczeniu, i¿ blok który pojawia siê najczêœciej w~danej sekwencji wideo jest najlepszym kandydatem na bycie fragmentem t³a. Bloki o~tych samych wspó³rzêdnych s¹ porównywane miêdzy sob¹ w~kolejnych ramkach sekwencji wideo (np. przy u¿yciu wspó³czynnika korelacji poszczególnych pikseli) w celu utworzenia grupy kandydatów - zbioru bloków, które z pewnym prawdopodobieñstwem nalez¹ do t³a i na podstawie którego (z u¿yciem odpowiednich transformat) t³o to zostanie odtworzone. 
-Pierwszy etap tego procesu mo¿na przedstawiæ za pomoc¹ schematu blokowego
-
+Pierwszy etap tego procesu mo¿na przedstawiæ za pomoc¹ schematu blokowego przedstawionego na stronie \pageref{fig:etap1przestrzenne}.
 
 W dalszej czêœci tego rozdzia³u zostan¹ omówione szczegó³owe zasady dzia³ania tej rodziny algorytmów, jak i~równie¿ zostan¹ przedstawione dwie metody, stosowane do wyboru najlepszego bloku z~grupy kandydatów, wykorzystuj¹ce odpowiednio transformatê DCT oraz rekursywn¹ transformatê Hadamarda.
+\newpage
+\begin{figure}[H]
+\label{fig:etap1przestrzenne}
+\includegraphics{etap1przestrzenne.png}
+\caption{Schemat blokowy I fazy metod blokowych}
+\end{figure}
 
 \section{Algorytm dzia³ania}
 \label{blo:algorytm}

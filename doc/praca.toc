@@ -14,24 +14,24 @@
 \contentsline {subsection}{\numberline {2.3.2}Opis metody}{11}
 \contentsline {chapter}{\numberline {3}Metody blokowe (przestrzenne)}{13}
 \contentsline {section}{\numberline {3.1}Wprowadzenie}{13}
-\contentsline {section}{\numberline {3.2}Algorytm dzia\IeC {\l }ania}{13}
-\contentsline {subsection}{\numberline {3.2.1}Kolekcjonowanie kandydat\'ow}{14}
-\contentsline {subsubsection}{\numberline {3.2.1.1}Kryteria podobie\'nstwa blok\'ow}{14}
-\contentsline {subsection}{\numberline {3.2.2}Cz\k e\'sciowa rekonstrukcja t\IeC {\l }a}{15}
-\contentsline {subsection}{\numberline {3.2.3}Estymacja brakuj\k acego t\IeC {\l }a}{15}
-\contentsline {subsubsection}{\numberline {3.2.3.1}Estymacja z~wykorzystaniem DCT}{15}
-\contentsline {subsubsection}{\numberline {3.2.3.2}Estymacja z~wykorzystaniem rekursywnej transformaty Hadamarda}{16}
-\contentsline {chapter}{\numberline {4}Metodologia bada\'n}{18}
-\contentsline {section}{\numberline {4.1}U\.zyte sekwencje}{18}
-\contentsline {section}{\numberline {4.2}U\.zyte metryki}{18}
-\contentsline {chapter}{\numberline {5}Badania}{20}
-\contentsline {section}{\numberline {5.1}Metody operuj\k ace na pikselach}{20}
-\contentsline {subsection}{\numberline {5.1.1}Metoda \'Sredniej z bufora ramek}{20}
-\contentsline {subsection}{\numberline {5.1.2}Metoda mediany z bufora ramek}{21}
-\contentsline {subsection}{\numberline {5.1.3}Metoda aproksymacji \'sredniej z bufora ramek}{23}
-\contentsline {subsection}{\numberline {5.1.4}Metoda Mixture of Gaussians}{24}
-\contentsline {section}{\numberline {5.2}Metody przestrzenne - operuj\k ace na blokach}{25}
-\contentsline {subsection}{\numberline {5.2.1}Metoda wykorzystuj\k aca transformat\k e DCT}{25}
-\contentsline {subsection}{\numberline {5.2.2}Metoda wykorzystuj\k aca transformat\k e Hadamarda}{27}
-\contentsline {section}{\numberline {5.3}Por\'ownanie metod przestrzennych z Mixture of Gaussians}{28}
-\contentsline {chapter}{\numberline {6}S\IeC {\l }ownik u\.zytych poj\k e\'c}{29}
+\contentsline {section}{\numberline {3.2}Algorytm dzia\IeC {\l }ania}{15}
+\contentsline {subsection}{\numberline {3.2.1}Kolekcjonowanie kandydat\'ow}{15}
+\contentsline {subsubsection}{\numberline {3.2.1.1}Kryteria podobie\'nstwa blok\'ow}{16}
+\contentsline {subsection}{\numberline {3.2.2}Cz\k e\'sciowa rekonstrukcja t\IeC {\l }a}{16}
+\contentsline {subsection}{\numberline {3.2.3}Estymacja brakuj\k acego t\IeC {\l }a}{16}
+\contentsline {subsubsection}{\numberline {3.2.3.1}Estymacja z~wykorzystaniem DCT}{17}
+\contentsline {subsubsection}{\numberline {3.2.3.2}Estymacja z~wykorzystaniem rekursywnej transformaty Hadamarda}{18}
+\contentsline {chapter}{\numberline {4}Metodologia bada\'n}{19}
+\contentsline {section}{\numberline {4.1}U\.zyte sekwencje}{19}
+\contentsline {section}{\numberline {4.2}U\.zyte metryki}{19}
+\contentsline {chapter}{\numberline {5}Badania}{21}
+\contentsline {section}{\numberline {5.1}Metody operuj\k ace na pikselach}{21}
+\contentsline {subsection}{\numberline {5.1.1}Metoda \'Sredniej z bufora ramek}{21}
+\contentsline {subsection}{\numberline {5.1.2}Metoda mediany z bufora ramek}{22}
+\contentsline {subsection}{\numberline {5.1.3}Metoda aproksymacji \'sredniej z bufora ramek}{24}
+\contentsline {subsection}{\numberline {5.1.4}Metoda Mixture of Gaussians}{25}
+\contentsline {section}{\numberline {5.2}Metody przestrzenne - operuj\k ace na blokach}{26}
+\contentsline {subsection}{\numberline {5.2.1}Metoda wykorzystuj\k aca transformat\k e DCT}{26}
+\contentsline {subsection}{\numberline {5.2.2}Metoda wykorzystuj\k aca transformat\k e Hadamarda}{28}
+\contentsline {section}{\numberline {5.3}Por\'ownanie metod przestrzennych z Mixture of Gaussians}{29}
+\contentsline {chapter}{\numberline {6}S\IeC {\l }ownik u\.zytych poj\k e\'c}{30}
