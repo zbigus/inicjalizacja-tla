@@ -93,7 +93,7 @@ gdzie: T~jest miar¹ minimalnej iloœci danych jaka powinna byæ prana pod uwagê. R
 
 \section{Œrednia z~bufora ramek}
 \subsection{Wprowadzenie}
-Œrednia z~bufora ramek jest jedn¹ z~najprostszych mo¿liwych metod generacji t³a. Algorytm ten opiera siê na wyliczaniu œredniej arytmetycznej dla ka¿dej pozycji piksela na obrazie spoœród ramek zgromadzonych w~buforze.
+Œrednia z~bufora ramek jest jedn¹ z~najprostszych mo¿liwych metod inicjalizacji t³a. W tej metodzie t³o inicjalizowane jest na podstawie ca³ego bufora ramek. Algorytm ten opiera siê na wyliczaniu œredniej arytmetycznej dla ka¿dej pozycji piksela na obrazie spoœród ramek zgromadzonych w~buforze.
 
 \subsection{Opis metody}
 Wartoœæ dla ka¿dego piksela t³a wyliczana jest ze wzoru.
@@ -108,7 +108,7 @@ B(x,y)=\frac{1}{n} \sum_{i=1}^{n} P(x_i,y_i)
 \section{Aproksymacja œredniej przy u¿yciu parametru alfa}
 \subsection{Wprowadzenie}
 
-Metoda ta jest modyfikacj¹ œredniej z~bufora ramek. Jej g³ównym za³o¿eniem jest aproksymacja œredniej za pomoc¹ morfingu ramek. Daje ona podobne rezultaty, jednak¿e w~przeciwieñstwie do swojego pierwowzoru nie wykorzystuje bufora, a przez to charakteryzuje siê mniejsz¹ z³o¿onoœci¹ pamiêciow¹.
+Metoda ta jest modyfikacj¹ œredniej z~bufora ramek. Jej g³ównym za³o¿eniem jest aproksymacja œredniej za pomoc¹ morfingu ramek. Daje ona podobne rezultaty, jednak¿e w~przeciwieñstwie do swojego pierwowzoru nie wykorzystuje bufora, a przez to charakteryzuje siê mniejsz¹ z³o¿onoœci¹ pamiêciow¹. Inicjalizacja t³a przeprowadzana jest na podstawie pierwszej ramki.
 
 \subsection{Opis metody}
 Wartoœæ dla ka¿dego piksela t³a wyliczana jest ze wzoru.
@@ -118,4 +118,19 @@ Wartoœæ dla ka¿dego piksela t³a wyliczana jest ze wzoru.
 B_{n}(x,y) = P_{n}(x,y) \cdot (1-\alpha) + B_{n-1}(x,y) \cdot \alpha
 \end{equation}
 
-\noindent gdzie $B_{n}(x,y)$ oznacza obecn¹ wartoœæ piksela t³a w~miejscu (x,y), $P_{n}(x,y)$ oznacza wartoœæ piksela na pozycji (x,y) w~obecnej ramce, $B_{n-1}$ oznacza wartoœæ piksela na pozycji (x,y) w~poprzednim modelu t³a
+\noindent gdzie $B_{n}(x,y)$ oznacza obecn¹ wartoœæ piksela t³a w~miejscu (x,y), $P_{n}(x,y)$ oznacza wartoœæ piksela na pozycji (x,y) w~obecnej ramce, $B_{n-1}$ oznacza wartoœæ piksela t³a na pozycji (x,y) w~poprzedniej iteracji algorytmu.
+
+\section{Mediana z bufora ramek}
+\subsection{Wprowadzenie}
+
+Mediana z~bufora ramek jest kolejn¹ z prostych metod inicjalizacji t³a. Do zainicjalizowania t³o u¿ywa ona ca³ego bufora ramek. Algorytm ten opiera siê na wyliczaniu mediany dla ka¿dej pozycji piksela na obrazie spoœród ramek zgromadzonych w~buforze.
+
+\subsection{Opis metody}
+Wartoœæ dla ka¿dego piksela t³a wyliczana jest ze wzoru.
+
+\begin{equation}
+\label{alpha}
+B(x,y) = \widetilde{P(x,y)}, \; gdzie \;  P(x,y) = \{P_{1}(x,y), P_{2}(x,y), \dots , P_{n}(x,y)\}
+\end{equation}
+
+\noindent gdzie $B(x,y)$ oznacza wartoœæ piksela t³a w~miejscu (x,y), $P(x,y)$ oznacza zbiór wartoœæ piksela na pozycji (x,y) we wszystkich ramkach w buforze,  $P_{i}(x,y)$ oznacza wartoœæ piksela na pozycji (x,y) \newline w $i$-tej ramce, gdzie $i \in \{1,2,\dots,n\}$.

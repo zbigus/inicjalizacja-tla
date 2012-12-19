@@ -350,6 +350,10 @@ Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej se
         \caption{Obrazy wynikowe dla sekwencji clip\_03.mpg}
 \end{figure}
 
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{alphawykres.png}
+\caption{Wykres porównawczy wartoœci b³êdu œredniokwadratowego dla metody wyorzystuj¹cej aproksymacjê œredniej z bufora za pomoc¹ parametru $\alpha$}
+\end{figure}
 W metodzie tej model t³a inicjalizowany na podstawie pierwszej ramki.
 Metoda ta poradzi³a sobie w sposób zadowalaj¹cy jedynie z sekwencj¹ fountain.mpg. Na pozosta³ych sekwencjach z powodu sposobu swojego dzia³ania dawa³a ona obrazy z du¿¹ iloœci¹ pozosta³oœci obiektów z pierwszej ramki. 
 
@@ -543,6 +547,10 @@ Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej se
         \caption{Obrazy wynikowe dla sekwencji clip\_03.mpg}
 \end{figure}
 
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{dctwykres.png}
+\caption{Wykres porównawczy wartoœci b³êdu œredniokwadratowego dla metody wyorzystuj¹cej transformatê DCT}
+\end{figure}
 Metoda ta da³a zadowalaj¹ce efekty dla wszystkich sekwencji przy wspó³czynnikach: $T_{MAD}=20$ oraz $T_{corr} \in \{0.6, 0.7, 0.8\}$. Przy spó³czynniku $T_{MAD}=10$ t³o dla niektórych sekwencji nie zosta³o poprawnie zainicjalizowane. Wynika to z faktu, i¿ wspó³czynnik ten jest odpowiedzialny za maksymalny akceptowalny poziom szumu przy sprawdzaniu podobieñstwa bloków. Zbyt niska wartoœæ tego wspó³czynnika mo¿e spowodowaæ, i¿ powstanie zbyt du¿a iloœæ kandydatów dla danej lokalizacji blokowej, przez co w trzeciej fazie algorytmu (koñcowa rekonstrukcja t³a) bêd¹ istnia³y superbloki nieposiadaj¹ce trzech bloków z uzupe³nionym t³em, przez co pe³nie zainicjalizowanie t³a stanie siê niemo¿liwe. Podobna sytuacja ma miejsce dla wspó³czynnika  $T_{corr} = 0.9$ - bloki musz¹ byæ wtedy podobne do siebie w a¿ 90\% aby zosta³y uznane za ten sam blok, przez co powstaje zbyt wiele kandydatów dla danej lokalizacji blokowej.
 
 %------------------------------------------------------------------------------
@@ -634,6 +642,10 @@ Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej se
         \caption{Obrazy wynikowe dla sekwencji clip\_03.mpg}
 \end{figure}
 
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{hadwykres.png}
+\caption{Wykres porównawczy wartoœci b³êdu œredniokwadratowego dla metody wyorzystuj¹cej transformatê Hadamarda}
+\end{figure}
 Metoda ta podobnie jak metoda wykorzystuj¹ca transformatê DCT da³a zadowalaj¹ce efekty dla wszystkich sekwencji przy wspó³czynnikach: $T_{MAD}=20$ oraz $T_{corr} \in \{0.6, 0.7, 0.8\}$. Dla pozosta³ych wartoœci parametrów nie zawsze uda³o siê zainicjalizowaæ model t³a z powodów identycznych jak w metodzie wykorzystuj¹cej transformatê DCT.
 
 

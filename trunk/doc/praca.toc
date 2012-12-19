@@ -12,6 +12,9 @@
 \contentsline {section}{\numberline {2.3}Aproksymacja \'sredniej przy u\.zyciu parametru alfa}{11}
 \contentsline {subsection}{\numberline {2.3.1}Wprowadzenie}{11}
 \contentsline {subsection}{\numberline {2.3.2}Opis metody}{11}
+\contentsline {section}{\numberline {2.4}Mediana z bufora ramek}{12}
+\contentsline {subsection}{\numberline {2.4.1}Wprowadzenie}{12}
+\contentsline {subsection}{\numberline {2.4.2}Opis metody}{12}
 \contentsline {chapter}{\numberline {3}Metody blokowe (przestrzenne)}{13}
 \contentsline {section}{\numberline {3.1}Wprowadzenie}{13}
 \contentsline {section}{\numberline {3.2}Algorytm dzia\IeC {\l }ania}{15}
@@ -29,9 +32,10 @@
 \contentsline {subsection}{\numberline {5.1.1}Metoda \'Sredniej z bufora ramek}{22}
 \contentsline {subsection}{\numberline {5.1.2}Metoda mediany z bufora ramek}{24}
 \contentsline {subsection}{\numberline {5.1.3}Metoda aproksymacji \'sredniej z bufora ramek}{25}
-\contentsline {subsection}{\numberline {5.1.4}Metoda Mixture of Gaussians}{26}
-\contentsline {section}{\numberline {5.2}Metody przestrzenne - operuj\k ace na blokach}{28}
-\contentsline {subsection}{\numberline {5.2.1}Metoda wykorzystuj\k aca transformat\k e DCT}{28}
-\contentsline {subsection}{\numberline {5.2.2}Metoda wykorzystuj\k aca transformat\k e Hadamarda}{29}
-\contentsline {chapter}{\numberline {6}Por\'ownania metod}{31}
-\contentsline {chapter}{\numberline {7}S\IeC {\l }ownik u\.zytych poj\k e\'c}{32}
+\contentsline {subsection}{\numberline {5.1.4}Metoda Mixture of Gaussians}{27}
+\contentsline {section}{\numberline {5.2}Metody przestrzenne - operuj\k ace na blokach}{29}
+\contentsline {subsection}{\numberline {5.2.1}Metoda wykorzystuj\k aca transformat\k e DCT}{29}
+\contentsline {subsection}{\numberline {5.2.2}Metoda wykorzystuj\k aca transformat\k e Hadamarda}{30}
+\contentsline {chapter}{\numberline {6}Por\'ownania metod}{33}
+\contentsline {section}{\numberline {6.1}Por\'ownanie metody MOG z metod\k a mediany z bufora}{33}
+\contentsline {chapter}{\numberline {7}S\IeC {\l }ownik u\.zytych poj\k e\'c}{34}
