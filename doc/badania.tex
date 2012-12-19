@@ -11,17 +11,17 @@ Zestawienie wszystkich metod oraz metryk u¿ytych w tej pracy zosta³o zaprezentow
     \multicolumn{3}{|c|}{\multirow{2}[4]{*}{Metoda}} & \multicolumn{5}{c|}{Metryka} \bigstrut\\
 \cline{4-8}    \multicolumn{3}{|c|}{} & MSE   & PP(80\%) & PP(90\%) & PP(98\%) & PP(99\%) \bigstrut\\
     \hline
-    \multicolumn{3}{|c|}{Œrednia} & 85,9989 & 97,5983\% & 86,8470\% & 46,9376\% & 22,2358\% \bigstrut\\
+    \multicolumn{3}{|c|}{Œrednia} & 85.9989 & 97.5983\% & 86.8470\% & 46.9376\% & 22.2358\% \bigstrut\\
     \hline
-    \multicolumn{3}{|c|}{Mediana} & 53,8921 & 97,7174\% & 94,8843\% & 58,1590\% & 28,2275\% \bigstrut\\
+    \multicolumn{3}{|c|}{Mediana} & 53.8921 & 97.7174\% & 94.8843\% & 58.1590\% & 28.2275\% \bigstrut\\
     \hline
-    \multicolumn{3}{|c|}{MOG} & 86,2640 & 95,0852\% & 86,3069\% & 46,0399\% & 21,2885\% \bigstrut\\
+    \multicolumn{3}{|c|}{MOG} & 86.2640 & 95.0852\% & 86.3069\% & 46.0399\% & 21.2885\% \bigstrut\\
     \hline
-    \multicolumn{2}{|c|}{\multirow{5}[10]{*}{\parbox{2,6cm}{Aproksymacja œredniej z~bufora z~parametrem $\alpha$}}} & 0.8   & 64,5492 & 94,6081\% & 90,0417\% & 57,5679\% & 28,4593\% \bigstrut\\
-\cline{3-8}    \multicolumn{2}{|c|}{} & 0.9   & 66,6434 & 94,9282\% & 89,4445\% & 57,1947\% & 29,1491\% \bigstrut\\
-\cline{3-8}    \multicolumn{2}{|c|}{} & 0.95  & 79,7173 & 95,4888\% & 88,9891\% & 46,7501\% & 22,3941\% \bigstrut\\
-\cline{3-8}    \multicolumn{2}{|c|}{} & 0.97  & 99,4204 & 96,2030\% & 88,4354\% & 34,8990\% & 16,1827\% \bigstrut\\
-\cline{3-8}    \multicolumn{2}{|c|}{} & 0.99  & 112,6090 & 96,8924\% & 78,9799\% & 35,2469\% & 16,6751\% \bigstrut\\
+    \multicolumn{2}{|c|}{\multirow{5}[10]{*}{\parbox{2.6cm}{Aproksymacja œredniej z~bufora z~parametrem $\alpha$}}} & 0.8   & 64.5492 & 94.6081\% & 90.0417\% & 57.5679\% & 28.4593\% \bigstrut\\
+\cline{3-8}    \multicolumn{2}{|c|}{} & 0.9   & 66.6434 & 94.9282\% & 89.4445\% & 57.1947\% & 29.1491\% \bigstrut\\
+\cline{3-8}    \multicolumn{2}{|c|}{} & 0.95  & 79.7173 & 95.4888\% & 88.9891\% & 46.7501\% & 22.3941\% \bigstrut\\
+\cline{3-8}    \multicolumn{2}{|c|}{} & 0.97  & 99.4204 & 96.2030\% & 88.4354\% & 34.8990\% & 16.1827\% \bigstrut\\
+\cline{3-8}    \multicolumn{2}{|c|}{} & 0.99  & 112.6090 & 96.8924\% & 78.9799\% & 35.2469\% & 16.6751\% \bigstrut\\
     \hline
     \end{tabular}%
     
@@ -39,23 +39,23 @@ Zestawienie wszystkich metod oraz metryk u¿ytych w tej pracy zosta³o zaprezentow
     \hline
     Transformata & $T_{MAD}$ & $T_{corr}$ & MSE   & PP(80\%) & PP(90\%) & PP(98\%) & PP(99\%) \bigstrut\\
     \hline
-    \multicolumn{1}{|c|}{\multirow{8}[16]{*}{DCT}} & \multicolumn{1}{c|}{\multirow{4}[8]{*}{10}} & 0.6   & 48,2812 & 99,3185\% & 97,7901\% & 63,2873\% & 34,2152\% \bigstrut\\
-\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.7   & 47,2416 & 99,3171\% & 97,8236\% & 63,5748\% & 34,2944\% \bigstrut\\
-\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.8   & 46,2450 & 99,0527\% & 97,6004\% & 64,0907\% & 34,5123\% \bigstrut\\
-\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.9   & 43,1881 & 98,9074\% & 97,5169\% & 65,6391\% & 35,4548\% \bigstrut\\
-\cline{2-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{\multirow{4}[8]{*}{20}} & 0.6   & 59,0277 & 98,7617\% & 96,5170\% & 58,7414\% & 31,6900\% \bigstrut\\
-\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.7   & 56,8871 & 98,7809\% & 96,7428\% & 59,4943\% & 32,0192\% \bigstrut\\
-\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.8   & 54,1390 & 98,7100\% & 96,8958\% & 60,4672\% & 32,4690\% \bigstrut\\
-\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.9   & 47,4516 & 98,5651\% & 96,9589\% & 63,5496\% & 34,3331\% \bigstrut\\
+    \multicolumn{1}{|c|}{\multirow{8}[16]{*}{DCT}} & \multicolumn{1}{c|}{\multirow{4}[8]{*}{10}} & 0.6   & 48.2812 & 99.3185\% & 97.7901\% & 63.2873\% & 34.2152\% \bigstrut\\
+\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.7   & 47.2416 & 99.3171\% & 97.8236\% & 63.5748\% & 34.2944\% \bigstrut\\
+\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.8   & 46.2450 & 99.0527\% & 97.6004\% & 64.0907\% & 34.5123\% \bigstrut\\
+\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.9   & 43.1881 & 98.9074\% & 97.5169\% & 65.6391\% & 35.4548\% \bigstrut\\
+\cline{2-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{\multirow{4}[8]{*}{20}} & 0.6   & 59.0277 & 98.7617\% & 96.5170\% & 58.7414\% & 31.6900\% \bigstrut\\
+\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.7   & 56.8871 & 98.7809\% & 96.7428\% & 59.4943\% & 32.0192\% \bigstrut\\
+\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.8   & 54.1390 & 98.7100\% & 96.8958\% & 60.4672\% & 32.4690\% \bigstrut\\
+\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.9   & 47.4516 & 98.5651\% & 96.9589\% & 63.5496\% & 34.3331\% \bigstrut\\
     \hline
-    \multicolumn{1}{|c|}{\multirow{8}[16]{*}{Hadamarda}} & \multicolumn{1}{c|}{\multirow{4}[8]{*}{10}} & 0.6   & 48,2920 & 99,3185\% & 97,7905\% & 63,2782\% & 34,2105\% \bigstrut\\
-\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.7   & 47,1993 & 99,3171\% & 97,8297\% & 63,6014\% & 34,3148\% \bigstrut\\
-\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.8   & 46,2278 & 99,0527\% & 97,6018\% & 64,0911\% & 34,5123\% \bigstrut\\
-\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.9   & 43,1868 & 98,9053\% & 97,5165\% & 65,6391\% & 35,4566\% \bigstrut\\
-\cline{2-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{\multirow{4}[8]{*}{20}} & 0.6   & 59,1575 & 98,7665\% & 96,5118\% & 58,7157\% & 31,6869\% \bigstrut\\
-\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.7   & 56,8728 & 98,7874\% & 96,7510\% & 59,5112\% & 32,0323\% \bigstrut\\
-\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.8   & 54,0997 & 98,7165\% & 96,8976\% & 60,4946\% & 32,4803\% \bigstrut\\
-\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.9   & 47,6793 & 98,4912\% & 96,8776\% & 63,4913\% & 34,3170\% \bigstrut\\
+    \multicolumn{1}{|c|}{\multirow{8}[16]{*}{Hadamarda}} & \multicolumn{1}{c|}{\multirow{4}[8]{*}{10}} & 0.6   & 48.2920 & 99.3185\% & 97.7905\% & 63.2782\% & 34.2105\% \bigstrut\\
+\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.7   & 47.1993 & 99.3171\% & 97.8297\% & 63.6014\% & 34.3148\% \bigstrut\\
+\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.8   & 46.2278 & 99.0527\% & 97.6018\% & 64.0911\% & 34.5123\% \bigstrut\\
+\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.9   & 43.1868 & 98.9053\% & 97.5165\% & 65.6391\% & 35.4566\% \bigstrut\\
+\cline{2-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{\multirow{4}[8]{*}{20}} & 0.6   & 59.1575 & 98.7665\% & 96.5118\% & 58.7157\% & 31.6869\% \bigstrut\\
+\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.7   & 56.8728 & 98.7874\% & 96.7510\% & 59.5112\% & 32.0323\% \bigstrut\\
+\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.8   & 54.0997 & 98.7165\% & 96.8976\% & 60.4946\% & 32.4803\% \bigstrut\\
+\cline{3-8}    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & 0.9   & 47.6793 & 98.4912\% & 96.8776\% & 63.4913\% & 34.3170\% \bigstrut\\
     \hline
     \end{tabular}%
     \caption{Zbiorcze wyniki metryk dla metod blokowych dla sekwencji clip\_01.mpg}
@@ -73,15 +73,15 @@ Dla tej metody najlepsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_02
   \centering
     \begin{tabular}{|r|r|}
     \hline
-    MSE   & 38,39342287 \\
+    MSE   & 38.39342287 \\
     \hline
-    PP(80\%) & 0,999278003 \\
+    PP(80\%) & 0.999278003 \\
     \hline
-    PP(90\%) & 0,977152724 \\
+    PP(90\%) & 0.977152724 \\
     \hline
-    PP(98\%) & 0,762080394 \\
+    PP(98\%) & 0.762080394 \\
     \hline
-    PP(99\%) & 0,529932411 \\
+    PP(99\%) & 0.529932411 \\
     \hline
     \end{tabular}%
  \caption{Wartoœci metryk dla sekwencji clip\_02.mpg}
@@ -118,15 +118,15 @@ Najgorsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_03.mpg i wynosz¹ 
   \centering
     \begin{tabular}{|r|r|}
     \hline
-    MSE   & 198,5494437 \\
+    MSE   & 198.5494437 \\
     \hline
-    PP(80\%) & 0,98932228 \\
+    PP(80\%) & 0.98932228 \\
     \hline
-    PP(90\%) & 0,847793561 \\
+    PP(90\%) & 0.847793561 \\
     \hline
-    PP(98\%) & 0,093102758 \\
+    PP(98\%) & 0.093102758 \\
     \hline
-    PP(99\%) & 0,038605068 \\
+    PP(99\%) & 0.038605068 \\
     \hline
     \end{tabular}%
   \caption{Wartoœci metryk dla sekwencji clip\_03.mpg}
@@ -172,15 +172,15 @@ Dla tej metody najlepsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_02
   \centering
     \begin{tabular}{|r|r|}
     \hline
-    MSE   & 13,15359824 \\
+    MSE   & 13.15359824 \\
     \hline
-    PP(80\%) & 0,998912656 \\
+    PP(80\%) & 0.998912656 \\
     \hline
-    PP(90\%) & 0,996189946 \\
+    PP(90\%) & 0.996189946 \\
     \hline
-    PP(98\%) & 0,894175315 \\
+    PP(98\%) & 0.894175315 \\
     \hline
-    PP(99\%) & 0,638897346 \\
+    PP(99\%) & 0.638897346 \\
     \hline
     \end{tabular}%
  \caption{Wartoœci metryk dla sekwencji clip\_02.mpg}
@@ -215,15 +215,15 @@ Najgorsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_03.mpg i wynosz¹ 
   \centering
     \begin{tabular}{|r|r|}
     \hline
-    MSE   & 201,5417845 \\
+    MSE   & 201.5417845 \\
     \hline
-    PP(80\%) & 0,984985952 \\
+    PP(80\%) & 0.984985952 \\
     \hline
-    PP(90\%) & 0,846380014 \\
+    PP(90\%) & 0.846380014 \\
     \hline
-    PP(98\%) & 0,090032098 \\
+    PP(98\%) & 0.090032098 \\
     \hline
-    PP(99\%) & 0,037495977 \\
+    PP(99\%) & 0.037495977 \\
     \hline
     \end{tabular}
   \caption{Wartoœci metryk dla sekwencji clip\_03.mpg}
@@ -268,15 +268,15 @@ Dla tej metody najlepsze wartoœci metryk zosta³y uzyskane dla sekwencji fountain
   \centering
     \begin{tabular}{|r|r|}
     \hline
-    MSE   & 13,09215802 \\
+    MSE   & 13.09215802 \\
     \hline
-    PP(80\%) & 0,995739976 \\
+    PP(80\%) & 0.995739976 \\
     \hline
-    PP(90\%) & 0,980837264 \\
+    PP(90\%) & 0.980837264 \\
     \hline
-    PP(98\%) & 0,932871462 \\
+    PP(98\%) & 0.932871462 \\
     \hline
-    PP(99\%) & 0,911379717 \\
+    PP(99\%) & 0.911379717 \\
     \hline
     \end{tabular}%
  \caption{Wartoœci metryk dla sekwencji fountain.mpg}
@@ -313,15 +313,15 @@ Najgorsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_03.mpg przy param
   \centering
     \begin{tabular}{|r|r|}
     \hline
-    MSE   & 208,8327099 \\
+    MSE   & 208.8327099 \\
     \hline
-    PP(80\%) & 0,979836289 \\
+    PP(80\%) & 0.979836289 \\
     \hline
-    PP(90\%) & 0,66894719 \\
+    PP(90\%) & 0.66894719 \\
     \hline
-    PP(98\%) & 0,085669674 \\
+    PP(98\%) & 0.085669674 \\
     \hline
-    PP(99\%) & 0,038291913 \\
+    PP(99\%) & 0.038291913 \\
     \hline
     \end{tabular}%
   \caption{Wartoœci metryk dla sekwencji clip\_03.mpg}
@@ -368,15 +368,15 @@ Dla tej metody najlepsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_02
   \centering
     \begin{tabular}{|r|r|}
     \hline
-    MSE   & 25,19326021 \\
+    MSE   & 25.19326021 \\
     \hline
-    PP(80\%) & 0,990661888 \\
+    PP(80\%) & 0.990661888 \\
     \hline
-    PP(90\%) & 0,9738298 \\
+    PP(90\%) & 0.9738298 \\
     \hline
-    PP(98\%) & 0,832057516 \\
+    PP(98\%) & 0.832057516 \\
     \hline
-    PP(99\%) & 0,586496055 \\
+    PP(99\%) & 0.586496055 \\
     \hline
     \end{tabular}%
  \caption{Wartoœci metryk dla sekwencji fountain.mpg}
@@ -414,15 +414,15 @@ Najgorsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_03.mpg przy param
   \centering
     \begin{tabular}{|r|r|}
     \hline
-    MSE   & 208,8327099 \\
+    MSE   & 208.8327099 \\
     \hline
-    PP(80\%) & 0,979836289 \\
+    PP(80\%) & 0.979836289 \\
     \hline
-    PP(90\%) & 0,66894719 \\
+    PP(90\%) & 0.66894719 \\
     \hline
-    PP(98\%) & 0,085669674 \\
+    PP(98\%) & 0.085669674 \\
     \hline
-    PP(99\%) & 0,038291913 \\
+    PP(99\%) & 0.038291913 \\
     \hline
     \end{tabular}%
   \caption{Wartoœci metryk dla sekwencji clip\_03.mpg}
@@ -466,15 +466,15 @@ Dla tej metody najlepsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_04
   \centering
     \begin{tabular}{|r|r|}
     \hline
-    MSE   & 34,17465792 \\
+    MSE   & 34.17465792 \\
     \hline
-    PP(80\%) & 0,999069233 \\
+    PP(80\%) & 0.999069233 \\
     \hline
-    PP(90\%) & 0,989518002 \\
+    PP(90\%) & 0.989518002 \\
     \hline
-    PP(98\%) & 0,733739855 \\
+    PP(98\%) & 0.733739855 \\
     \hline
-    PP(99\%) & 0,378974243 \\
+    PP(99\%) & 0.378974243 \\
     \hline
     \end{tabular}%
  \caption{Wartoœci metryk dla sekwencji clip\_04.mpg}
@@ -510,15 +510,15 @@ Najgorsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_03.mpg przy param
   \centering
     \begin{tabular}{|r|r|}
     \hline
-    MSE   & 184,9569325 \\
+    MSE   & 184.9569325 \\
     \hline
-    PP(80\%) & 0,960420672 \\
+    PP(80\%) & 0.960420672 \\
     \hline
-    PP(90\%) & 0,694969511 \\
+    PP(90\%) & 0.694969511 \\
     \hline
-    PP(98\%) & 0,117385329 \\
+    PP(98\%) & 0.117385329 \\
     \hline
-    PP(99\%) & 0,053018902 \\
+    PP(99\%) & 0.053018902 \\
     \hline
     \end{tabular}%
   \caption{Wartoœci metryk dla sekwencji clip\_03.mpg}
@@ -563,15 +563,15 @@ Dla tej metody najlepsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_04
   \centering
     \begin{tabular}{|r|r|}
     \hline
-    MSE   & 200,9861037 \\
+    MSE   & 200.9861037 \\
     \hline
-    PP(80\%) & 0,810710775 \\
+    PP(80\%) & 0.810710775 \\
     \hline
-    PP(90\%) & 0,61367531 \\
+    PP(90\%) & 0.61367531 \\
     \hline
-    PP(98\%) & 0,083434094 \\
+    PP(98\%) & 0.083434094 \\
     \hline
-    PP(99\%) & 0,038774694 \\
+    PP(99\%) & 0.038774694 \\
     \hline
     \end{tabular}%
  \caption{Wartoœci metryk dla sekwencji clip\_04.mpg}
@@ -606,15 +606,15 @@ Najgorsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_03.mpg przy param
   \centering
     \begin{tabular}{|r|r|}
     \hline
-    MSE   & 184,9524657 \\
+    MSE   & 184.9524657 \\
     \hline
-    PP(80\%) & 0,960420672 \\
+    PP(80\%) & 0.960420672 \\
     \hline
-    PP(90\%) & 0,69497821 \\
+    PP(90\%) & 0.69497821 \\
     \hline
-    PP(98\%) & 0,117398377 \\
+    PP(98\%) & 0.117398377 \\
     \hline
-    PP(99\%) & 0,053027601 \\
+    PP(99\%) & 0.053027601 \\
     \hline
     \end{tabular}%
   \caption{Wartoœci metryk dla sekwencji clip\_03.mpg}
