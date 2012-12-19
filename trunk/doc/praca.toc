@@ -37,5 +37,5 @@
 \contentsline {subsection}{\numberline {5.2.1}Metoda wykorzystuj\k aca transformat\k e DCT}{29}
 \contentsline {subsection}{\numberline {5.2.2}Metoda wykorzystuj\k aca transformat\k e Hadamarda}{30}
 \contentsline {chapter}{\numberline {6}Por\'ownania metod}{33}
-\contentsline {section}{\numberline {6.1}Por\'ownanie metody MOG z metod\k a mediany z bufora}{33}
-\contentsline {chapter}{\numberline {7}S\IeC {\l }ownik u\.zytych poj\k e\'c}{34}
+\contentsline {section}{\numberline {6.1}Por\'ownanie metody MOG z metod\k a mediany z bufora}{34}
+\contentsline {chapter}{\numberline {7}S\IeC {\l }ownik u\.zytych poj\k e\'c}{36}
