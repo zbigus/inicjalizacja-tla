@@ -3,8 +3,8 @@
 \contentsline {chapter}{\numberline {2}Metody operuj\k ace na poziomie pikseli}{8}
 \contentsline {section}{\numberline {2.1}Mixture of Gaussians (MOG)}{8}
 \contentsline {subsection}{\numberline {2.1.1}Wprowadzenie}{8}
-\contentsline {subsection}{\numberline {2.1.2}Opis metody}{9}
-\contentsline {subsubsection}{\numberline {2.1.2.1}Model mieszanki}{9}
+\contentsline {subsection}{\numberline {2.1.2}Opis metody}{8}
+\contentsline {subsubsection}{\numberline {2.1.2.1}Model mieszanki}{8}
 \contentsline {subsubsection}{\numberline {2.1.2.2}Estymacja modelu t\IeC {\l }a}{10}
 \contentsline {section}{\numberline {2.2}\'Srednia z~bufora ramek}{11}
 \contentsline {subsection}{\numberline {2.2.1}Wprowadzenie}{11}
@@ -12,8 +12,8 @@
 \contentsline {section}{\numberline {2.3}Aproksymacja \'sredniej przy u\.zyciu parametru alfa}{11}
 \contentsline {subsection}{\numberline {2.3.1}Wprowadzenie}{11}
 \contentsline {subsection}{\numberline {2.3.2}Opis metody}{11}
-\contentsline {section}{\numberline {2.4}Mediana z bufora ramek}{12}
-\contentsline {subsection}{\numberline {2.4.1}Wprowadzenie}{12}
+\contentsline {section}{\numberline {2.4}Mediana z bufora ramek}{11}
+\contentsline {subsection}{\numberline {2.4.1}Wprowadzenie}{11}
 \contentsline {subsection}{\numberline {2.4.2}Opis metody}{12}
 \contentsline {chapter}{\numberline {3}Metody blokowe (przestrzenne)}{13}
 \contentsline {section}{\numberline {3.1}Wprowadzenie}{13}
