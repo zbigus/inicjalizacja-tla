@@ -2,20 +2,20 @@
 \label{cha:Metody operuj¹ce na poziomie pikseli}
 \section{Mixture of Gaussians (MOG)}
 \subsection{Wprowadzenie}
-T³o sceny zawiera wiele dynamicznych obiektów jak poruszane na wietrze ga³êzie i~liœcie drzew czy krzewów. Zmiany w~obrazie nimi wywo³ane powoduj¹, ¿e wartoœæ intensywnoœci danego piksela oraz jego kolor w~czasie mog¹ siê bardzo ró¿niæ od siebie. Z~tego powodu wykorzystanie pojedynczego przybli¿enia rozk³adu prawdopodobieñstwa przy u¿yciu krzywej Gaussa daje z³e rezultaty. Zamiast tego w~opisywanej metodzie u¿yto podejœcia bazuj¹cego na wykorzystaniu kilku rozk³adów Gaussa o~ró¿nych parametrach w~celu zamodelowania takich zmian \cite{7}.
+T³o sceny zawiera wiele dynamicznych obiektów jak poruszane na wietrze ga³êzie i~liœcie drzew czy krzewów. Zmiany w~obrazie nimi wywo³ane powoduj¹, ¿e wartoœæ intensywnoœci danego piksela oraz jego kolor w~czasie mog¹ siê bardzo ró¿niæ od siebie. Z~tego powodu wykorzystanie pojedynczego przybli¿enia rozk³adu prawdopodobieñstwa przy u¿yciu krzywej Gaussa u¿yte w \cite{Wren1997} daje z³e rezultaty. Zamiast tego w~opisywanej metodzie u¿yto podejœcia bazuj¹cego na wykorzystaniu kilku rozk³adów Gaussa o~ró¿nych parametrach w~celu zamodelowania takich zmian \cite{7}.
 
-Standardowe adaptacyjne modele t³a polegaj¹ na tworzeniu aproksymacji t³a, które jest podobne do obecnej statycznej sceny za wyj¹tkiem miejsc, w~których odby³ siê ruch. Podejœcie takie jest efektywne w~sytuacjach, gdy obiekty poruszaj¹ siê stale, a~t³o jest widoczne znaczn¹ czêœæ czasu, jednak¿e nie sprawdza siê ono dla scen zawieraj¹cych du¿o poruszaj¹cych siê obiektów, a~w szczególnoœci, gdy obiekty te poruszaj¹ siê powoli. Nie potrafi tak¿e poradziæ sobie z~t³ami posiadaj¹cymi rozk³ad dwumodalny, powoli odtwarza t³o jeœli zostanie ono odkryte i~ma jeden ustalony próg dla ca³ej sceny. 
+%Standardowy adaptacyjny model t³a polega na tworzeniu aproksymacji t³a, które jest podobne do obecnej statycznej sceny za wyj¹tkiem miejsc, w~których odby³ siê ruch. Podejœcie takie jest efektywne w~sytuacjach, gdy obiekty poruszaj¹ siê nieustannie, a~t³o jest widoczne znaczn¹ czêœæ czasu, jednak¿e nie sprawdza siê ono dla scen zawieraj¹cych du¿o poruszaj¹cych siê obiektów, a~w szczególnoœci, gdy obiekty te poruszaj¹ siê powoli. Nie potrafi tak¿e poradziæ sobie z~t³ami posiadaj¹cymi rozk³ad dwumodalny (posiadaj¹cy 2 najczêœciej wystêpuj¹ce wartoœci), powoli odtwarza t³o jeœli zostanie ono odkryte i~ma jeden ustalony próg dla ca³ej sceny. 
 
-W metodzie MOG zamiast modelowaæ wartoœci wszystkich pikseli jako wy³¹cznie jeden typ rozk³adu, modelowane s¹ one mieszank¹ rozk³adów Gaussa. Bazuj¹c na wadze i~wariancji ka¿dego u¿ytego do mieszanki rozk³adu Gaussa okreœlane jest, które z~nich mog¹ odnosiæ siê do kolorów t³a. Wartoœci pikseli, które nie mieszcz¹ siê w~¿adnym rozk³adzie t³a uznawane s¹ za piksele nale¿¹ce do pierwszego planu. Taki stan pikseli utrzymuje siê do czasu kiedy zaczn¹ wystarczaj¹co dobrze pasowaæ do któregoœ z~rozk³adów t³a. 
+W metodzie MOG zamiast modelowaæ wartoœci wszystkich pikseli jako wy³¹cznie jeden typ rozk³adu, modelowane s¹ one mieszank¹ rozk³adów Gaussa. Bazuj¹c na wadze i~wariancji ka¿dego u¿ytego do mieszanki rozk³adu Gaussa okreœlane jest, które z~nich mog¹ odnosiæ siê do pikseli t³a, a które do obiektów pierwszego planu. Wartoœci pikseli, które nie pasuj¹ do ¿adnego rozk³adu t³a uznawane s¹ za piksele nale¿¹ce do pierwszego planu. Taki stan pikseli utrzymuje siê do czasu kiedy zaczn¹ wystarczaj¹co dobrze pasowaæ do któregoœ z~rozk³adów t³a. 
 
 Opisywana metoda dostosowuje siê aby radziæ sobie ze zmianami oœwietlenia, powtarzalnymi ruchami elementów t³a, powolnie poruszaj¹cymi siê elementami pierwszego planu oraz wprowadzaniu lub usuwaniu elementów ze sceny. Powolnie poruszaj¹ce siê elementy potrzebuj¹ wiêcej czasu aby wpasowaæ siê w~t³o, poniewa¿ rozk³ad do którego pasuj¹ ma wiêksz¹ wariancjê ni¿ t³o. Powtarzaj¹ce siê zmiany równie¿ s¹ uwzglêdniane, a~model rozk³adu t³a jest utrzymywany nawet jeœli jest chwilowo zamieniony przez inny rozk³ad, co prowadzi do szybszego odtworzenia t³a w~przypadku usuniêcia obiektów ze sceny.
-Metoda ta wykorzystuje dwa podstawowe parametry: 
-\begin{lstlisting}
-a - sta³a uczenia
-T - porcja danych jaka powinna byæ uwzglêdniona w~tle
-\end{lstlisting}
+%Metoda ta wykorzystuje dwa podstawowe parametry: 
+%\begin{lstlisting}
+%a - sta³a uczenia
+%T - porcja danych jaka powinna byæ uwzglêdniona w~tle
+%\end{lstlisting}
 
-Zak³adaj¹c, ¿e ka¿dy piksel obrazu bêdzie pochodzi³ z~jednej p³aszczyzny przy zmiennym œwietleniu, to do wydzielenia t³a z~takiego obrazu wystarczy u¿ycie pojedynczej adaptacyjnej aproksymacji rozk³adem Gaussa dla ka¿dego piksela. Jednak¿e w~rzeczywistych warunkach na obrazie wystêpuje wiele powierzchni oraz zmienne oœwietlenie, co sprawia, ¿e potrzebne staje siê u¿ycie kilku adaptacyjnych rozk³adów Gaussa. W~opisywanej metodzie u¿yta jest mieszanka kilku takich rozk³adów o~ró¿nych parametrach. Za ka¿dym razem, gdy parametry rozk³adu s¹ aktualizowane, nastêpuje proces oceny dostêpnych rozk³adów w~celu okreœlenia tego najbardziej prawdopodobnego. 
+%Zak³adaj¹c, ¿e ka¿dy piksel obrazu bêdzie pochodzi³ z~jednej p³aszczyzny przy zmiennym œwietleniu, to do wydzielenia t³a z~takiego obrazu wystarczy u¿ycie pojedynczej adaptacyjnej aproksymacji rozk³adem Gaussa dla ka¿dego piksela. Jednak¿e w~rzeczywistych warunkach na obrazie wystêpuje wiele powierzchni oraz zmienne oœwietlenie, co sprawia, ¿e potrzebne staje siê u¿ycie kilku adaptacyjnych rozk³adów Gaussa. W~opisywanej metodzie u¿yta jest mieszanka kilku takich rozk³adów o~ró¿nych parametrach. Za ka¿dym razem, gdy parametry rozk³adu s¹ aktualizowane, nastêpuje proces oceny dostêpnych rozk³adów w~celu okreœlenia tego najbardziej prawdopodobnego. 
 
 \subsection{Opis metody}
 \subsubsection{Model mieszanki}
@@ -48,7 +48,7 @@ Takie rozwi¹zanie zak³ada, ¿e wartoœci dla poszczególnych sk³adowych barwnych ka
 
 Zatem rozk³ad ostatnio obserwowanych wartoœci dla ka¿dego piksela w~obrazie opisany jest mieszank¹ rozk³adów Gaussa. Nowa wartoœæ piksela bêdzie na ogó³ reprezentowana przez jeden z~g³ównych sk³adników mieszanki. 
 
-Do obliczenia wartoœci nowego piksela u¿yta zosta³a metoda on-line K-means approximation. Ka¿da wartoœæ piksela jest sprawdzana pod k¹tem dopasowania do jednego z~K rozk³adów. Warunkiem przynale¿noœci jest wartoœæ w~zakresie do 2,5 odchylenia standardowego z~danego rozk³adu. Zmiana opisanego wczeœniej progu ma niewielki wp³yw na wydajnoœæ algorytmu. Opisany sposób wyboru odpowiednich pikseli jest bardzo u¿yteczny dla obszarów z~ró¿nym oœwietleniem, poniewa¿ obiekty znajduj¹ce siê w~zacienionych obszarach maj¹ mniejszy szum ni¿ obiekty znajduj¹ce siê w~jaœniejszych regionach.
+Do obliczenia wartoœci nowego piksela u¿yta zosta³a metoda aproksymacji K œrednimi. Ka¿da wartoœæ piksela jest sprawdzana pod k¹tem dopasowania do jednego z~K rozk³adów. Obliczana jest odleg³oœæ piksela od ka¿dego z rozk³adów, zdefiniowana jako 2,5 odchylenia standardowego z~danego rozk³adu. Opisany sposób wyboru odpowiednich pikseli jest bardzo u¿yteczny dla obszarów z~ró¿nym oœwietleniem, poniewa¿ obiekty znajduj¹ce siê w~zacienionych obszarach maj¹ mniejszy szum ni¿ obiekty znajduj¹ce siê w~jaœniejszych regionach.
 
 W przypadku, gdy ¿aden rozk³ad nie zosta³ dopasowany do danego piksela, to rozk³ad z~najmniejsz¹ wag¹ jest zastêpowany nowym z~wartoœci¹ piksela jako now¹ wartoœci¹ oczekiwan¹, du¿¹ wariancj¹ i~nisk¹ wag¹.
 
