@@ -1,1 +1,25 @@
 \chapter{Wnioski}
+
+Po szczegó³owym przeanalizowaniu ka¿dej metody na 7 sewencjach testowych mo¿na dojœæ do wniosku, i¿ ¿adnej z nich nie mo¿na okreœliæ mianem uniwersalnej - rezultaty zalez¹ od czynników takich jak oœwietlenie, wystêpowanie cienia, dynamika sekwencji wideo, przejœcia tonalne elementów t³a. Dodatkowo, ka¿da z metod posiada jeden lub kilka wspó³czynników, które nale¿y dobraæ indywidualnie dla ka¿dej sekwencji (czêsto metod¹ prób i b³êdów).  Z³y dobór wspomnianych wspó³czynników mo¿e doprowadziæ do niepoprawnego zainicjalizowania t³a i powstania b³êdnych modeli, jak na obrazach poni¿ej:
+
+
+\begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{clip_02_broken.png}
+                \centering
+                \caption{$DCT\;T_{corr}=0.8$ $T_{MAD}=10$}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{fountain_broken.png}
+                \caption{$Hadamard\;T_{corr}=0.9$ $T_{MAD}=10$}        
+                \end{subfigure}
+        \begin{subfigure}[b]{0.3\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{highway_broken.png}
+                \caption{$DCT\;T_{corr}=0.9$ $T_{MAD}=10$}
+        \end{subfigure}
+        \caption{Obrazy wynikowe dla sekwencji clip\_03.mpg}
+\end{figure}
