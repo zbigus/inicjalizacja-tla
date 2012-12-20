@@ -40,4 +40,4 @@
 \contentsline {section}{\numberline {6.1}Por\'ownanie metody MOG z metod\k a mediany z bufora}{34}
 \contentsline {section}{\numberline {6.2}Por\'ownanie metody MOG z metodami przestrzennymi}{35}
 \contentsline {chapter}{\numberline {7}Wnioski}{37}
-\contentsline {chapter}{\numberline {8}S\IeC {\l }ownik u\.zytych poj\k e\'c}{38}
+\contentsline {chapter}{\numberline {8}S\IeC {\l }ownik u\.zytych poj\k e\'c}{39}
