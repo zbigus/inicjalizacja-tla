@@ -52,38 +52,5 @@ Metryka ta jest g³ównie przeznaczona do wizualnej oceny efektywnoœci algorytmu
 AbsDiff(I_r, I_b)= |I_r - I_b|
 \end{equation}
 
-\item Histogram
-
-Metryka ta okreœla liczbê pikseli o~danej wartoœci, pos³u¿y ona do wizualnej oceny ró¿nic obrazów.
-
-\begin{equation}
-H(i,I)=\sum_{x=0}^{N-1}\sum_{y=0}^{M-1} p(i,I(x,y))
-\end{equation}
-
-\begin{equation}
-p(i,px)=
-\begin{cases} 
-1,\,gdy \, px =i\\
-0,\,gdy \, px \ne i\\
-\end{cases}
-\end{equation}
-
-
-\item Histogram ró¿nicowy
-
-Metryka ta okreœla ró¿nicê liczby pikseli o~danej wartoœci
-
-\begin{equation}
-H(i,I_1,I_2)=\left(\sum_{x=0}^{N-1}\sum_{y=0}^{M-1} p(i,I_1(x,y))\right) - \left(\sum_{x=0}^{N-1}\sum_{y=0}^{M-1} p(i,I_2(x,y))\right)
-\end{equation}
-
-\begin{equation}
-p(i,px)=
-\begin{cases} 
-1,\,gdy \, px =i\\
-0,\,gdy \, px \ne i\\
-\end{cases}
-\end{equation}
-
 \end{enumerate}
 
