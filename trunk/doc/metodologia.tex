@@ -15,7 +15,7 @@ W niniejszej pracy do oceny jakoœci algorytmów inicjalizacji t³a u¿yto pierwszyc
 \end{enumerate}
 
 \section{U¿yte metryki}
-W celu porównania skutecznoœci algorytmów dla ka¿dej z~wy¿ej wymienionych sekwencji zosta³y wyliczone modele t³a z~u¿yciem ró¿nych metod i~wspó³czynników. Obliczenia zosta³y przeprowadzone na ramkach w 8 bitowej skali szaroœci.
+W celu porównania skutecznoœci algorytmów dla ka¿dej z~wy¿ej wymienionych sekwencji zosta³y wyliczone modele t³a z~u¿yciem ró¿nych metod i~wspó³czynników. Obliczenia zosta³y przeprowadzone na obrazach w 8 bitowej skali szaroœci.
 
 Dla metod wykorzystuj¹cych transformatê DCT oraz rekursywn¹ transformatê Hadamarda obliczenia zosta³y wykonane dla wartoœci wspó³czynnika $T_{corr} =  \{ 0.6, 0.7, 0.8, 0.9 \}$ oraz $T_{MAD} =  \{ 10, 20 \}$.
 
@@ -26,7 +26,7 @@ Tam, gdzie jest to mo¿liwe zosta³a wybrana ramka referencyjna, najlepiej oddaj¹c
 \begin{equation}
 MSE(I_r,I_b) = \frac{1}{N*M}\sum_{i=0}^{N-1}\sum_{j=0}^{M-1}(I_r(i,j)-I_b(i,j))^2
 \end{equation}
-Gdzie $I_r$ to ramka referencyjna, $I_b$ to obliczony model t³a, $N$ to wysokoœæ, a~$M$ to szerokoœæ ramki
+Gdzie: $I_r$ to ramka referencyjna, $I_b$ to obliczony model t³a, $N$ to wysokoœæ, a~$M$ to szerokoœæ ramki
 
 \item Procent podobieñstwa o~zadanym progu
 
@@ -43,7 +43,7 @@ F(p_r, p_b)=
 0, \, gdy \, |p_r-p_b|\ge(1-\alpha)*255\\
 \end{cases}
 \end{equation}
-Gdzie $\alpha \in\space <0,1>$ oznacza wymagany próg podobieñstwa piksela, $I_r$ to ramka referencyjna, $I_b$ to obliczony model t³a,  $N$ to wysokoœæ, a~$M$ to szerokoœæ ramki, $p_r$ to wartoœæ piksela ramki referencyjnej, $p_b$ to wartoœæ piksela wygenerowane modelu t³a.
+Gdzie: $\alpha \in\space <0,1>$ oznacza wymagany próg podobieñstwa piksela, $I_r$ to ramka referencyjna, $I_b$ to obliczony model t³a,  $N$ to wysokoœæ, a~$M$ to szerokoœæ ramki, $p_r$ to wartoœæ piksela ramki referencyjnej, $p_b$ to wartoœæ piksela wygenerowane modelu t³a.
 
 \item Obraz ró¿nicowy
 
