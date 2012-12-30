@@ -1,7 +1,7 @@
 \chapter{Porównania metod}
 
-W niniejszym rozdziale zostan¹ porównane miêdzy sob¹ niektóre metody.
-W celu przeprowadzenia porównania dokonano tabelaryzacji najlepszych dla danej metody wyników \ref{tabelaporownawcza} oraz przedstawiono je na wykresie porównawczym \ref{wykresporownawczy}.
+W niniejszym rozdziale zostanie przeprowadzone porównanie miêdzy sob¹ niektóre metody.
+W tym celu dokonano tabelaryzacji najlepszych dla danej metody wyników (tabela \ref{tabelaporownawcza}) oraz przedstawiono je na wykresie porównawczym na rysunku \ref{wykresporownawczy}.
 
 \begin{table}[H]
   \centering
@@ -25,7 +25,7 @@ W celu przeprowadzenia porównania dokonano tabelaryzacji najlepszych dla danej m
     \textbf{pedestrians.mpg} & 105.0423 & 24.9158 & 33.3411 & 67.8489 & 84.5606 & 84.5457 \bigstrut\\
     \hline
     \end{tabular}%
-\caption{Wykres porównawczy wszystkich metod}
+\caption{Tabela porównawcza wszystkich metod}
 \label{tabelaporownawcza}
 \end{table}%
 
@@ -40,7 +40,7 @@ W celu przeprowadzenia porównania dokonano tabelaryzacji najlepszych dla danej m
 
 \section{Porównanie metody MOG z metod¹ mediany z bufora}
 
-Poni¿ej zaprezentowano porównanie dwóch najskuteczniejszych metod operuj¹cych na pikselach: metody MOG oraz mediany z bufora. 
+W tabeli \ref{MOGMEDporownanietabela} oraz na wykresie na rysunku \ref{wykresporownawczyMOGMED} zaprezentowano porównanie dwóch najskuteczniejszych metod operuj¹cych na pikselach: metody MOG oraz mediany z bufora. 
 
 \begin{table}[H]
   \centering
@@ -74,13 +74,13 @@ Poni¿ej zaprezentowano porównanie dwóch najskuteczniejszych metod operuj¹cych na
 \label{wykresporownawczyMOGMED}
 \end{figure}
 
-Metoda MOG okaza³a siê skuteczniejsza tylko w 2 przypadkach (clip\_03.mpg oraz fountain.mpg). W ka¿dej innej sekwencji z zadaniem inicjalizacji t³a lepiej poradzi³a sobie mediana. Fakt ten wynika z tego, i¿ t³o w tych sekwencjach by³o widoczne przez ponad 50\% czasu trwania sekwencji. Nale¿y jednak zauwa¿yæ, i¿ niespe³nienie wczeœniej wspomnianego warunku skutkuje znaczn¹ iloœci¹ artefaktów w odtworzonym metod¹ mediany tle. G³ównym czynnikiem przemawiaj¹cym jednak na korzyœæ metody MOG jest z³o¿onoœæ obliczeniowa, a co za tym idzie czas potrzeby na obliczenie t³a - dla testowanych sekwencji wyniós³ on oko³o 6 minut dla metody wykorzystuj¹cej medianê, natomiast dla metody MOG jedynie kilkanaœcie sekund. Metoda MOG jest lepsza równie¿ wtedy, gdy istnieje prawdopodobieñstwo, i¿ t³o nie jest widoczne przez wiêksz¹ czêœæ czasu trwania sekwencji.
+Metoda MOG okaza³a siê skuteczniejsza tylko w 2 przypadkach (clip\_03.mpg oraz fountain.mpg). W~ka¿dej innej sekwencji z zadaniem inicjalizacji t³a lepiej poradzi³a sobie mediana. Fakt ten wynika z~tego, i¿ t³o w tych sekwencjach by³o widoczne przez ponad 50\% czasu trwania sekwencji. Nale¿y jednak zauwa¿yæ, i¿ niespe³nienie wczeœniej wspomnianego warunku skutkuje znaczn¹ liczb¹ artefaktów w odtworzonym metod¹ mediany tle. G³ównym czynnikiem przemawiaj¹cym jednak na korzyœæ metody MOG jest z³o¿onoœæ obliczeniowa, a co za tym idzie czas potrzeby na obliczenie t³a - dla testowanych sekwencji wyniós³ on oko³o 6 minut dla metody wykorzystuj¹cej medianê, natomiast dla metody MOG jedynie kilkanaœcie sekund. Metoda MOG jest lepsza równie¿ wtedy, gdy istnieje prawdopodobieñstwo, i¿ t³o nie jest widoczne przez wiêksz¹ czêœæ czasu trwania sekwencji.
 
 
 
 \section{Porównanie metody MOG z metodami przestrzennymi}
 
-Poni¿ej zaprezentowano porównanie dwóch najskuteczniejszych metod operuj¹cych na pikselach: MOG i przestrzennych. 
+W tabeli \ref{MOGBLKporownanietabela} oraz na wykresie na rysunku \ref{wykresporownawczyMOGMBLK} zaprezentowano porównanie pomiêdzy metod¹ MOG oraz metodami przestrzennymi. 
 
 
 \begin{table}[H]

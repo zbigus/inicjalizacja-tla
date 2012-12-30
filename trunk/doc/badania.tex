@@ -1,7 +1,7 @@
 \chapter{Badania}
 \label{badania}
 Dla ka¿dej z u¿ytych sekwencji wideo zosta³y policzone wszystkie metryki wymienione w rozdziale~4. 
-Poni¿ej, dla ka¿dej metody, przedstawiony zostanie obraz wynikowy dla dwóch przypadków: najgorszych oraz najlepszych uzyskanych metryk: MSE - b³êdu œredniokwadratowego oraz PP - Procentu podobieñstwa o zadanym progu. 
+W dalszej czêœci pracy dla ka¿dej metody przedstawiony zostanie rezultat jej dzia³ania - obraz wynikowy - dla dwóch sekwencji wideo: z najlepszymi i najgorszymi uzyskanymi wartoœciami metryk MSE i PP.
 Zestawienie wszystkich metod oraz metryk u¿ytych w tej pracy zosta³o zaprezentowane w tabelach: \ref{tab:wyn_zb_pix} oraz \ref{tab:wyn_zb_blk}. S¹ to wyniki dla sekwencji clip\_01.mpg. Analogiczne obliczenia przeprowadzono dla wszystkich sekwencji testowych wymienionych w sekcji \ref{sekwencje}. 
 
 \begin{table}[H]
@@ -158,7 +158,7 @@ Na rysunku \ref{œr_obr_wyn_clip_03.mpg} przedstawiono obrazy: referencyjny, wyni
 \end{figure}
 
 W metodzie tej model t³a inicjalizowany na podstawie ca³ego bufora z ramkami, który w opisywanym przypadku mia³ rozmiar 200 ramek.
-Metoda ta radzi sobie dobrze z sekwencjami na których wystêpuj¹ dynamiczne elementy t³a takie jak poruszaj¹ce siê na wietrze liœcie lub poruszaj¹ca siê woda, natomiast wykazuje du¿e b³êdy przy du¿ej liczbie poruszaj¹cych siê obiektów nie nale¿¹cych do t³a (ludzie, samochody, zwierzêta).
+Radzi ona sobie dobrze z sekwencjami, na których wystêpuj¹ dynamiczne elementy t³a, takie jak poruszaj¹ce siê na wietrze liœcie lub poruszaj¹ca siê woda, natomiast wykazuje du¿e b³êdy przy du¿ej liczbie poruszaj¹cych siê obiektów nie nale¿¹cych do t³a (ludzie, samochody, zwierzêta).
 
 Metoda ta poradzi³a sobie najlepiej z sekwencj¹ fountain.mpg, zadowalaj¹ce s¹ równie¿ wyniki dla sekwencji clip\_02.mpg, aczkolwiek da siê zauwa¿yæ pozosta³oœci sylwetek ludzi przemieszczaj¹cych siê po chodniku. W przypadku pozosta³ych sekwencji, z powodu du¿ej iloœci ruchomych obiektów oraz zmiennego oœwietlenia, metoda ta nie zainicjalizowa³a t³a w sposób, który mo¿na by nazwaæ poprawnym.
 
@@ -256,9 +256,9 @@ Na rysunku \ref{med_obr_wyn_clip_03.mpg} przedstawiono obrazy: referencyjny, wyn
 \end{figure}
 
 W metodzie tej model t³a inicjalizowany na podstawie ca³ego bufora z ramkami, który w opisywanym przypadku mia³ rozmiar 200 ramek.
-Metoda ta radzi sobie bardzo dobrze z sekwencjami na których t³o widoczne jest przynajmniej przez po³owê czasu trwania sekwencji ucz¹cej.
+Radzi ona sobie bardzo dobrze z sekwencjami na których t³o widoczne jest przynajmniej przez po³owê czasu ich trwania.
 
-Metoda ta poradzi³a sobie najlepiej z sekwencj¹ clip02. Okaza³a siê ona równie¿ najlepsza ze wszystkich badanych metod dla sekwencji pedestrians.mpg. Nawet dla sekwencji z najwy¿sz¹ wartoœci¹ b³êdu œredniokwadratowego (clip\_03.mpg) rezultaty dzia³ania tej metody mo¿na wizualnie uznaæ za zadowalaj¹ce - wysoka wartoœæ b³êdu wynika z uœrednienia cienia wywo³anego zmieniaj¹cymi siê warunkami oœwietleniowymi.
+Metoda ta poradzi³a sobie najlepiej z sekwencj¹ clip\_02.mpg. Okaza³a siê ona równie¿ najlepsz¹  dla klipu pedestrians.mpg. Nawet dla sekwencji z najwy¿sz¹ wartoœci¹ b³êdu œredniokwadratowego (clip\_03.mpg) rezultaty dzia³ania mediany z bufora ramek mo¿na wizualnie uznaæ za zadowalaj¹ce - wysoka wartoœæ b³êdu wynika z uœrednienia cienia wywo³anego zmieniaj¹cymi siê warunkami oœwietleniowymi.
 
 %------------------------------------------------------------------------------
 \subsection{Metoda aproksymacji œredniej z bufora ramek}
@@ -489,7 +489,7 @@ Dla tej metody najlepsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_04
 \end{table}%
 
 
-Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej sekwencji.
+Na rysunku \ref{fig:DCTcompbest} przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej sekwencji.
 
 
 \begin{figure}[H]
@@ -510,6 +510,7 @@ Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej se
                 \caption{Obraz ró¿nicowy}
         \end{subfigure}
         \caption{Obrazy wynikowe dla sekwencji clip\_04.mpg}
+        \label{fig:DCTcompbest}
 \end{figure}
 
 Najgorsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_03.mpg przy parametrach $T_{corr} = 0.6$, $T_{MAD} = 20$ i wynosz¹ one odpowiednio:
@@ -532,7 +533,7 @@ Najgorsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_03.mpg przy param
   \caption{Wartoœci metryk dla sekwencji clip\_03.mpg}
 \end{table}
 
-Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej sekwencji.
+Na rysunku \ref{fig:DCTcomp}  przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej sekwencji.
 
 
 \begin{figure}[H]
@@ -553,13 +554,14 @@ Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej se
                 \caption{Obraz ró¿nicowy}
         \end{subfigure}
         \caption{Obrazy wynikowe dla sekwencji clip\_03.mpg}
+        \label{fig:DCTcomp}
 \end{figure}
-
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{dctwykres.png}
 \caption{Wykres porównawczy wartoœci b³êdu œredniokwadratowego dla metody wyorzystuj¹cej transformatê DCT}
+\label{wykresDCT}
 \end{figure}
-Metoda ta da³a zadowalaj¹ce efekty dla wszystkich sekwencji przy wspó³czynnikach: $T_{MAD}=20$ oraz $T_{corr} \in \{0.6, 0.7, 0.8\}$. Przy spó³czynniku $T_{MAD}=10$ t³o dla niektórych sekwencji nie zosta³o poprawnie zainicjalizowane. Wynika to z faktu, i¿ wspó³czynnik ten jest odpowiedzialny za maksymalny akceptowalny poziom szumu przy sprawdzaniu podobieñstwa bloków. Zbyt niska wartoœæ tego wspó³czynnika mo¿e spowodowaæ, i¿ powstanie zbyt du¿a iloœæ kandydatów dla danej lokalizacji blokowej, przez co w trzeciej fazie algorytmu (koñcowa rekonstrukcja t³a) bêd¹ istnia³y superbloki nieposiadaj¹ce trzech bloków z uzupe³nionym t³em, przez co pe³nie zainicjalizowanie t³a stanie siê niemo¿liwe. Podobna sytuacja ma miejsce dla wspó³czynnika  $T_{corr} = 0.9$ - bloki musz¹ byæ wtedy podobne do siebie w a¿ 90\% aby zosta³y uznane za ten sam blok, przez co powstaje zbyt wiele kandydatów dla danej lokalizacji blokowej.
+Metoda ta da³a zadowalaj¹ce efekty dla wszystkich sekwencji przy wspó³czynnikach: $T_{MAD}=20$ oraz $T_{corr} \in \{0.6, 0.7, 0.8\}$, co objawia siê ni¿sz¹ wartoœci¹ b³êdu œredniokwadratowego i zosta³o zaprezentowane na wykresie \ref{wykresDCT}. Przy wspó³czynniku $T_{MAD}=10$ t³o dla niektórych sekwencji nie zosta³o poprawnie zainicjalizowane. Wynika to z faktu, i¿ wspó³czynnik ten jest odpowiedzialny za maksymalny akceptowalny poziom szumu przy sprawdzaniu podobieñstwa bloków. Zbyt niska wartoœæ tego wspó³czynnika mo¿e spowodowaæ, i¿ powstanie zbyt du¿a iloœæ kandydatów dla danej lokalizacji blokowej, przez co w trzeciej fazie algorytmu (koñcowa rekonstrukcja t³a) bêd¹ istnia³y superbloki nieposiadaj¹ce trzech bloków z uzupe³nionym t³em, przez co pe³nie zainicjalizowanie t³a stanie siê niemo¿liwe. Podobna sytuacja ma miejsce dla wspó³czynnika  $T_{corr} = 0.9$ - bloki musz¹ byæ wtedy podobne do siebie w a¿ 90\% aby zosta³y uznane za ten sam blok, przez co powstaje zbyt wiele kandydatów dla danej lokalizacji blokowej.
 
 %------------------------------------------------------------------------------
 \subsection{Metoda wykorzystuj¹ca transformatê Hadamarda}
@@ -585,7 +587,7 @@ Dla tej metody najlepsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_04
  \caption{Wartoœci metryk dla sekwencji clip\_04.mpg}
 \end{table}%
 
-Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej sekwencji.
+Na rysunku \ref{fig:compHADbest} przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej sekwencji.
 
 
 \begin{figure}[H]
@@ -606,6 +608,7 @@ Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej se
                 \caption{Obraz ró¿nicowy}
         \end{subfigure}
         \caption{Obrazy wynikowe dla sekwencji clip\_04.mpg}
+        \label{fig:compHADbest}
 \end{figure}
 
 Najgorsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_03.mpg przy parametrach $T_{corr} = 0.6$, $T_{MAD} = 20$ i wynosz¹ one odpowiednio:
@@ -628,7 +631,7 @@ Najgorsze wartoœci metryk zosta³y uzyskane dla sekwencji clip\_03.mpg przy param
   \caption{Wartoœci metryk dla sekwencji clip\_03.mpg}
 \end{table}
 
-Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej sekwencji.
+Na rysunku \ref{fig:compHADworst} przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej sekwencji.
 
 \begin{figure}[H]
         \centering
@@ -648,12 +651,14 @@ Poni¿ej przedstawiono obrazy: referencyjny, wynikowy oraz ich ró¿nicê dla tej se
                 \caption{Obraz ró¿nicowy}
         \end{subfigure}
         \caption{Obrazy wynikowe dla sekwencji clip\_03.mpg}
+        \label{fig:compHADworst}
 \end{figure}
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{hadwykres.png}
 \caption{Wykres porównawczy wartoœci b³êdu œredniokwadratowego dla metody wyorzystuj¹cej transformatê Hadamarda}
+\label{wykresHAD}
 \end{figure}
-Metoda ta podobnie jak metoda wykorzystuj¹ca transformatê DCT da³a zadowalaj¹ce efekty dla wszystkich sekwencji przy wspó³czynnikach: $T_{MAD}=20$ oraz $T_{corr} \in \{0.6, 0.7, 0.8\}$. Dla pozosta³ych wartoœci parametrów nie zawsze uda³o siê zainicjalizowaæ model t³a z powodów identycznych jak w metodzie wykorzystuj¹cej transformatê DCT.
+Metoda ta podobnie jak metoda wykorzystuj¹ca transformatê DCT da³a zadowalaj¹ce efekty dla wszystkich sekwencji przy wspó³czynnikach: $T_{MAD}=20$ oraz $T_{corr} \in \{0.6, 0.7, 0.8\}$, co zosta³o przedstawione na wykresie \ref{wykresHAD}. Dla pozosta³ych wartoœci parametrów nie zawsze uda³o siê zainicjalizowaæ model t³a z powodów identycznych jak w metodzie wykorzystuj¹cej transformatê DCT.
 
 
