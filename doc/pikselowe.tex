@@ -1,5 +1,13 @@
 \chapter{Metody operuj¹ce na poziomie pikseli}
 \label{cha:Metody operuj¹ce na poziomie pikseli}
+Metody inicjalizacji modelu t³a dzia³aj¹ce na poziomie pikseli dzia³aj¹ na najmniejszych mo¿liwych czêœciach obrazu, czyli na pojedynczych pikselach. Metody te bior¹ pod uwagê jedynie wartoœæ piksela w danym miejscu obrazu bez zwracania uwagi na bezpoœrednie s¹siedztwo analizowanego elementu.
+W~niniejszym rozdziale zostan¹ opisane 4 metody inicjalizacji t³a zaliczaj¹ce siê do tej grupy:
+\begin{itemize}
+\item Mixture of Gaussians (MOG)
+\item Œrednia z bufora ramek
+\item Aproksymacja œredniej przy u¿yciu parametru alfa
+\item Mediana z bufora ramek
+\end{itemize}
 \section{Mixture of Gaussians (MOG)}
 \subsection{Wprowadzenie}
 T³o sceny zawiera wiele dynamicznych obiektów jak poruszane na wietrze ga³êzie i~liœcie drzew czy krzewów. Zmiany w~obrazie nimi wywo³ane powoduj¹, ¿e wartoœæ intensywnoœci danego piksela oraz jego kolor w~czasie mog¹ siê bardzo ró¿niæ od siebie. Z~tego powodu wykorzystanie pojedynczego przybli¿enia rozk³adu prawdopodobieñstwa przy u¿yciu krzywej Gaussa u¿yte w \cite{Wren1997} daje z³e rezultaty. Zamiast tego w~opisywanej metodzie u¿yto podejœcia bazuj¹cego na wykorzystaniu kilku rozk³adów Gaussa o~ró¿nych parametrach w~celu zamodelowania takich zmian \cite{7}.
