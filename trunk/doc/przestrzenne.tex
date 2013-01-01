@@ -3,7 +3,7 @@
 \section{Wprowadzenie}
 \label{blo:wstep}
 Metody przestrzenne, w~przeciwieñstwie do punktowych, rozwa¿aj¹ ramkê wideo jako grupê bloków o~okreœlonym rozmiarze oraz wspó³rzêdnych, lokalizuj¹cych jednoznacznie dany blok w~danej ramce. 
-Za³o¿enie tej klasy algorytmów polega na przypuszczeniu, i¿ blok który pojawia siê najczêœciej w~danej sekwencji wideo jest najlepszym kandydatem na bycie fragmentem t³a. Bloki o~tych samych wspó³rzêdnych s¹ porównywane miêdzy sob¹ w~kolejnych ramkach sekwencji wideo (np. przy u¿yciu wspó³czynnika korelacji poszczególnych pikseli) w celu utworzenia grupy kandydatów - zbioru bloków, które z~pewnym prawdopodobieñstwem nalez¹ do t³a i na podstawie którego (z u¿yciem odpowiednich transformat) t³o to zostanie odtworzone. 
+Za³o¿enie tej klasy algorytmów polega na przypuszczeniu, i¿ blok który pojawia siê najczêœciej w~danej sekwencji wideo jest najlepszym kandydatem na bycie fragmentem t³a. Bloki o~tych samych wspó³rzêdnych s¹ porównywane miêdzy sob¹ w~kolejnych ramkach sekwencji wideo (np. przy u¿yciu wspó³czynnika korelacji poszczególnych pikseli) w celu utworzenia grupy kandydatów - zbioru bloków, które z~pewnym prawdopodobieñstwem nale¿¹ do t³a i na podstawie którego (z u¿yciem odpowiednich transformat) t³o to zostanie odtworzone. 
 Pierwszy etap tego procesu mo¿na przedstawiæ za pomoc¹ schematu blokowego przedstawionego na rysunku \ref{fig:etap1przestrzenne}.
 
 W dalszej czêœci tego rozdzia³u zostan¹ omówione szczegó³owe zasady dzia³ania tej rodziny algorytmów, jak i~równie¿ zostan¹ przedstawione dwie metody, stosowane do wyboru najlepszego bloku z~grupy kandydatów, wykorzystuj¹ce odpowiednio transformatê DCT oraz rekursywn¹ transformatê Hadamarda.
@@ -72,7 +72,7 @@ W celu przeprowadzenia estymacji t³a zosta³o wprowadzone pojêcie superbloku, def
 
 Przyk³adowo, dla bloku X~z~rysunku \ref{blokX} mo¿emy wyró¿niæ nastêpuj¹ce superbloki: \{B,C,A,X\}, \{C,D,X,E\}, \{A,X,H,G\} oraz \{X,E,G,F\}.
 W tej fazie algorytmu dla ka¿dego superbloku, który zawiera 3~bloki wype³nione t³em, jest szacowany czwarty, brakuj¹cy blok. Estymacja odbywa siê w~dziedzinie czêstotliwoœci. Ka¿da z~omawianych metod skupia siê na analizie wysokich czêstotliwoœci, gdy¿ to one odpowiadaj¹ za zmiennoœæ obrazu. Faza koñczy siê gdy ca³e t³o zostanie zrekonstruowane.
-Omawiane dwa algorytmy ró¿ni¹ siê doborem transformaty, a ka¿dy z nich operuje na blokach odtwarzanych z odpowiadaj¹cych wektorów blokowych.
+Omawiane dwa algorytmy ró¿ni¹ siê doborem transformaty, a ka¿dy z nich operuje na blokach odtwarzanych z~odpowiadaj¹cych wektorów blokowych.
 \subsubsection{Estymacja z~wykorzystaniem DCT}
  Metoda ta zosta³a zaproponowana w~\cite{Reddy2009}. Dla ka¿dego superbloku s¹ w niej tworzone dwie ró¿ne wersje transformaty.
  \begin{enumerate}
