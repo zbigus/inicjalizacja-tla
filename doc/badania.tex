@@ -160,7 +160,7 @@ Na rysunku \ref{œr_obr_wyn_clip_03.mpg} przedstawiono obrazy: referencyjny, wyni
 W metodzie tej model t³a inicjalizowany na podstawie ca³ego bufora z ramkami, który w opisywanym przypadku mia³ rozmiar 200 ramek.
 Radzi ona sobie dobrze z sekwencjami, na których wystêpuj¹ dynamiczne elementy t³a, takie jak poruszaj¹ce siê na wietrze liœcie lub poruszaj¹ca siê woda, natomiast wykazuje du¿e b³êdy przy du¿ej liczbie poruszaj¹cych siê obiektów nie nale¿¹cych do t³a (ludzie, samochody, zwierzêta).
 
-Metoda ta poradzi³a sobie najlepiej z sekwencj¹ fountain.mpg, zadowalaj¹ce s¹ równie¿ wyniki dla sekwencji clip\_02.mpg, aczkolwiek da siê zauwa¿yæ pozosta³oœci sylwetek ludzi przemieszczaj¹cych siê po chodniku. W przypadku pozosta³ych sekwencji, z powodu du¿ej iloœci ruchomych obiektów oraz zmiennego oœwietlenia, metoda ta nie zainicjalizowa³a t³a w sposób, który mo¿na by nazwaæ poprawnym.
+Metoda ta poradzi³a sobie najlepiej z sekwencj¹ fountain.mpg. Zadowalaj¹ce s¹ równie¿ wyniki dla sekwencji clip\_02.mpg, aczkolwiek da siê zauwa¿yæ pozosta³oœci sylwetek ludzi przemieszczaj¹cych siê po chodniku. W przypadku pozosta³ych sekwencji, z powodu du¿ej iloœci ruchomych obiektów oraz zmiennego oœwietlenia, metoda ta nie zainicjalizowa³a t³a w sposób, który mo¿na by nazwaæ poprawnym.
 
 
 
@@ -356,7 +356,7 @@ Na rysunku \ref{ap_obr_wyn_clip_03.mpg} przedstawiono obrazy: referencyjny, wyni
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{alphawykres.png}
-\caption{Wykres porównawczy wartoœci b³êdu œredniokwadratowego dla metody wyorzystuj¹cej aproksymacjê œredniej z bufora za pomoc¹ parametru $\alpha$}
+\caption{Wykres porównawczy wartoœci b³êdu œredniokwadratowego dla metody wykorzystuj¹cej aproksymacjê œredniej z bufora za pomoc¹ parametru $\alpha$}
 \label{wykres_alpha}
 \end{figure}
 W metodzie tej model t³a inicjalizowany na podstawie pierwszej ramki.
@@ -460,7 +460,7 @@ Na rysunku \ref{mog_obr_wyn_clip_03.mpg} przedstawiono obrazy: referencyjny, wyn
 \end{figure}
 
 W metodzie tej inicjalizacja przeprowadzana jest na podstawie pierwszej ramki.
-Metoda ta wystêpuje w wielu publikacjach zwi¹zanych z przetwarzaniem obrazów cyfrowych i jest uznawana za jedn¹ ze skuteczniejszych. Wygenerowa³a ona zadowalaj¹ce wyniki dla ka¿dej z testowanych sekwencji, jednak¿e nie zawsze okazywa³a siê najlepsza.
+Wystêpuje ona w wielu publikacjach zwi¹zanych z przetwarzaniem obrazów cyfrowych i jest uznawana za jedn¹ ze skuteczniejszych. Wygenerowa³a ona zadowalaj¹ce wyniki dla ka¿dej z testowanych sekwencji, jednak¿e nie zawsze okazywa³a siê najlepsza.
 
 
 %------------------------------------------------------------------------------
@@ -558,7 +558,7 @@ Na rysunku \ref{fig:DCTcomp}  przedstawiono obrazy: referencyjny, wynikowy oraz 
 \end{figure}
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{dctwykres.png}
-\caption{Wykres porównawczy wartoœci b³êdu œredniokwadratowego dla metody wyorzystuj¹cej transformatê DCT}
+\caption{Wykres porównawczy wartoœci b³êdu œredniokwadratowego dla metody wykorzystuj¹cej transformatê DCT}
 \label{wykresDCT}
 \end{figure}
 Metoda ta da³a zadowalaj¹ce efekty dla wszystkich sekwencji przy wspó³czynnikach: $T_{MAD}=20$ oraz $T_{corr} \in \{0.6, 0.7, 0.8\}$, co objawia siê ni¿sz¹ wartoœci¹ b³êdu œredniokwadratowego i zosta³o zaprezentowane na wykresie \ref{wykresDCT}. Przy wspó³czynniku $T_{MAD}=10$ t³o dla niektórych sekwencji nie zosta³o poprawnie zainicjalizowane. Wynika to z faktu, i¿ wspó³czynnik ten jest odpowiedzialny za maksymalny akceptowalny poziom szumu przy sprawdzaniu podobieñstwa bloków. Zbyt niska wartoœæ tego wspó³czynnika mo¿e spowodowaæ, i¿ powstanie zbyt du¿a iloœæ kandydatów dla danej lokalizacji blokowej, przez co w trzeciej fazie algorytmu (koñcowa rekonstrukcja t³a) bêd¹ istnia³y superbloki nieposiadaj¹ce trzech bloków z uzupe³nionym t³em, przez co pe³nie zainicjalizowanie t³a stanie siê niemo¿liwe. Podobna sytuacja ma miejsce dla wspó³czynnika  $T_{corr} = 0.9$ - bloki musz¹ byæ wtedy podobne do siebie w a¿ 90\% aby zosta³y uznane za ten sam blok, przez co powstaje zbyt wiele kandydatów dla danej lokalizacji blokowej.
@@ -656,7 +656,7 @@ Na rysunku \ref{fig:compHADworst} przedstawiono obrazy: referencyjny, wynikowy o
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{hadwykres.png}
-\caption{Wykres porównawczy wartoœci b³êdu œredniokwadratowego dla metody wyorzystuj¹cej transformatê Hadamarda}
+\caption{Wykres porównawczy wartoœci b³êdu œredniokwadratowego dla metody wykorzystuj¹cej transformatê Hadamarda}
 \label{wykresHAD}
 \end{figure}
 Metoda ta podobnie jak metoda wykorzystuj¹ca transformatê DCT da³a zadowalaj¹ce efekty dla wszystkich sekwencji przy wspó³czynnikach: $T_{MAD}=20$ oraz $T_{corr} \in \{0.6, 0.7, 0.8\}$, co zosta³o przedstawione na wykresie \ref{wykresHAD}. Dla pozosta³ych wartoœci parametrów nie zawsze uda³o siê zainicjalizowaæ model t³a z powodów identycznych jak w metodzie wykorzystuj¹cej transformatê DCT.
