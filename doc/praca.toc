@@ -41,3 +41,5 @@
 \contentsline {section}{\numberline {6.2}Por\'ownanie metody MOG z metodami przestrzennymi}{35}
 \contentsline {chapter}{\numberline {7}Wnioski}{37}
 \contentsline {chapter}{\numberline {8}S\IeC {\l }ownik u\.zytych poj\k e\'c}{39}
+\contentsline {chapter}{\numberline {9}Dodatek A - spis zawarto\'sci p\IeC {\l }yty CD}{40}
+\contentsline {chapter}{\numberline {10}Dodatek B - opis informatyczny programu}{41}
