@@ -8,4 +8,23 @@ W tym miejscu nale¿y zwróciæ uwagê na ró¿nicê pomiêdzy inicjalizacj¹, a generacj
 Pomimo ci¹g³ego rozwoju algorytmów stosowanych do inicjalizacji modelu t³a nadal istniej¹ sytuacje, w~których algorytmy te nie s¹ w~stanie wygenerowaæ poprawnych rezultatów. Najwiêksze problemy sprawiaj¹ zmienne warunki oœwietlenia oraz drobne ruchy obiektów t³a (np. liœcie na wietrze). Kolejnym niepo¿¹danym zjawiskiem jest wtapianie siê obiektów z~pierwszego planu w~t³o, gdy pozostaj¹ one przez d³ugi czas nieruchome. 
 Nieustannie trwaj¹ prace nad stworzeniem algorytmów eliminuj¹cych lub minimalizuj¹cych skutki wy¿ej wymienionych zjawisk. Próby te zosta³y opisane miêdzy innymi w~\cite{Baltieri2010} oraz \cite{Reddy2009}.
 Metody te zaliczaj¹ siê do klasy metod przestrzennych (blokowych), a~ich zaimplementowanie i~porównanie bêdzie stanowiæ jeden z~celów niniejszej pracy. Nastêpnie zostan¹ one skonfrontowane z~metodami operuj¹cymi na poziomie pikseli - opisanymi w~pracach \cite{7}.
-
+\newpage
+\section{Struktura pracy i u¿yte programy}
+Niniejsza praca sk³ada siê z nastêpuj¹cych rozdzia³ów (w nawiasach podano osobê odpowiedzialn¹ za dany rozdzia³):
+\begin{enumerate}
+\item Wstêp - wprowadzenie do zagadnienia, zastosowania metod inicjalizacji modelu t³a (Jakub Gola, Zbigniew Tekiela),
+\item Metody operuj¹ce na poziomie pikseli - opis metod MOG, œrednia z bufora ramek, mediana z bufora ramek, aproksymacja œredniej przy u¿yciu parametru alfa (Zbigniew Tekiela),
+\item Metody blokowe (przestrzenne) - opis metod operuj¹cych na grupach pikseli, wykorzystuj¹cych transformatê DCT i rekursywn¹ transformatê Hadamarda (Jakub Gola),
+\item Metodologia badañ - opis u¿ytych sekwencji wideo oraz metryk do oceny skutecznoœci metod (Jakub Gola, Zbigniew Tekiela),
+\item Badania - opis rezultatów uzyskanych przez poszczególne metody (Jakub Gola - metody przestrzenne, Zbigniew Tekiela - metody operuj¹ce na pikselach),
+\item Porównanie metod - opis porównawczy metod MOG, mediana z bufora i metod przestrzennych, porównanie wartoœci metryk (Jakub Gola, Zbigniew Tekiela),
+\item Wnioski - omówienie rezultatów uzyskanych przez poszczególne metody, propozycje ulepszeñ algorytmów (Jakub Gola, Zbigniew Tekiela),
+\item S³ownik u¿ytych pojêæ - objaœnienia terminów u¿ywanych w niniejszej pracy (Jakub Gola),
+\item Dodatek A - spis zawartoœci p³yty CD (Zbigniew Tekiela),
+\item Dodatek B - opis najwa¿niejszych klas i metod u¿ytych programów (Jakub Gola - program robust.exe, Zbigniew Tekiela - program simple\_pixel\_methods).
+\end{enumerate}
+W celu porównania metod inicjalizacji t³a utworzono nastepuj¹ce programy (w nawiasie podano osobê odpowiedzialn¹):
+\begin{enumerate}
+\item robust.exe - program obliczaj¹cy model t³a metodami przestrzennymi (Jakub Gola) oraz metod¹ MOG (Zbigniew Tekiela),
+\item simple\_pixel\_methods.exe - program obliczaj¹cy model t³a metodami: œredniej z bufora ramek (Jakub Gola), aproksymacji œredniej przy u¿yciu parametru alfa, mediany z bufora ramek (Zbigniew Tekiela).
+\end{enumerate}
