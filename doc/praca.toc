@@ -43,3 +43,10 @@
 \contentsline {chapter}{\numberline {8}S\IeC {\l }ownik u\.zytych poj\k e\'c}{39}
 \contentsline {chapter}{\numberline {9}Dodatek A - spis zawarto\'sci p\IeC {\l }yty CD}{40}
 \contentsline {chapter}{\numberline {10}Dodatek B - opis informatyczny programu}{41}
+\contentsline {section}{\numberline {10.1}Program robust}{41}
+\contentsline {subsection}{\numberline {10.1.1}blok}{41}
+\contentsline {subsection}{\numberline {10.1.2}grid}{42}
+\contentsline {subsection}{\numberline {10.1.3}background}{42}
+\contentsline {subsection}{\numberline {10.1.4}utils}{42}
+\contentsline {subsection}{\numberline {10.1.5}robust}{43}
+\contentsline {section}{\numberline {10.2}Program simple\_pixel\_methods}{43}
