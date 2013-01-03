@@ -17,48 +17,69 @@ Program ten przyjmuje parametry wejœciowe w nastêpuj¹cej kolejnoœci:
 Program sk³ada siê z nastêpuj¹cych klas
 \subsection{blok}
 Klasa blok przechowuje w kontenerze typu vector zawartoœæ pojedynczego bloku. Posiada ona równie¿ zmienn¹ weight, reprezentuj¹c¹ wagê bloku oraz size, okreœlaj¹c¹ jego rozmiar. Jej najwa¿niejsze metody to:
-\begin{enumerate}
-\item int getSize() - zwraca rozmiar bloku,
-\item double mean() - oblicza œredni¹ z pikseli wchodz¹cych w sk³ad bloku,
-\item double deviation() - oblicza odchylenie standardowe z pikeli wchodz¹cych w sk³ad bloku,
-\item double corelation(blok \&blk) - oblicza wspó³czynnik korelacji z innym blokiem,
-\item double mad(blok \&blk) - oblicza wspó³czynnik MAD z innym blokiem,
-\item boolean similar(blok \&blk, double T1,double T2) - zwraca prawdê, jeœli blok jest podobny do innego bloku przy wspó³czynniku korelacji równym T1 i wspó³czynniku MAD równym T2.
-\end{enumerate}
+\begin{description}
+\item [int getSize()] - zwraca rozmiar bloku,
+\item [double mean()] - oblicza œredni¹ z pikseli wchodz¹cych w sk³ad bloku,
+\item [double deviation()] - oblicza odchylenie standardowe z pikeli wchodz¹cych w sk³ad bloku,
+\item [double corelation(blok \&blk)] - oblicza wspó³czynnik korelacji z innym blokiem,
+\item [double mad(blok \&blk)] - oblicza wspó³czynnik MAD z innym blokiem,
+\item [boolean similar(blok \&blk, double T1,double T2)] - zwraca prawdê, jeœli blok jest podobny do innego bloku przy wspó³czynniku korelacji równym T1 i wspó³czynniku MAD równym T2.
+\end{description}
 \subsection{grid}
 Klasa grid przechowuje ca³¹ siatkê grupy kandydatów. Jej najwa¿niejsze metody to:
-\begin{enumerate}
-\item void insertAt(int x,int y, blok\&) - wstawia do grupy kandydatów dla lokalizacji blokowej o wspó³rzêdnych $(x,y)$ blok blk,
-\item grid(int \_width, int \_height) - konstruktor, ustawiaj¹cy wysokoœæ i szerokoœæ siatki,
-\item void reserve(int n) - rezerwuje w pamiêci obszar do stworzenia siatki mog¹cej pomieœciæ n elementów, musi byæ wywo³ana po stworzeniu obiektu typu grid,
-\item void fix() - naprawia b³êdy zwi¹zane z nieprawid³owoœciami podczas przechwytywania obrazu (usuwa nieprawid³owe bloki z siatki) - musi byæ wywo³ana po zakoñczeniu kolekcjonowania kandydatów.
-\end{enumerate} 
+\begin{description}
+\item [void insertAt(int x,int y, blok\&)] - wstawia do grupy kandydatów dla lokalizacji blokowej o wspó³rzêdnych $(x,y)$ blok blk,
+\item [grid(int \_width, int \_height)] - konstruktor, ustawiaj¹cy wysokoœæ i szerokoœæ siatki,
+\item [void reserve(int n)] - rezerwuje w pamiêci obszar do stworzenia siatki mog¹cej pomieœciæ n elementów, musi byæ wywo³ana po stworzeniu obiektu typu grid,
+\item [void fix()] - naprawia b³êdy zwi¹zane z nieprawid³owoœciami podczas przechwytywania obrazu (usuwa nieprawid³owe bloki z siatki) - musi byæ wywo³ana po zakoñczeniu kolekcjonowania kandydatów.
+\end{description} 
 \subsection{background}
 Klasa background przechwouje odtworzone fragmenty t³a w kontenerze typu vector. Zawiera równie¿ tablicê int**filltable, okreœlaj¹c¹, czy dana lokalizacja blokowa posiada ju¿ odtworzone t³o (jeœli tak, w tablicy w miejscu o wspó³rzêdnych x i y bêdzie znajdowaæ siê wartoœæ 1) oraz licznik int nrfilled okreœlaj¹cy, ile fragmentów t³a zosta³o ju¿ odtworzonych. 
 jej najwa¿niejsze metody to:
-\begin{enumerate}
-\item Mat \& devectorize() - zwraca t³o jako obiekt Mat, który mo¿na zapisaæ i wyœwietliæ przy u¿yciu standardowych funkcji OpenCV,
-\item void insertAt(int x,int y, blok\&) - wstawia dla lokalizacji blokowej o wspó³rzêdnych $(x,y)$ dany blok,
-\item int isFilled(int x,int y) - zwraca ,,1'' gdy dla danej lokalizacji blokowej t³o zosta³o ju¿ odtworzone.
-\end{enumerate}
+\begin{description}
+\item [Mat \& devectorize()] - zwraca t³o jako obiekt Mat, który mo¿na zapisaæ i wyœwietliæ przy u¿yciu standardowych funkcji OpenCV,
+\item [void insertAt(int x,int y, blok\&)] - wstawia dla lokalizacji blokowej o wspó³rzêdnych $(x,y)$ dany blok,
+\item [int isFilled(int x,int y)] - zwraca ,,1'' gdy dla danej lokalizacji blokowej t³o zosta³o ju¿ odtworzone.
+\end{description}
 \subsection{utils}
 Utils jest klas¹ pomocnicz¹, zawieraj¹c¹ nastêpuj¹ce funkcje:
-\begin{enumerate}
-\item Mat** grid\_cut(Mat input\_image, int size) - zwraca ramkê obrazu w postaci tablicy obiektów Mat o danym rozmiarze - innymi s³owy dzieli j¹ na ma³e fragmenty,
-\item - double cost(Mat C, Mat D,int size, double alpha, int weight) - liczy funkcjê kosztu dla transformaty, zgodnie ze wzorem (\ref{costfun}),
-\item Mat hadamardmat(int size) - zwraca obiekt Mat bêd¹cy macierz¹ Hadamarda o zadanym rozmiarze.
-\end{enumerate}
+\begin{description}
+\item [Mat** grid\_cut(Mat input\_image, int size)] - zwraca ramkê obrazu w postaci tablicy obiektów Mat o danym rozmiarze - innymi s³owy dzieli j¹ na ma³e fragmenty,
+\item [double cost(Mat C, Mat D,int size, double alpha, int weight)] - liczy funkcjê kosztu dla transformaty, zgodnie ze wzorem (\ref{costfun}),
+\item [Mat hadamardmat(int size)] - zwraca obiekt Mat bêd¹cy macierz¹ Hadamarda o zadanym rozmiarze.
+\end{description}
 \subsection{robust}
 Robust jest to g³ówna klasa, wykonuj¹ca obliczenia na sekwencjach wideo i zwracaj¹ca obrazy wynikowe t³a. Po uruchomieniu,gdy zostanie wywo³ana dla metod blokowych, tworzy ona pojedyncze obiekty klas grid(do przechowywania grupy kandydatów) i background (do przechowywania odtworzonego t³a), a nastêpnie przetwarza ka¿d¹ kolejn¹ ramkê zgodnie z algorytmem opisanym w sekcji \ref{blo:algorytm}. W przypadku wywo³ania jej dla metody MOG, u¿ywa ona wbudowanej w OpenCV klasy BackgroundSubtractorMOG2, pozwalaj¹cej obliczyæ model t³a metod¹ MOG.
+
+
 \section{Program simple\_pixel\_methods} 
 Program \textbf{simple\_pixel\_methods.exe} zawiera w sobie implementacjê 3 algorytmów. S¹ nimi algorytmy: œredniej z bufora, aproksymacji œredniej z bufora oraz mediany.
 
 Program ten przyjmuje parametry wejœciowe w nastêpuj¹cej kolejnoœci:
 
 \begin{enumerate}
-\item wielkoœæ bufora ramek,
-\item typ metody (0 - aproksymacja, 1 - œrednia, 2 - mediana),
-\item wartoœæ parametru $\alpha$ w przypadku wybrania metody aproksymacji.
+\item nazwa pliku wejœciowy
+\item wielkoœæ bufora ramek
+\item typ metody (0 - aproksymacja, 1 - œrednia, 2 - mediana)
+\item wartoœæ parametru $\alpha$ (jedynie w przypadku metody aproksymacji)
 \end{enumerate}
+Program sk³ada siê z nastêpuj¹cych klas
+\subsection{alpha}
+Klasa alpha odpowiedzialna jest za liczenie metody aproksymacji œredniej z bufora.
+Posiada ona nastêpuj¹ce metody:
+\begin{description}
+\item[alpha(double)] - konstruktor sparametryzowany przyjmuj¹cy jeden argument, który jest wartoœci¹ wspó³czynnika $\alpha$,
 
-nie wiem co tu dalej napisaæ...
+\item[void process(const cv::Mat \&img\_input, cv::Mat \&img\_output)] - metoda odpowiedzialna za obliczanie t³a metod¹ aproksymacji œredniej. Pierwszym przyjmowanym parametrem jest referencja do obiektu zawieraj¹cego pojedyncz¹ ramkê obrazu, natomiast drugim jest referencja do obiektu przechowuj¹cego obliczone t³o.
+\end{description}
+
+\subsection{cachedMethods}
+Klasa cachedMethods zawiera jest odpowiedzialna za obliczanie metod œredniej z bufora oraz mediany
+\begin{description}
+\item[void processMean(const cv::Mat \&img\_input, cv::Mat \&img\_output)] - metoda odpowiedzialna za obliczanie t³a metod¹ œredniej. Pierwszym przyjmowanym parametrem jest referencja do obiektu zawieraj¹cego pojedyncz¹ ramkê obrazu, natomiast drugim jest referencja do obiektu przechowuj¹cego obliczone t³o,
+\item[void processMedian(const cv::Mat \&img\_input)] - metoda odpowiedzialna za kolekcjonowanie ramek w celu póŸniejszego wyliczenia t³a metod¹ mediany,
+\item[unsigned char median(std::vector<unsigned char>)] - metoda licz¹ca medianê ze standardowego kontenera vector
+\item[Mat getMedianImg()] - metoda licz¹ca medianê z bufora ramek,
+\item[void cachePush(const cv::Mat \&img\_input)] - metoda dodaj¹ca daj¹ca dan¹ ramkê do wektorów u¿ywanych do liczenia mediany,
+\item[void initVect()] - metoda alokuj¹ca i inicjuj¹ca wektory. 
+\end{description}
