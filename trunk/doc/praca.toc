@@ -1,6 +1,6 @@
 \select@language {polish}
 \contentsline {chapter}{\numberline {1}Wst\k ep}{7}
-\contentsline {section}{\numberline {1.1}Struktura pracy i u\.zyte programy}{8}
+\contentsline {section}{\numberline {1.1}Struktura pracy i stworzone programy}{8}
 \contentsline {chapter}{\numberline {2}Metody operuj\k ace na poziomie pikseli}{9}
 \contentsline {section}{\numberline {2.1}Mixture of Gaussians (MOG)}{9}
 \contentsline {subsection}{\numberline {2.1.1}Wprowadzenie}{9}
@@ -51,3 +51,5 @@
 \contentsline {subsection}{\numberline {10.1.4}utils}{43}
 \contentsline {subsection}{\numberline {10.1.5}robust}{44}
 \contentsline {section}{\numberline {10.2}Program simple\_pixel\_methods}{44}
+\contentsline {subsection}{\numberline {10.2.1}alpha}{44}
+\contentsline {subsection}{\numberline {10.2.2}cachedMethods}{44}
