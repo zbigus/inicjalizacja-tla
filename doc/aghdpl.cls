@@ -95,7 +95,7 @@ im. Stanis\l{}awa Staszica w Krakowie}}}
 \begin{flushright}
 \begin{minipage}[!h]{12cm}
 \mbox{\large{\scshape \textbf{O\'SWIADCZENIE AUTOR\'OW PRACY}}}\\[3mm] 
-{\scshape O\'swiadczamy, \'swiadomi odpowiedzialno\'sci karnej za po\'swiadczenie nieprawdy, \.ze niniejsz\k{a} prac\k{e} dyplomow\k{a} wykonali\'smy osobi\'scie i samodzielnie, i nie korzystali\'smy ze \'zr\'ode\l{} innych ni\.z wymienione w pracy.}\\
+{\scshape O\'swiadczamy, \'swiadomi odpowiedzialno\'sci karnej za po\'swiadczenie nieprawdy, \.ze niniejsz\k{a} prac\k{e} dyplomow\k{a} wykonali\'smy osobi\'scie i samodzielnie, (w zakresie wyszczeg\'olnionym we wst\k{e}pie) i \.ze nie  korzystali\'smy ze \'zr\'ode\l{} innych ni\.z wymienione w pracy.}\\
 \end{minipage}
 
 \vspace{2cm}

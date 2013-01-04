@@ -14,9 +14,12 @@ Program ten przyjmuje parametry wejœciowe w nastêpuj¹cej kolejnoœci:
 \item wspó³czynnik $T_{corr}$ (w przypadku wybrania metody MOG parametr ten pomija siê),
 \item wspó³czynnik $T_{mad}$ (w przypadku wybrania metody MOG parametr ten pomija siê).
 \end{enumerate}
+
+Przyk³adowe wywo³anie programu u¿ywaj¹cego do obliczeñ transformatê Hadamarda dla sekwencji clip\_01.mpg z parametrami $T_{corr}=0.8$ oraz $T_{mad}=20$: \textbf{robust.exe clip\_01.mpg 200 1 16 0.8 20}
+
 Program sk³ada siê z nastêpuj¹cych klas
 \subsection{blok}
-Klasa blok przechowuje w kontenerze typu vector zawartoœæ pojedynczego bloku. Posiada ona równie¿ zmienn¹ weight, reprezentuj¹c¹ wagê bloku oraz size, okreœlaj¹c¹ jego rozmiar. Jej najwa¿niejsze metody to:
+Klasa blok przechowuje w kontenerze typu vector zawartoœæ pojedynczego bloku. Posiada ona równie¿ zmienn¹ \texttt{weight}, reprezentuj¹c¹ wagê bloku oraz \texttt{size}, okreœlaj¹c¹ jego rozmiar. Jej najwa¿niejsze metody to:
 \begin{description}
 \item [int getSize()] - zwraca rozmiar bloku,
 \item [double mean()] - oblicza œredni¹ z pikseli wchodz¹cych w sk³ad bloku,
@@ -34,8 +37,8 @@ Klasa grid przechowuje ca³¹ siatkê grupy kandydatów. Jej najwa¿niejsze metody to
 \item [void fix()] - naprawia b³êdy zwi¹zane z nieprawid³owoœciami podczas przechwytywania obrazu (usuwa nieprawid³owe bloki z siatki) - musi byæ wywo³ana po zakoñczeniu kolekcjonowania kandydatów.
 \end{description} 
 \subsection{background}
-Klasa background przechwouje odtworzone fragmenty t³a w kontenerze typu vector. Zawiera równie¿ tablicê int**filltable, okreœlaj¹c¹, czy dana lokalizacja blokowa posiada ju¿ odtworzone t³o (jeœli tak, w tablicy w miejscu o wspó³rzêdnych x i y bêdzie znajdowaæ siê wartoœæ 1) oraz licznik int nrfilled okreœlaj¹cy, ile fragmentów t³a zosta³o ju¿ odtworzonych. 
-jej najwa¿niejsze metody to:
+Klasa background przechwouje odtworzone fragmenty t³a w kontenerze typu vector. Zawiera równie¿ tablicê \texttt{int**filltable}, okreœlaj¹c¹, czy dana lokalizacja blokowa posiada ju¿ odtworzone t³o, jeœli tak, to w tablicy w miejscu o wspó³rzêdnych x i y bêdzie znajdowaæ siê wartoœæ 1, oraz licznik \texttt{int nrfilled} okreœlaj¹cy, ile fragmentów t³a zosta³o ju¿ odtworzonych. 
+Jej najwa¿niejsze metody to:
 \begin{description}
 \item [Mat \& devectorize()] - zwraca t³o jako obiekt Mat, który mo¿na zapisaæ i wyœwietliæ przy u¿yciu standardowych funkcji OpenCV,
 \item [void insertAt(int x,int y, blok\&)] - wstawia dla lokalizacji blokowej o wspó³rzêdnych $(x,y)$ dany blok,
@@ -49,7 +52,7 @@ Utils jest klas¹ pomocnicz¹, zawieraj¹c¹ nastêpuj¹ce funkcje:
 \item [Mat hadamardmat(int size)] - zwraca obiekt Mat bêd¹cy macierz¹ Hadamarda o zadanym rozmiarze.
 \end{description}
 \subsection{robust}
-Robust jest to g³ówna klasa, wykonuj¹ca obliczenia na sekwencjach wideo i zwracaj¹ca obrazy wynikowe t³a. Po uruchomieniu,gdy zostanie wywo³ana dla metod blokowych, tworzy ona pojedyncze obiekty klas grid(do przechowywania grupy kandydatów) i background (do przechowywania odtworzonego t³a), a nastêpnie przetwarza ka¿d¹ kolejn¹ ramkê zgodnie z algorytmem opisanym w sekcji \ref{blo:algorytm}. W przypadku wywo³ania jej dla metody MOG, u¿ywa ona wbudowanej w OpenCV klasy BackgroundSubtractorMOG2, pozwalaj¹cej obliczyæ model t³a metod¹ MOG.
+Robust jest to g³ówna klasa, wykonuj¹ca obliczenia na sekwencjach wideo i zwracaj¹ca obrazy wynikowe t³a. Po uruchomieniu, gdy zostanie wywo³ana dla metod blokowych, tworzy ona pojedyncze obiekty klas grid (do przechowywania grupy kandydatów) i background (do przechowywania odtworzonego t³a), a nastêpnie przetwarza ka¿d¹ kolejn¹ ramkê zgodnie z algorytmem opisanym w sekcji \ref{blo:algorytm}. W przypadku wywo³ania jej dla metody MOG, u¿ywa ona wbudowanej w OpenCV klasy BackgroundSubtractorMOG2, pozwalaj¹cej obliczyæ model t³a metod¹ MOG.
 
 
 \section{Program simple\_pixel\_methods} 
@@ -58,12 +61,14 @@ Program \textbf{simple\_pixel\_methods.exe} zawiera w sobie implementacjê 3 algo
 Program ten przyjmuje parametry wejœciowe w nastêpuj¹cej kolejnoœci:
 
 \begin{enumerate}
-\item nazwa pliku wejœciowy
-\item wielkoœæ bufora ramek
-\item typ metody (0 - aproksymacja, 1 - œrednia, 2 - mediana)
-\item wartoœæ parametru $\alpha$ (jedynie w przypadku metody aproksymacji)
+\item œcie¿ka do analizowanej sekwencji wideo,
+\item wielkoœæ bufora ramek,
+\item u¿ywana metoda: 0 - aproksymacja, 1 - œrednia, 2 - mediana,
+\item wartoœæ parametru $\alpha$ (jedynie w przypadku metody aproksymacji).
 \end{enumerate}
-Program sk³ada siê z nastêpuj¹cych klas
+Przyk³adowe wywo³anie programu u¿ywaj¹cego do obliczeñ metodê aproksymacji œredniej z bufora dla sekwencji clip\_02.mpg z parametrem $\alpha=0.95$: \textbf{simple\_pixel\_methods.exe clip\_01.mpg 200 0 0.95}
+
+Program sk³ada siê z nastêpuj¹cych klas:
 \subsection{alpha}
 Klasa alpha odpowiedzialna jest za liczenie metody aproksymacji œredniej z bufora.
 Posiada ona nastêpuj¹ce metody:
