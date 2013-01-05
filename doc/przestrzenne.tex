@@ -2,9 +2,9 @@
 \label{cha:metodyprzestrzenne}
 \section{Wprowadzenie}
 \label{blo:wstep}
-Metody przestrzenne, w~przeciwieñstwie do punktowych, rozwa¿aj¹ ramkê wideo jako grupê bloków o~okreœlonym rozmiarze oraz wspó³rzêdnych, lokalizuj¹cych jednoznacznie dany blok w~danej ramce. 
+Metody przestrzenne, w~przeciwieñstwie do tych operuj¹cych na poziomie pojedynczych pikseli, rozwa¿aj¹ ramkê wideo jako grupê bloków o~okreœlonym rozmiarze oraz wspó³rzêdnych, lokalizuj¹cych jednoznacznie dany blok w~danej ramce. 
 Za³o¿enie tej klasy algorytmów polega na przypuszczeniu, i¿ blok który pojawia siê najczêœciej w~danej sekwencji wideo jest najlepszym kandydatem na bycie fragmentem t³a. Bloki o~tych samych wspó³rzêdnych s¹ porównywane miêdzy sob¹ w~kolejnych ramkach sekwencji wideo (np. przy u¿yciu wspó³czynnika korelacji poszczególnych pikseli) w celu utworzenia grupy kandydatów - zbioru bloków, które z~pewnym prawdopodobieñstwem nale¿¹ do t³a i na podstawie którego (z u¿yciem odpowiednich transformat) t³o to zostanie odtworzone. 
-Pierwszy etap tego procesu mo¿na przedstawiæ za pomoc¹ schematu blokowego przedstawionego na rysunku \ref{fig:etap1przestrzenne}.
+Pierwszy etap tego procesu mo¿na zilustrowaæ za pomoc¹ schematu blokowego przedstawionego na rysunku \ref{fig:etap1przestrzenne}.
 
 W dalszej czêœci tego rozdzia³u zostan¹ omówione szczegó³owe zasady dzia³ania tej rodziny algorytmów, jak i~równie¿ zostan¹ przedstawione dwie metody, stosowane do wyboru najlepszego bloku z~grupy kandydatów, wykorzystuj¹ce odpowiednio transformatê DCT oraz rekursywn¹ transformatê Hadamarda.
 \newpage
@@ -40,7 +40,7 @@ W kolejnych sekcjach ka¿da z~faz zostanie szczegó³owo omówiona.
 
 \subsection{Kolekcjonowanie kandydatów}
 \label{blo:kandydaci}
-W tej fazie nastêpuje obróbka kolejnych ramek sekwencji wideo. Ramka $f$ jest dzielona na równe bloki $B_f(i,j)$ o~rozmiarze $N\cdot N$. Nastêpnie ka¿dy blok $B_f(i,j)$ jest poddawany procesowi wektoryzacji, tj. zamieniany na wektor $b_f(i,j)$ o d³ugoœci $N^2$ - tzw. wektor blokowy -   poprzez ³¹czenie ze sob¹ kolejnych wierszy. W kolejnym kroku tej fazy algorytmu, ka¿dy wektor blokowy $b_f(i,j)$ jest porównywany z~ka¿dym wektorem blokowym $r_k(i,j)$ znajduj¹cym siê w~grupie kandydatów dla danej lokalizacji blokowej ($R(i,j)$). Jeœli nie jest podobny do ¿adnego z~kandydatów, zostaje dodany jako nowy kandydat z~pocz¹tkow¹ wag¹ równ¹ jeden. W~przeciwnym wypadku, ka¿dy podobny wektor blokowy i~jego waga s¹ aktualizowane wg nastêpuj¹cych wzorów: 
+W tej fazie nastêpuje obróbka kolejnych ramek sekwencji wideo. Ramka $f$ jest dzielona na równe bloki $B_f(i,j)$ o~rozmiarze $N\times N$. Nastêpnie ka¿dy blok $B_f(i,j)$ jest poddawany procesowi wektoryzacji, tj. zamieniany na wektor $b_f(i,j)$ o d³ugoœci $N^2$ - tzw. wektor blokowy -   poprzez ³¹czenie ze sob¹ kolejnych wierszy. W kolejnym kroku tej fazy algorytmu, ka¿dy wektor blokowy $b_f(i,j)$ jest porównywany z~ka¿dym wektorem blokowym $r_k(i,j)$ znajduj¹cym siê w~grupie kandydatów dla danej lokalizacji blokowej ($R(i,j)$). Jeœli nie jest podobny do ¿adnego z~kandydatów, zostaje dodany jako nowy kandydat z~pocz¹tkow¹ wag¹ równ¹ jeden. W~przeciwnym wypadku, ka¿dy podobny wektor blokowy i~jego waga s¹ aktualizowane wg nastêpuj¹cych wzorów: 
 \begin{equation}
 r_k(i,j)=\frac{r_k(i,j)W_k(i,j)+b_f(i,j)}{W_k(i,j)+1} 
 \end{equation}
@@ -48,7 +48,7 @@ r_k(i,j)=\frac{r_k(i,j)W_k(i,j)+b_f(i,j)}{W_k(i,j)+1}
 W_k(i,j)=W_k(i,j)+1
 \end{equation}
 \subsubsection{Kryteria podobieñstwa bloków}
-Kluczowe dla prawid³owego dzia³ania algorytmu jest dobranie odpowiednich kryteriów podobieñstwa bloków (a raczej wektorów blokowych, gdy¿ na nich wykonywane s¹ obliczenia). Najczeœciej w~tym celu u¿ywa siê wspó³czynnika korelacji oraz wspó³czynnika MAD\footnote{MAD - Mean of Absolute Differences}. S¹ one wyliczane nastepuj¹co:
+Kluczowe dla prawid³owego dzia³ania algorytmu jest dobranie odpowiednich kryteriów podobieñstwa bloków (a raczej wektorów blokowych, gdy¿ na nich wykonywane s¹ obliczenia). Najczêœciej w~tym celu u¿ywa siê wspó³czynnika korelacji oraz wspó³czynnika MAD\footnote{MAD - Mean of Absolute Differences}. S¹ one wyliczane nastêpuj¹co:
 \begin{equation}
 \label{Tcorr}
 T_{corr}=\frac{{(r_k(i,j)-\mu_{r_k}(i,j))}^T(b_f(i,j)-\mu_{b_f}(i,j))}{\sigma_{r_k}(i,j)\sigma_{b_f}(i,j)}
@@ -74,16 +74,16 @@ Przyk³adowo, dla bloku X~z~rysunku \ref{blokX} mo¿emy wyró¿niæ nastêpuj¹ce super
 W tej fazie algorytmu dla ka¿dego superbloku, który zawiera 3~bloki wype³nione t³em, jest szacowany czwarty, brakuj¹cy blok. Estymacja odbywa siê w~dziedzinie czêstotliwoœci. Ka¿da z~omawianych metod skupia siê na analizie wysokich czêstotliwoœci, gdy¿ to one odpowiadaj¹ za zmiennoœæ obrazu. Faza koñczy siê gdy ca³e t³o zostanie zrekonstruowane.
 Omawiane dwa algorytmy ró¿ni¹ siê doborem transformaty, a ka¿dy z nich operuje na blokach odtwarzanych z~odpowiadaj¹cych wektorów blokowych.
 \subsubsection{Estymacja z~wykorzystaniem DCT}
- Metoda ta zosta³a zaproponowana w~\cite{Reddy2009}. Dla ka¿dego superbloku s¹ w niej tworzone dwie ró¿ne wersje transformaty.
+ Metoda ta zosta³a zaproponowana w~\cite{Reddy2009}. Dla ka¿dego superbloku s¹ w niej tworzone dwie ró¿ne wersje transformaty:
  \begin{enumerate}
- \item blok X~jest zerowany, natomiast brana jest pod uwagê zawartoœæ s¹siednich bloków. Na superbloku jest przeprowadzana dwuwymiarowa dyskretna transformata kosinusowa, a~jej wspó³czynniki s¹ zapisywane w~macierzy $C$ o~wymiarach $M \cdot M$. Wspó³czynnik DC macierzy C~(o wspó³rzêdnych (0,0)) jest ustawiany na 0, przez co pod uwagê zostanie wziête tylko przestrzenne zró¿nicowanie wartoœci poszczególnych pikseli. 
- \item bloki otaczaj¹ce X~s¹ zerowane, natomiast X~jest inicjalizowany kolejnymi wartoœciami $r_k$ ze zbioru kandydatów $R$ dla danej lokalizacji blokowej. Powstaje zatem $k$~wersji superbloku. Na ka¿dym z~superbloków jest przeprowadzana 2D DCT, a~jej wspó³czynniki s¹ zachowywane w~macierzy $D_k$, gdzie k~to numer kolejnego bloku ze zbioru kandydatów. Tak jak poprzednio, wspó³czynnik DC macierzy $D_k$ jest ustawiany na zero. 
+ \item blok X~jest zerowany, natomiast brana jest pod uwagê zawartoœæ s¹siednich bloków. Na superbloku jest przeprowadzana dwuwymiarowa dyskretna transformata kosinusowa, a~jej wspó³czynniki s¹ zapisywane w~macierzy $C$ o~wymiarach $M \times M$. Wspó³czynnik DC macierzy C~(o wspó³rzêdnych (0,0)) jest ustawiany na 0, przez co pod uwagê zostanie wziête tylko przestrzenne zró¿nicowanie wartoœci poszczególnych pikseli, 
+ \item bloki otaczaj¹ce X~s¹ zerowane, natomiast X~jest inicjalizowany kolejnymi wartoœciami $r_k$ ze zbioru kandydatów $R$ dla danej lokalizacji blokowej. Powstaje zatem $k$~wersji superbloku. Na ka¿dym z~superbloków jest przeprowadzana 2D DCT, a~jej wspó³czynniki s¹ zachowywane w~macierzy $D_k$, gdzie $k$~to numer kolejnego bloku ze zbioru kandydatów. Tak jak poprzednio, wspó³czynnik DC macierzy $D_k$ jest ustawiany na zero. 
  \end{enumerate}
   
   Nale¿y zauwa¿yæ, i¿ w~wyniku zastosowania dwóch przeciwstawnych masek superbloku (tj. zerowania okreœlonych bloków do niego nale¿¹cych) wartoœci pikseli w~obszarze wysokich czêstotliwoœci bêd¹ przeciwstawne w~macierzach $C$ oraz $D_k$, przez co zredukuj¹ siê one przy dodawaniu. Istniej¹ jednak przypadki, gdy tak siê nie dzieje i~w~macierzach $C$ oraz $D_k$ nie ma elementów o~wysokich czêstotliwoœciach - zdarza siê to gdy wartoœci pikseli w~niewyzerowanych blokach sa bliskie zeru. Aby temu zapobiec, analizuje siê œredni¹ pikseli $\mu_k$ bloku $r_k$ - jeœli jest wy¿sza lub równa 128, odpowiednie bloki w~obu wersjach superbloku s¹ zerowane, a~jeœli œrednia jest ni¿sza - wszystkie piksele tych bloków s¹ ustawiane na 255. Korekta ta zapewnia, ¿e w~ka¿dym superbloku obszar wysokich czêstotliwoœci nie bêdzie pusty.
   
   W³asnoœæ redukowania siê wysokich czêstotliwoœci przy dodawaniu dwóch komplementarnych superbloków wykorzystano przy tworzeniu funkcji kosztu, wyznaczaj¹cej najlepszy blok do uzupe³nienia brakuj¹cego t³a. 
-  Funkcja ta ma nastêpuj¹c¹ postaæ 
+  Funkcja ta ma nastêpuj¹c¹ postaæ: 
   \begin{equation}
   \label{costfun}
   cost(k)=\left(\sum_{v=0}^{M-1}\sum_{u=0}^{M-1}\left|C(v,u)+D_k(v,u)\right|\right)\lambda_k
@@ -91,10 +91,10 @@ Omawiane dwa algorytmy ró¿ni¹ siê doborem transformaty, a ka¿dy z nich operuje n
   \begin{equation}
   \lambda_k=e^{-\alpha\omega_k}
   \end{equation}
-  gdzie: $a\in\langle0,1\rangle$, $\omega_k=\frac{W_k}{\sum_{k=0}^{L-1}W_k}$, przy czym $W_k$ jest wag¹ elementu $r_k$, a~L~jest liczb¹ elementów zbioru $r_k$. Wspó³czynnik $\alpha$ jest dobierany zazwyczaj eksperymentalnie i~okreœla, jak du¿y wp³yw na wynik funkcji kosztu ma waga danego bloku (czyli tak naprawdê czêstoœæ jego wystêpowania w~sekwencji wideo). 
-  Blok o~najni¿szej wartoœci funkcji kosztu (czyli taki, który najlepiej redukuje sumê wysokich czêstotliwoœci w~macierzach C~i~D~) zostaje dodany jako najbardziej wiarygodna estymacja t³a.
+  gdzie: $a\in\langle0,1\rangle$, $\omega_k=\frac{W_k}{\sum_{k=0}^{L-1}W_k}$, przy czym $W_k$ jest wag¹ elementu $r_k$, a~$L$~jest liczb¹ elementów zbioru $r_k$. Wspó³czynnik $\alpha$ jest dobierany zazwyczaj eksperymentalnie i~okreœla, jak du¿y wp³yw na wynik funkcji kosztu ma waga danego bloku (czyli tak naprawdê czêstoœæ jego wystêpowania w~sekwencji wideo). 
+  Blok o~najni¿szej wartoœci funkcji kosztu (czyli taki, który najlepiej redukuje sumê wysokich czêstotliwoœci w~macierzach $C$~i~$D$~) zostaje dodany jako najbardziej wiarygodna estymacja t³a.
    \subsubsection{Estymacja z~wykorzystaniem rekursywnej transformaty Hadamarda}
-   Metoda zosta³a przedstawiona po raz pierwszy w~pracy \cite{Baltieri2010}. Ka¿da ramka jest w niej dzielona na bloki o~rozmiarze $16 \times 16$ pikseli. Do przeprowadzenia trzeciego etapu tej metody jest wykorzystywana dyskretna transformata Hadamarda, bêd¹ca generalizacj¹ transformaty Fouriera. Opiera siê ona na macierzach Hadamarda H, definiowanych rekursywnie w~nastêpuj¹cy sposób:
+   Metoda zosta³a przedstawiona po raz pierwszy w~pracy \cite{Baltieri2010}. Ka¿da ramka jest w niej dzielona na bloki o~rozmiarze $16 \times 16$ pikseli. Do przeprowadzenia trzeciego etapu tej metody jest wykorzystywana dyskretna transformata Hadamarda, bêd¹ca generalizacj¹ transformaty Fouriera. Opiera siê ona na macierzach Hadamarda $H$, definiowanych rekursywnie w~nastêpuj¹cy sposób:
    \begin{equation}
     H_1=\left[1\right] \\
     \end{equation}
@@ -105,11 +105,11 @@ Omawiane dwa algorytmy ró¿ni¹ siê doborem transformaty, a ka¿dy z nich operuje n
    \end{bmatrix}
    \end{equation}
    
-   Transformatê F~bloku $X$ o~wymiarach $2N \cdot 2N$ wyra¿a siê jako
+   Transformatê $F$~bloku $X$ o~wymiarach $2N \times 2N$ wyra¿a siê jako:
    \begin{equation}
    F=MXM
    \end{equation}
-   gdzie: M~to macierz Hadamarda rzêdu 2N. Bardzo u¿yteczn¹ w³asnoœci¹ tej transformaty jest mo¿liwoœæ rozbicia jej na sumê transformat rzêdu ni¿szego. Przyk³adowo, po rozbiciu bloku X~na podbloki A,B,C,D o~wymiarach $N\cdot N$  transformatê mo¿na obliczyæ ze wzoru
+   gdzie: $M$~to macierz Hadamarda rzêdu $2N$. Bardzo u¿yteczn¹ w³asnoœci¹ tej transformaty jest mo¿liwoœæ rozbicia jej na sumê transformat rzêdu ni¿szego. Przyk³adowo, po rozbiciu bloku $X$~na podbloki $A$,$B$,$C$,$D$ o~wymiarach $N\times N$  transformatê mo¿na obliczyæ ze wzoru:
    \begin{equation}F=
    \begin{bmatrix}
    H& H\\
@@ -124,8 +124,8 @@ Omawiane dwa algorytmy ró¿ni¹ siê doborem transformaty, a ka¿dy z nich operuje n
       H & -H
       \end{bmatrix}
    \end{equation}
-gdzie: H~to macierz Hadamarda rzêdu N.   
-Wyra¿aj¹c macierz F~jako:
+gdzie: $H$~to macierz Hadamarda rzêdu $N$.   
+Wyra¿aj¹c macierz $F$~jako:
 \begin{equation}
 \label{matrixf}
 F=
@@ -145,6 +145,6 @@ f_{2,2}=HAH-HBH-HCH+HDH\\
 \end{equation}
 
 Stosuj¹c wzory (\ref{matrixf}) oraz (\ref{matrixfelements}) mo¿na obliczyæ macierz Hadamarda rzêdu $2N$ z~czterech macierzy rzêdu $N$, co bêdzie pomocne w~przy wyliczaniu transformat superbloków.
-Tak samo jak w~metodzie DCT, dla ka¿dego superbloku tworzone s¹ 2~wersje transformat: pierwsza - z~wyzerowanym blokiem X, bior¹ca pod uwagê zawartoœæ bloków s¹siednich oraz druga - z~wyzerowanymi s¹siednimi blokami, bior¹ca pod uwagê tylko zawartoœæ bloku X. Funkcja kosztu, okreœlaj¹ca który blok jest najlepszym kandydatem do bycia blokiem t³a, jest identyczna jak we wzorze \ref{costfun}. 
+Tak samo jak w~metodzie DCT, dla ka¿dego superbloku tworzone s¹ 2~wersje transformat: pierwsza - z~wyzerowanym blokiem $X$, bior¹ca pod uwagê zawartoœæ bloków s¹siednich oraz druga - z~wyzerowanymi s¹siednimi blokami, bior¹ca pod uwagê tylko zawartoœæ bloku $X$. Funkcja kosztu, okreœlaj¹ca który blok jest najlepszym kandydatem do bycia blokiem t³a, jest identyczna jak we wzorze \ref{costfun}. 
 %Algorytm wprowadza równie¿ poprawkê na integralnoœæ wybranego bloku z~reszt¹ t³a - jeœli jego œredni gradient wzd³u¿ przynajmniej dwóch krawêdzi jest wiêkszy ni¿ $\gamma$, blok jest odrzucany, po czym nastêpuje analiza kolejnego bloku z~grupy kandydatów z~najmniejsz¹ wartoœci¹ funkcji kosztu.
 %Wspó³czynnik $\gamma$ jest dobierany eksperymentalnie.   

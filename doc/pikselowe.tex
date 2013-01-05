@@ -66,7 +66,7 @@ Wczeœniejsze wagi K~rozk³adów w~czasie t~s¹ aktualizowane wg wzoru:
 \begin{equation}
 \omega_{k,t}=(1-\alpha)\omega_{k,t-1}+\alpha(M_{k,t})
 \end{equation}
-gdzie: $\alpha$ to tempo uczenia, a~$M_{k,t}$ jest 1~dla dopasowanego rozk³adu i~0 dla pozosta³ych rozk³adów. Po dokonaniu aproksymacji wagi s¹ normalizowane. $\frac{1}{\alpha}$ oznacza sta³¹ czasow¹ okreœlaj¹c¹ prêdkoœæ z~jak¹ parametry rozk³adów siê zmieniaj¹.
+gdzie: $\alpha$ to tempo uczenia, a~$M_{k,t}$ wspó³czynnik, który jest równy 1~dla dopasowanego rozk³adu i~0 dla pozosta³ych rozk³adów. Po dokonaniu aproksymacji wagi s¹ normalizowane. $\frac{1}{\alpha}$ oznacza sta³¹ czasow¹ okreœlaj¹c¹ prêdkoœæ z~jak¹ parametry rozk³adów siê zmieniaj¹.
 
 Dla rozk³adów niedopasowanych do danego piksela wartoœci $\mu$ i~$\sigma$ pozostaj¹ niezmienione. Dla rozk³adów, które zosta³y dopasowane wartoœci $\mu$ i~$\sigma$ obliczane s¹ nastêpuj¹co:
 
@@ -83,7 +83,7 @@ przy czym:
 \rho = \alpha\eta(X_t|\mu_k,\sigma_k)
 \end{equation}
 
-Jedn¹ z~najwiêkszych zalet opisanego rozwi¹zania jest fakt, ¿e kiedy jakiœ obiekt zostanie dodany do t³a, to nie niszczy on istniej¹cego modelu t³a. Oryginalny kolor t³a zostaje zachowany w~mieszance do czasu, a¿ stanie siê najmniej prawdopodobnym kandydatem oraz zostanie zaobserwowany nowy kolor. Zatem jeœli obiekt pozostanie nieruchomy wystarczaj¹co d³ugo aby staæ siê czêœci¹ t³a, a~nastêpnie siê poruszy, to rozk³ad opisuj¹cy poprzednie t³o ci¹gle istnieje w~tymi samymi $\mu$ i~$\sigma^2$, ale mniejszym $\omega$ przez co mo¿e zostaæ szybko ponownie do³¹czony do modelu t³a.
+Jedn¹ z~najwiêkszych zalet opisanego rozwi¹zania jest fakt, ¿e kiedy jakiœ obiekt zostanie dodany do t³a, to nie niszczy on istniej¹cego modelu t³a. Oryginalny kolor t³a zostaje zachowany w~mieszance do czasu, a¿ stanie siê najmniej prawdopodobnym kandydatem oraz zostanie zaobserwowany nowy kolor. Zatem jeœli obiekt pozostanie nieruchomy wystarczaj¹co d³ugo aby staæ siê czêœci¹ t³a, a~nastêpnie siê poruszy, to rozk³ad opisuj¹cy poprzednie t³o ci¹gle istnieje z~tymi samymi $\mu$ i~$\sigma^2$, ale mniejszym $\omega$, przez co mo¿e zostaæ szybko ponownie do³¹czony do modelu t³a.
 
 \subsubsection{Estymacja modelu t³a}
 
@@ -92,12 +92,12 @@ Podczas gdy parametry modelu mieszanki dla ka¿dego piksela zmieniaj¹ siê, nale¿y
 
 
 W celu wybrania odpowiednich rozk³adów nale¿y uszeregowaæ je wed³ug wartoœci $\omega$/$\sigma$. Wartoœæ ta roœnie zarówno przy zwiêkszeniu dopasowania, jak i~przy zmniejszeniu wariancji. W~praktyce tak uszeregowana lista daje zbiór rozk³adów, gdzie najbardziej prawdopodobni kandydaci znajduj¹ siê na pocz¹tku, a~najmniej prawdopodobni na koñcu.
-Selekcji pierwszych rozk³adów do modelu t³a dokonuje siê za pomoc¹ wzoru 
+Selekcji pierwszych rozk³adów do modelu t³a dokonuje siê za pomoc¹ wzoru: 
 
 \begin{equation}
 B = argmin_b\left(\sum_{k=1}^{b}\omega_k>T\right)
 \end{equation}
-gdzie: T~jest miar¹ minimalnej iloœci danych jaka powinna byæ prana pod uwagê. Rozwi¹zanie takie bierze pod uwagê najlepiej dostosowany rozk³ad dot¹d, a¿ pewna porcja T~danych jest rozwa¿ona. Jeœli T~jest jest wartoœci¹ ma³¹, to wtedy model t³a zazwyczaj jest unimodalny. Jeœli T~jest wartoœci¹ wiêksz¹, multimodalny rozk³ad wywo³any powtarzalnymi ruchami w~tle mo¿e skutkowaæ uwzglêdnieniem w~modelu t³a wiêcej ni¿ jednego koloru. Rezultatem tego jest efekt przezroczystoœci, który pozwala modelowi przyjmowaæ dwa lub wiêcej oddzielnych kolorów. 
+gdzie: T~jest miar¹ minimalnej iloœci danych jaka powinna byæ brana pod uwagê. Rozwi¹zanie takie bierze pod uwagê najlepiej dostosowany rozk³ad dot¹d, a¿ pewna porcja T~danych jest rozwa¿ona. Jeœli T~jest jest wartoœci¹ ma³¹, to wtedy model t³a zazwyczaj jest unimodalny. Jeœli T~jest wartoœci¹ wiêksz¹, multimodalny rozk³ad wywo³any powtarzalnymi ruchami w~tle mo¿e skutkowaæ uwzglêdnieniem w~modelu t³a wiêcej ni¿ jednego koloru. Rezultatem tego jest efekt przezroczystoœci, który pozwala modelowi przyjmowaæ dwa lub wiêcej oddzielnych kolorów. 
 
 
 \section{Œrednia z~bufora ramek}
@@ -105,7 +105,7 @@ gdzie: T~jest miar¹ minimalnej iloœci danych jaka powinna byæ prana pod uwagê. R
 Œrednia z~bufora ramek jest jedn¹ z~najprostszych mo¿liwych metod inicjalizacji t³a. W tej metodzie t³o inicjalizowane jest na podstawie ca³ego bufora ramek. Algorytm ten opiera siê na wyliczaniu œredniej arytmetycznej dla ka¿dej pozycji piksela na obrazie spoœród ramek zgromadzonych w~buforze.
 
 \subsection{Opis metody}
-Wartoœæ dla ka¿dego piksela t³a wyliczana jest ze wzoru.
+Wartoœæ dla ka¿dego piksela t³a wyliczana jest ze wzoru:
 
 \begin{equation}
 B(x,y)=\frac{1}{n} \sum_{i=1}^{n} P(x_i,y_i)
@@ -135,11 +135,11 @@ B_{n}(x,y) = P_{n}(x,y) \cdot (1-\alpha) + B_{n-1}(x,y) \cdot \alpha
 Mediana z~bufora ramek jest kolejn¹ z prostych metod inicjalizacji t³a. Do zainicjalizowania t³a u¿ywa ona ca³ego bufora ramek. Algorytm ten opiera siê na wyliczaniu mediany dla ka¿dej pozycji piksela na obrazie spoœród ramek zgromadzonych w~buforze.
 
 \subsection{Opis metody}
-Wartoœæ dla ka¿dego piksela t³a wyliczana jest ze wzoru.
+Wartoœæ dla ka¿dego piksela t³a wyliczana jest ze wzoru:
 
 \begin{equation}
 \label{alpha}
 B(x,y) = \widetilde{P(x,y)}, \; gdzie \;  P(x,y) = \{P_{1}(x,y), P_{2}(x,y), \dots , P_{n}(x,y)\}
 \end{equation}
 
-\noindent gdzie: $B(x,y)$ oznacza wartoœæ piksela t³a w~miejscu (x,y), $P(x,y)$ oznacza zbiór wartoœæ piksela na pozycji (x,y) we wszystkich ramkach w buforze, $\widetilde{P(x,y)}$ oznacza medianê (wartoœæ œrodkow¹) na pozycji (x,y) we wszystkich ramkach w buforze, $P_{i}(x,y)$ oznacza wartoœæ piksela na pozycji (x,y) \newline w $i$-tej ramce, gdzie $i \in \{1,2,\dots,n\}$.
+\noindent gdzie: $B(x,y)$ oznacza wartoœæ piksela t³a w~miejscu (x,y), $P(x,y)$ oznacza zbiór wartoœci piksela na pozycji (x,y) we wszystkich ramkach w buforze, $\widetilde{P(x,y)}$ oznacza medianê (wartoœæ œrodkow¹) na pozycji (x,y) we wszystkich ramkach w buforze, $P_{i}(x,y)$ oznacza wartoœæ piksela na pozycji (x,y) w~$i$-tej ramce, gdzie $i \in \{1,2,\dots,n\}$.
