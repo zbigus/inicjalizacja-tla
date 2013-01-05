@@ -3,15 +3,14 @@
 
 \begin{description}
 \item[inicjalizacja t³a] proces jednorazowy, w którym na podstawie pewnej liczby ramek i odpowiednich algorytmów zostaje uzyskany model t³a
-\item[generecja t³a] ci¹g³y proces aktualizacji wstêpnie zainicjalizowanego modelu  t³a
-\item[blok] wydzielona kwadratowa czeœæ ramki o~rozmiarach $N*N$, zawieraj¹ca oprócz pikseli informacjê o~wadze superbloku
-\item[superblok] grupa 4~s¹siaduj¹cych ze sob¹ bloków, tworz¹ca wiêkszy blok(superblok) o~rozmiarach $2N~*~2N$. Przyk³adowy superblok zosta³ przedstawiony na rysunku \ref{slowniSUPERBLOK_IMG}.
+\item[generacja t³a] ci¹g³y proces aktualizacji wstêpnie zainicjalizowanego modelu  t³a
+\item[blok] wydzielona kwadratowa czeœæ ramki o~rozmiarach $N\times N$, zawieraj¹ca oprócz pikseli informacjê o~wadze superbloku
+\item[superblok] grupa 4~s¹siaduj¹cych ze sob¹ bloków, tworz¹ca wiêkszy blok (superblok) o~rozmiarach $2N~\times~2N$. Przyk³adowy superblok zosta³ przedstawiony na rysunku \ref{slowniSUPERBLOK_IMG}.
 \begin{figure}[ht]
 \begin{center}
 \includegraphics{blok.png}
-\label{slowniSUPERBLOK_IMG}
 \caption{Blok X~oraz jego otoczenie, tworz¹ce razem z~nim superblok}
-
+\label{slowniSUPERBLOK_IMG}
 \end{center}
 \end{figure}  
 \item[grupa kandydatów] utrzymywana dla ka¿dego bloku grupa bloków, które z pewnym prawdopodobieñstwem mog¹ byæ fragmentem t³a
