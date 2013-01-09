@@ -58,16 +58,25 @@ int main(int argc, const char** argv) {
 	string str_null("null");
 	Mat** tmp;
 			if (argc > 2 ) {
-				if(atoi(argv[2]) == 0){
-					method=1; //uruchom mog
+				
+				ileklatek=atoi(argv[2]);
 				}
-				else{
-					ileklatek=atoi(argv[2]);
-				}
-			}
 			if(argc>3){
-				if(argv[3] ==0)
+				if(atoi(argv[3]) ==0)
+					{
+						dctmethod=false;
+						method=1;
+					}
+				else if(atoi(argv[3]) ==1)
+				{
 					dctmethod=true;
+					method=0;
+				}
+				else
+				{
+					dctmethod=false;
+					method=0;
+				}
 			}
 			if(argc>4){
 					size=atoi(argv[4]);
@@ -207,11 +216,11 @@ int main(int argc, const char** argv) {
 			cout<<endl;
 			for (int j=0;j<::grid_width;j++)
 			{
-				//cout<<grd(i,j).size()<<","<<grd(i,j).at(0).getWeight()<<" ";
-				//Mat tmp=grd(i,j).at(0).devectorize();
-				//cvNamedWindow("test");
-				//imshow("test",tmp);
-				//char cdd=(char) waitKey(10);
+				cout<<grd(i,j).size()<<","<<grd(i,j).at(0).getWeight()<<" ";
+				Mat tmp=grd(i,j).at(0).devectorize();
+				cvNamedWindow("test");
+				imshow("test",tmp);
+				char cdd=(char) waitKey(10);
 				//system("PAUSE");
 				if(grd(i,j).size()==1)
 				{
@@ -225,9 +234,9 @@ int main(int argc, const char** argv) {
 				}
 			}
 		}
-		//cvNamedWindow("wynik");
-		//imshow("wynik",bg.devectorize()); //jeszcze nie dziala
-		//waitKey(10);
+		cvNamedWindow("wynik");
+		imshow("wynik",bg.devectorize()); //jeszcze nie dziala
+		waitKey(10);
 //ETAP 3
 		changedsomething=true;
 		while(changedsomething && !bg.isComplete() ){
@@ -321,15 +330,15 @@ int main(int argc, const char** argv) {
 					bg.rep(a,b,grd(a,b).at(nrnajlepszegobloku));
 					changedsomething=true;
 					cout<<"Uzupe³niono "<<bg.getFilled()<<"\\"<<grd.getHeight()*grd.getWidth()<<endl;
-					//cvNamedWindow("wyniktest");
-					//imshow("wyniktest",bg.devectorize()); //jeszcze nie dziala
-					//waitKey(10);
-					//system("PAUSE");
+					cvNamedWindow("wyniktest");
+					imshow("wyniktest",bg.devectorize()); //jeszcze nie dziala
+					waitKey(10);
+					system("PAUSE");
 				}
 			}
 		}
-		//cvNamedWindow("wynik2");
-		//imshow("wynik2",bg.devectorize());
+		cvNamedWindow("wynik2");
+		imshow("wynik2",bg.devectorize());
 		
 		bg.devectorize().convertTo(save_img,CV_8U);
 		_splitpath(argv[1],NULL,NULL,filename,NULL);
@@ -392,7 +401,7 @@ int main(int argc, const char** argv) {
 
 	char wynik_char=(char) waitKey(10);
 	
-	//system("PAUSE");	
+	system("PAUSE");	
 	clock_t after = clock();
 
 	cout << endl << "czas[ms]" << after - before << endl;
